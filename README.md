@@ -1,5 +1,5 @@
 
-# Src/components/Helm　※Helm~Leginsは全て同じ処理をします
+# Src/components/Helm　※Helm~Leginsは全て同じ処理をします。Bukiは別物ですの無視してください。
 
 ## /Helm.tsx
 
