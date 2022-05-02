@@ -13,7 +13,7 @@ export const TestPage = () => {
     // return acc + val.skillLevel.firstSK;
     // if("firstSK" in val.skillLevel){
     if (val.skillLevel.hasOwnProperty("firstSK")) {
-      return acc + val?.skillLevel?.firstSK;
+      return acc + val?.skillLevel?.;
     }
   }, 0);
 
