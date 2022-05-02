@@ -1,8 +1,24 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { ChakraProvider } from "@chakra-ui/react";
+import { BukiSDateProvider } from "../src/provider/BukisDateProvider";
+import { HelmDateProvider } from "../src/provider/HelmDateProvider";
+import { ArmDateProvider } from "../src/provider/ArmDateProvider";
+import { TotalDateProvider } from "../src/provider/TotalDateProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ChakraProvider>
+      <TotalDateProvider>
+        <BukiSDateProvider>
+          <HelmDateProvider>
+            <ArmDateProvider>
+              <Component {...pageProps} />
+            </ArmDateProvider>
+          </HelmDateProvider>
+        </BukiSDateProvider>
+      </TotalDateProvider>
+    </ChakraProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

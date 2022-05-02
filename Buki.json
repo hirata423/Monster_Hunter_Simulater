@@ -1,0 +1,191 @@
+[
+  {
+    "id": 0,
+    "name": "一虎刀",
+    "subName": "ティガレックス",
+    "power": 230,
+    "type": "なし",
+    "critical": "-20%",
+    "checked": false
+  },
+  {
+    "id": 1,
+    "name": "たまのをの妖刀の斬振",
+    "subName": "タマミツネ",
+    "power": 210,
+    "type": "水／22",
+    "critical": "15%",
+    "checked": false
+  },
+  {
+    "id": 2,
+    "name": "夜刀【月影】",
+    "subName": "ナルガクルガ",
+    "power": 180,
+    "type": "なし",
+    "critical": "40%",
+    "checked": false
+  },
+  {
+    "id": 3,
+    "name": "飛龍刀【楓】",
+    "subName": "リオレウス",
+    "power": 210,
+    "type": "火／36",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 4,
+    "name": "帝王刀【陽炎】",
+    "subName": "テオ・テスカトル",
+    "power": 220,
+    "type": "爆破／41",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 5,
+    "name": "ファントムミラージュ",
+    "subName": "オオナズチ",
+    "power": 220,
+    "type": "なし",
+    "critical": "15%",
+    "checked": false
+  },
+  {
+    "id": 6,
+    "name": "龍天刀【紅百武】",
+    "subName": "バルファルク",
+    "power": 180,
+    "type": "龍／39",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 7,
+    "name": "王牙刀",
+    "subName": "ジンオウガ",
+    "power": 200,
+    "type": "雷／34",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 8,
+    "name": "凍刃【氷華】",
+    "subName": "ゴシャハギ",
+    "power": 210,
+    "type": "氷／27",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 9,
+    "name": "飛龍刀【葵】",
+    "subName": "リオレイア",
+    "power": 200,
+    "type": "毒／22",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 10,
+    "name": "南蛮刀フラムソブレ",
+    "subName": "アンジャナフ",
+    "power": 230,
+    "type": "火／24",
+    "critical": "-20%",
+    "checked": false
+  },
+  {
+    "id": 11,
+    "name": "大鎌威太刀",
+    "subName": "オオナズチ",
+    "power": 210,
+    "type": "毒／34",
+    "critical": "-10%",
+    "checked": false
+  },
+  {
+    "id": 12,
+    "name": "禍ツ太刀ノ幽鬼アガラ",
+    "subName": "マガイマガト",
+    "power": 200,
+    "type": "爆破／23",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 13,
+    "name": "大鬼薙刀",
+    "subName": "ラージャン",
+    "power": 220,
+    "type": "雷／15",
+    "critical": "-10%",
+    "checked": false
+  },
+  {
+    "id": 14,
+    "name": "神淵ノ風斬り",
+    "subName": "イブシマキヒコ",
+    "power": 200,
+    "type": "龍／13",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 15,
+    "name": "神淵ノ雷斬り",
+    "subName": "ナルハタタヒメ",
+    "power": 190,
+    "type": "雷／42",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 16,
+    "name": "爆鱗刀バゼルガルガー",
+    "subName": "バゼルギウス",
+    "power": 220,
+    "type": "爆破／17",
+    "critical": "-10%",
+    "checked": false
+  },
+  {
+    "id": 17,
+    "name": "ダオラ＝レイド",
+    "subName": "クシャルダオラ",
+    "power": 190,
+    "type": "氷／45",
+    "critical": "0%",
+    "checked": false
+  },
+  {
+    "id": 18,
+    "name": "伝承の宝刀【カムラ】",
+    "subName": "フゲン",
+    "power": 190,
+    "type": "火／15",
+    "critical": "40%",
+    "checked": false
+  },
+  {
+    "id": 19,
+    "name": "蒼星ノ太刀【舞龍】",
+    "subName": "イベント",
+    "power": 220,
+    "type": "水／37",
+    "critical": "30%",
+    "checked": false
+  },
+  {
+    "id": 20,
+    "name": "百龍刀【千変万化】",
+    "subName": "初期武器",
+    "power": 210,
+    "type": "なし",
+    "critical": "0%",
+    "checked": false
+  }
+]
