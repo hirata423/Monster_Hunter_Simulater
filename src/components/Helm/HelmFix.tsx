@@ -1,8 +1,6 @@
 import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
-import { useEffect } from "react";
 
 import { useHelmDate } from "../../hooks/useHelmsDate";
-import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
 
 export const HelmFix = (props: BuguType) => {

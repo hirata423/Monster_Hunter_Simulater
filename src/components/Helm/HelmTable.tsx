@@ -1,4 +1,4 @@
-import { Box, Button, color, Flex, HStack, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useHelmDate } from "../../hooks/useHelmsDate";
 import { useTotalDate } from "../../hooks/useTotalDate";
@@ -12,10 +12,6 @@ export const HelmTable = () => {
   const filterDate = helmList.filter((item: BuguType) => {
     return item.flag === true;
   });
-
-  const sum = filterDate.reduce((acc: number, val: BuguType): number => {
-    return acc + val.blockPoint;
-  }, 0);
 
   const addClick = () => {
     setTotal([...total, ...filterDate]);
@@ -69,25 +65,28 @@ export const HelmTable = () => {
 
   return (
     <>
-      <Button
-        onClick={addClick}
-        size="sm"
-        mb="46px"
-        backgroundColor="blue.200"
-        _hover={{ backgroundColor: "blue.100" }}
-      >
-        一覧追加
-      </Button>
+      <Flex>
+        <Button
+          onClick={addClick}
+          size="sm"
+          mb="46px"
+          mr="6px"
+          backgroundColor="blue.200"
+          _hover={{ backgroundColor: "blue.100" }}
+        >
+          一覧追加
+        </Button>
 
-      <Button
-        onClick={cancellClick}
-        size="sm"
-        mb="46px"
-        backgroundColor="orange.200"
-        _hover={{ backgroundColor: "orange.100" }}
-      >
-        一覧解除
-      </Button>
+        <Button
+          onClick={cancellClick}
+          size="sm"
+          mb="46px"
+          backgroundColor="orange.200"
+          _hover={{ backgroundColor: "orange.100" }}
+        >
+          一覧解除
+        </Button>
+      </Flex>
       <Box>{skillmap}</Box>
     </>
   );

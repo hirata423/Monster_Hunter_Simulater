@@ -72,9 +72,7 @@
       "secondSK": 1,
       "thirdSK": 1
     },
-    "slot": {
-      "firstSL": "なし"
-    },
+    "slot": {},
     "flag": false
   },
   {
@@ -92,9 +90,7 @@
       "secondSK": 1,
       "thirdSK": 1
     },
-    "slot": {
-      "firstSL": "なし"
-    },
+    "slot": {},
     "flag": false
   },
   {
@@ -629,9 +625,7 @@
     "name": "ジュラアーム",
     "subName": "ジュラトドス",
     "blockPoint": 48,
-    "skill": {
-      "firstSK": "なし"
-    },
+    "skill": {},
     "skillLevel": {},
     "slot": {
       "firstSL": "Lv,3",

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 62,
+    "name": "赫耀ノアーム",
+    "subName": "バルファルク",
+    "blockPoint": 80,
+    "skill": {
+      "firstSK": "龍気活性",
+      "secondSK": "弱点特効"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  }
+]

@@ -1,5 +1,5 @@
 import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTotalDate } from "../hooks/useTotalDate";
 import { BuguType } from "../types/BuguType";
 
@@ -124,7 +124,7 @@ export const SkillLevelSumPage = () => {
     }
   );
 
-  const slotMapItem = reduceList.map((item: SkillLevelType, index: number) => {
+  const slotMapItem = skillList.map((item: SkillLevelType, index: number) => {
     return (
       <Box key={index}>
         <Flex>

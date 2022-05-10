@@ -1,21 +1,21 @@
-import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useArmDate } from "../../hooks/useArmDate";
+import { useLeginsDate } from "../../hooks/useLeginsDate";
 import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
 
-export const ArmmTable = () => {
-  const { armList } = useArmDate();
+export const LeginsTable = () => {
+  const { leginsList } = useLeginsDate();
   const { total, setTotal } = useTotalDate();
-  const [color, setColor] = useState(false);
+  const [color, setColor] = useState(true);
 
-  const filterDate = armList.filter((item: BuguType) => {
+  const filterDate = leginsList.filter((item: BuguType) => {
     return item.flag === true;
   });
 
   const addClick = () => {
     setTotal([...total, ...filterDate]);
-    setColor(true);
+    setColor(false);
   };
   const cancellClick = () => {
     setTotal([]);
@@ -23,7 +23,7 @@ export const ArmmTable = () => {
   };
 
   useEffect(() => {
-    // console.log("ArmTotal", total);
+    // console.log("HelmTotal", total);
   }, [total]);
 
   const skillmap = filterDate.map((item: BuguType) => {
@@ -76,6 +76,7 @@ export const ArmmTable = () => {
         >
           一覧追加
         </Button>
+
         <Button
           onClick={cancellClick}
           size="sm"
@@ -86,10 +87,9 @@ export const ArmmTable = () => {
           一覧解除
         </Button>
       </Flex>
-
       <Box>{skillmap}</Box>
     </>
   );
 };
 
-export default ArmmTable;
+export default LeginsTable;

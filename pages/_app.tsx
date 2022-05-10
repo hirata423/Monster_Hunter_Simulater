@@ -4,6 +4,9 @@ import { BukiSDateProvider } from "../src/provider/BukisDateProvider";
 import { HelmDateProvider } from "../src/provider/HelmDateProvider";
 import { ArmDateProvider } from "../src/provider/ArmDateProvider";
 import { TotalDateProvider } from "../src/provider/TotalDateProvider";
+import { MeilDateProvider } from "../src/provider/MeilDateProvider";
+import { KoilDateProvider } from "../src/provider/KoilDateProvider";
+import { LeginsDateProvider } from "../src/provider/LeginsDateProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,7 +15,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         <BukiSDateProvider>
           <HelmDateProvider>
             <ArmDateProvider>
-              <Component {...pageProps} />
+              <MeilDateProvider>
+                <KoilDateProvider>
+                  <LeginsDateProvider>
+                    <Component {...pageProps} />
+                  </LeginsDateProvider>
+                </KoilDateProvider>
+              </MeilDateProvider>
             </ArmDateProvider>
           </HelmDateProvider>
         </BukiSDateProvider>

@@ -1,12 +1,12 @@
 import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
 
-import { useArmDate } from "../../hooks/useArmDate";
+import { useKoilDate } from "../../hooks/useKoilDate";
 import { BuguType } from "../../types/BuguType";
 
-export const HelmFix = (props: BuguType) => {
+export const KoilFix = (props: BuguType) => {
   const { id, name, subName, blockPoint, skill, skillLevel, slot, flag } =
     props;
-  const { setArmList } = useArmDate();
+  const { setKoilList } = useKoilDate();
 
   const clickChecked = (prevList: any[]) => {
     const targetItem = {
@@ -30,7 +30,7 @@ export const HelmFix = (props: BuguType) => {
   };
 
   const click = () => {
-    setArmList((prevList) => [...clickChecked(prevList)]);
+    setKoilList((prevList) => [...clickChecked(prevList)]);
   };
 
   return (
@@ -48,12 +48,13 @@ export const HelmFix = (props: BuguType) => {
           </Button>
         </Box>
       </Flex>
-
       <Box>防御力　：{blockPoint}</Box>
-      <HStack spacing="30px">
-        <Box>スロット：{slot.firstSL}</Box>
-        <Box>{slot.secondSL}</Box>
-      </HStack>
+      <Flex>
+        <HStack spacing="30px">
+          <Box>スロット：{slot.firstSL}</Box>
+          <Box>{slot.secondSL}</Box>
+        </HStack>
+      </Flex>
       <Flex>
         <HStack spacing="30px">
           <Flex>
@@ -68,12 +69,12 @@ export const HelmFix = (props: BuguType) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="89px"> {skill.thirdSK}</Box>
-          <Box> {skillLevel.thirdSK}</Box>
+          <Box ml="89px">{skill.thirdSK}</Box>
+          <Box>{skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>
     </Stack>
   );
 };
 
-export default HelmFix;
+export default KoilFix;
