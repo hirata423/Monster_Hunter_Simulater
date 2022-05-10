@@ -69,7 +69,7 @@ export const HelmFix = (props: BuguType) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="123px"> {skill.thirdSK}</Box>
+          <Box ml="89px"> {skill.thirdSK}</Box>
           <Box> {skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>

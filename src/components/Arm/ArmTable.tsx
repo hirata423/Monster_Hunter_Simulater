@@ -21,7 +21,7 @@ export const ArmmTable = () => {
   };
 
   useEffect(() => {
-    console.log("ArmTotal", total);
+    // console.log("ArmTotal", total);
   }, [total]);
 
   const skillmap = filterDate.map((item: BuguType) => {

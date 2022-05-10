@@ -1,0 +1,46 @@
+// const sumBlockPoint = total.reduce((acc: number, val: BuguType): number => {
+//   return acc + val.blockPoint;
+// }, 0);
+
+// const sum1 = total.reduce((acc: number, val: BuguType): number => {
+//   return val.skillLevel.firstSK ? acc + val.skillLevel.firstSK : acc;
+// }, 0);
+
+// const sum2 = total.reduce((acc: number, val: BuguType): number => {
+//   return val.skillLevel.secondSK ? acc + val.skillLevel.secondSK : acc;
+// }, 0);
+
+// const sum3 = total.reduce((acc: number, val: BuguType): number => {
+//   return val.skillLevel.thirdSK ? acc + val.skillLevel.thirdSK : acc;
+// }, 0);
+
+{
+  /* <Flex>
+        <Box>防御力合計：</Box>
+        <Box>{sumBlockPoint}</Box>
+      </Flex> */
+}
+
+{
+  /* <Flex>
+        <Box>スキル値1：</Box>
+        <Box>{sum1}</Box>
+      </Flex>
+      <Flex>
+        <Box>スキル値2：</Box>
+        <Box>{sum2}</Box>
+      </Flex>
+      <Flex>
+        <Box>スキル値3：</Box>
+        <Box>{sum3}</Box>
+      </Flex> */
+}
+
+  //aにany型をつけないと、引数の型がnever型の為、SkillLevelTypenever型への割り当てはできないエラー
+  // const reduceSkill = skillList.reduce((a: any, v: SkillLevelType) => {
+  //   if (!a.some((e: SkillLevelType) => e.skill === v.skill)) {
+  //     a.push(v);
+  //   }
+  //   return a;
+  // }, []);
+  // console.log("reduceSkill", reduceSkill);

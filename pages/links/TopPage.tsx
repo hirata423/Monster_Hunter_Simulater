@@ -9,7 +9,9 @@ import Table from "../../src/components/Buki/BukiTable";
 import HelmTable from "../../src/components/Helm/HelmTable";
 import ArmmTable from "../../src/components/Arm/ArmTable";
 
-import TestPage from "../../src/components/test";
+import skillLevelSumPage, {
+  SkillLevelSumPage,
+} from "../../src/components/SkillLevelSum";
 
 export const TopPage = () => {
   return (
@@ -48,7 +50,7 @@ export const TopPage = () => {
             </HStack>
           </Flex>
           <Box>
-            <TestPage />
+            <SkillLevelSumPage />
           </Box>
           <Box>
             <Meil />
