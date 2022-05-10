@@ -45,7 +45,7 @@ export const HelmFix = (props: BuguType) => {
             backgroundColor={!flag ? "blue.200" : "orange.200"}
             _hover={{ backgroundColor: !flag ? "blue.100" : "orange.100" }}
           >
-            {!flag ? "固定" : "解除"}
+            {!flag ? "決定" : "解除"}
           </Button>
         </Box>
       </Flex>

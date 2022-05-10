@@ -7,11 +7,13 @@ export type BuguType = {
     firstSK?: string;
     secondSK?: string;
     thirdSK?: string;
+    fourthSK?: string;
   };
   skillLevel: {
     firstSK?: number;
     secondSK?: number;
     thirdSK?: number;
+    fourthSK?: number;
   };
   slot: {
     firstSL?: string;

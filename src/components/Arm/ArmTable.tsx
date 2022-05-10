@@ -1,5 +1,5 @@
-import { Box, Button } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { Box, Button, Flex, HStack } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { useArmDate } from "../../hooks/useArmDate";
 import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
@@ -7,17 +7,19 @@ import { BuguType } from "../../types/BuguType";
 export const ArmmTable = () => {
   const { armList } = useArmDate();
   const { total, setTotal } = useTotalDate();
+  const [color, setColor] = useState(false);
 
   const filterDate = armList.filter((item: BuguType) => {
     return item.flag === true;
   });
 
-  const sum = filterDate.reduce((acc: number, val: BuguType): number => {
-    return acc + val.blockPoint;
-  }, 0);
-
-  const testClick = () => {
+  const addClick = () => {
     setTotal([...total, ...filterDate]);
+    setColor(true);
+  };
+  const cancellClick = () => {
+    setTotal([]);
+    setColor(true);
   };
 
   useEffect(() => {
@@ -27,31 +29,62 @@ export const ArmmTable = () => {
   const skillmap = filterDate.map((item: BuguType) => {
     return (
       <Box key={item.id}>
-        <Box>
-          {item.skill.firstSK}
-          {item.skillLevel.firstSK}
+        <Box fontSize="18px">
+          {"防御力　"}：{item.blockPoint}
         </Box>
-        <Box>
-          {item.skill.secondSK}
-          {item.skillLevel.secondSK}
-        </Box>
-        <Box>
-          {item.skill.thirdSK}
-          {item.skillLevel.thirdSK}
-        </Box>
+        <Flex fontSize="18px">
+          {"スキル　"}：
+          <Box>
+            <Box>
+              {item.skill.firstSK}
+              {item.skillLevel.firstSK}
+            </Box>
+            <Box>
+              {item.skill.secondSK}
+              {item.skillLevel.secondSK}
+            </Box>
+            <Box>
+              {item.skill.thirdSK}
+              {item.skillLevel.thirdSK}
+            </Box>
+          </Box>
+        </Flex>
+        <Flex fontSize="18px">
+          {"スロット"}：
+          <Flex>
+            <HStack spacing="20px">
+              <Box>{item.slot.firstSL}</Box>
+              <Box>{item.slot.secondSL}</Box>
+              <Box>{item.slot.thirdSL}</Box>
+            </HStack>
+          </Flex>
+        </Flex>
       </Box>
     );
   });
 
   return (
     <>
-      <Box>
-        {"防御力"}：{sum}
-      </Box>
-      <Box>{skillmap}</Box>
-      <Button onClick={testClick} size="sm">
-        テスト
+      <Button
+        onClick={addClick}
+        size="sm"
+        mb="46px"
+        backgroundColor="blue.200"
+        _hover={{ backgroundColor: "blue.100" }}
+      >
+        一覧追加
       </Button>
+
+      <Button
+        onClick={cancellClick}
+        size="sm"
+        mb="46px"
+        backgroundColor="orange.200"
+        _hover={{ backgroundColor: "orange.100" }}
+      >
+        一覧解除
+      </Button>
+      <Box>{skillmap}</Box>
     </>
   );
 };
