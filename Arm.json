@@ -440,7 +440,7 @@
   {
     "id": 86,
     "name": "ガブラスSアーム",
-    "subName": "ボルボロス",
+    "subName": "ガブラス",
     "blockPoint": 52,
     "skill": {
       "firstSK": "会心撃【属性】",
@@ -875,7 +875,7 @@
   },
   {
     "id": 110,
-    "name": " クルルSアーム",
+    "name": "クルルSアーム",
     "subName": "クルルヤック",
     "blockPoint": 38,
     "skill": {
@@ -933,7 +933,7 @@
     "subName": "ブナハブラ",
     "blockPoint": 34,
     "skill": {
-      "firstSK": " 毒属性強化",
+      "firstSK": "毒属性強化",
       "secondSK": "回避性能"
     },
     "skillLevel": {
@@ -1007,7 +1007,7 @@
     "subName": "特殊",
     "blockPoint": 32,
     "skill": {
-      "firstSK": " 納刀術"
+      "firstSK": "納刀術"
     },
     "skillLevel": {
       "firstSK": 1
@@ -1124,6 +1124,43 @@
       "firstSK": 1,
       "secondSK": 1,
       "thirdSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 195,
+    "name": "拘竜の革S",
+    "subName": "ジャギィ・ジャギノス",
+    "blockPoint": 40,
+    "skill": {
+      "firstSK": "攻撃"
+    },
+    "skillLevel": {
+      "firstSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 196,
+    "name": "蒼世ノ侍【袖】",
+    "subName": "イベント",
+    "blockPoint": 72,
+    "skill": {
+      "firstSK": "体術",
+      "secondSK": "弱点特効",
+      "thirdSK": "会心撃【属性】"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 2
     },
     "slot": {
       "firstSL": "Lv,1"
