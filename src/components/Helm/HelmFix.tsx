@@ -1,5 +1,4 @@
 import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
-import { useEffect } from "react";
 
 import { useHelmDate } from "../../hooks/useHelmsDate";
 import { useTotalDate } from "../../hooks/useTotalDate";
@@ -8,8 +7,8 @@ import { BuguType } from "../../types/BuguType";
 export const HelmFix = (props: BuguType) => {
   const { id, name, subName, blockPoint, skill, skillLevel, slot, flag } =
     props;
-  const { setHelmList } = useHelmDate();
-  const { total, setTotal } = useTotalDate();
+  const { helmList, setHelmList } = useHelmDate();
+  // const { total, setTotal } = useTotalDate();
 
   const clickChecked = (prevList: BuguType[]) => {
     const targetItem = {
@@ -35,6 +34,11 @@ export const HelmFix = (props: BuguType) => {
   const click = () => {
     setHelmList((prevList) => [...clickChecked(prevList)]);
   };
+
+  // const filterDate = helmList.filter((item: BuguType) => {
+  //   return item.flag === true;
+  // });
+  // setTotal([...total, ...filterDate]);
 
   return (
     <Stack spacing="15px" m="15px" fontSize="15px" key={id}>
