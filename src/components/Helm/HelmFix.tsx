@@ -1,14 +1,17 @@
 import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 import { useHelmDate } from "../../hooks/useHelmsDate";
+import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
 
 export const HelmFix = (props: BuguType) => {
   const { id, name, subName, blockPoint, skill, skillLevel, slot, flag } =
     props;
   const { setHelmList } = useHelmDate();
+  const { total, setTotal } = useTotalDate();
 
-  const clickChecked = (prevList: any[]) => {
+  const clickChecked = (prevList: BuguType[]) => {
     const targetItem = {
       id,
       name,
@@ -34,7 +37,7 @@ export const HelmFix = (props: BuguType) => {
   };
 
   return (
-    <Stack spacing="15px" m="15px" key={id}>
+    <Stack spacing="15px" m="15px" fontSize="15px" key={id}>
       <Flex>
         <Box>武具名　：{name}</Box>
         <Box ml="100px">

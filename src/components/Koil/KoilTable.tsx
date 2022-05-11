@@ -7,19 +7,21 @@ import { BuguType } from "../../types/BuguType";
 export const KoilTable = () => {
   const { koilList } = useKoilDate();
   const { total, setTotal } = useTotalDate();
-  const [color, setColor] = useState(true);
+  const [color, setColor] = useState("blue.200");
 
   const filterDate = koilList.filter((item: BuguType) => {
     return item.flag === true;
   });
 
   const addClick = () => {
-    setTotal([...total, ...filterDate]);
-    setColor(false);
-  };
-  const cancellClick = () => {
-    setTotal([]);
-    setColor(true);
+    if (color === "blue.200") {
+      setColor("orange.200");
+      setTotal([...total, ...filterDate]);
+    }
+    if (color === "orange.200") {
+      setColor("blue.200");
+      setTotal([]);
+    }
   };
 
   useEffect(() => {
@@ -28,11 +30,11 @@ export const KoilTable = () => {
 
   const skillmap = filterDate.map((item: BuguType) => {
     return (
-      <Box key={item.id}>
-        <Box fontSize="18px">
+      <Box key={item.id} fontSize="15px">
+        <Box>
           {"防御力　"}：{item.blockPoint}
         </Box>
-        <Flex fontSize="18px">
+        <Flex>
           {"スキル　"}：
           <Box>
             <Box>
@@ -49,7 +51,7 @@ export const KoilTable = () => {
             </Box>
           </Box>
         </Flex>
-        <Flex fontSize="18px">
+        <Flex>
           {"スロット"}：
           <Flex>
             <HStack spacing="20px">
@@ -71,20 +73,9 @@ export const KoilTable = () => {
           size="sm"
           mb="46px"
           mr="6px"
-          backgroundColor="blue.200"
-          _hover={{ backgroundColor: "blue.100" }}
+          backgroundColor={color}
         >
-          一覧追加
-        </Button>
-
-        <Button
-          onClick={cancellClick}
-          size="sm"
-          mb="46px"
-          backgroundColor="orange.200"
-          _hover={{ backgroundColor: "orange.100" }}
-        >
-          一覧解除
+          {color === "blue.200" ? "一覧追加" : "一覧解除"}
         </Button>
       </Flex>
       <Box>{skillmap}</Box>

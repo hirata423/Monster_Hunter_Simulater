@@ -37,7 +37,7 @@ export const Legins = () => {
   return (
     <Flex>
       <Flex>
-        <Heading fontSize="25px">ヘルム　：</Heading>
+        <Heading fontSize="25px">レギンス：</Heading>
       </Flex>
       <Box>
         <Box>

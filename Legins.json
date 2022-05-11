@@ -1,12 +1,1034 @@
 [
   {
-    "id": 62,
-    "name": "赫耀ノアーム",
+    "id": 267,
+    "name": "赫耀ノグリーヴ",
     "subName": "バルファルク",
     "blockPoint": 80,
     "skill": {
       "firstSK": "龍気活性",
-      "secondSK": "弱点特効"
+      "secondSK": "逆恨み"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 268,
+    "name": "カイザーグリーヴ",
+    "subName": "テオテスカトル",
+    "blockPoint": 74,
+    "skill": {
+      "firstSK": "炎鱗の恩恵",
+      "secondSK": "見切り"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3"
+    },
+    "flag": false
+  },
+  {
+    "id": 269,
+    "name": "クシャナペイル",
+    "subName": "クシャルダオラ",
+    "blockPoint": 74,
+    "skill": {
+      "firstSK": "鋼殻の恩恵",
+      "secondSK": "匠",
+      "thirdSK": "貫通弾・貫通矢強化"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 270,
+    "name": "なるかみのおみあし",
+    "subName": "ナルハタタヒメ",
+    "blockPoint": 76,
+    "skill": {
+      "firstSK": "雷紋の一致",
+      "secondSK": "回避性能",
+      "thirdSK": "ランナー"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 1
+    },
+    "slot": {},
+    "flag": false
+  },
+  {
+    "id": 271,
+    "name": "しまきのおみあし",
+    "subName": "イブシキマキヒコ",
+    "blockPoint": 66,
+    "skill": {
+      "firstSK": "風紋の一致",
+      "secondSK": "KO術",
+      "thirdSK": "ガード性能"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 1
+    },
+    "slot": {},
+    "flag": false
+  },
+  {
+    "id": 272,
+    "name": "バゼルグリーヴ",
+    "subName": "バゼルギウス",
+    "blockPoint": 72,
+    "skill": {
+      "firstSK": "砲術",
+      "secondSK": "ガード性能"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3"
+    },
+    "flag": false
+  },
+  {
+    "id": 273,
+    "name": "ミヅハ【丸帯】",
+    "subName": "オオナズチ",
+    "blockPoint": 74,
+    "skill": {
+      "firstSK": "霞皮の恩恵",
+      "secondSK": "回避性能"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 274,
+    "name": "ダマスクグリーヴ",
+    "subName": "特殊",
+    "blockPoint": 68,
+    "skill": {
+      "firstSK": "匠"
+    },
+    "skillLevel": {
+      "firstSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 275,
+    "name": "金色ノ帯",
+    "subName": "ラージャン",
+    "blockPoint": 70,
+    "skill": {
+      "firstSK": "超会心",
+      "secondSK": "力の解放"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 276,
+    "name": "ボロスSグリーヴ",
+    "subName": "ボルボロス",
+    "blockPoint": 50,
+    "skill": {
+      "firstSK": "ガード性能",
+      "secondSK": "防御",
+      "thirdSK": "攻めの守勢"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 277,
+    "name": "ヤツタガグリーヴ",
+    "subName": "ヤツタガキ",
+    "blockPoint": 66,
+    "skill": {
+      "firstSK": "体術",
+      "secondSK": "スタミナ急速回復"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 278,
+    "name": "ディアブロSグリーヴ",
+    "subName": "ディアブロス",
+    "blockPoint": 64,
+    "skill": {
+      "firstSK": "ガード性能",
+      "secondSK": "攻めの守勢"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 279,
+    "name": "レックスSグリーヴ",
+    "subName": "ティガレックス",
+    "blockPoint": 64,
+    "skill": {
+      "firstSK": "早食い",
+      "secondSK": "心眼"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 280,
+    "name": "オロミドSグリーヴ",
+    "subName": "オロミドロ",
+    "blockPoint": 64,
+    "skill": {
+      "firstSK": "業物"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 281,
+    "name": "ゴシャSグリーヴ",
+    "subName": "ゴシャハギ",
+    "blockPoint": 64,
+    "skill": {
+      "firstSK": "抜刀術【力】",
+      "secondSK": "挑戦者"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 3
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 282,
+    "name": "禍鎧・覇【具足】",
+    "subName": "マガイマガト",
+    "blockPoint": 64,
+    "skill": {
+      "firstSK": "鬼火纏",
+      "secondSK": "逆恨み",
+      "thirdSK": "ひるみ軽減"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 283,
+    "name": "ファルメルSアンカ",
+    "subName": "特殊",
+    "blockPoint": 62,
+    "skill": {
+      "firstSK": "見切り",
+      "secondSK": "龍属性攻撃強化"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 284,
+    "name": "ジンオウSグリーヴ",
+    "subName": "ジンオウガ",
+    "blockPoint": 62,
+    "skill": {
+      "firstSK": "力の解放",
+      "secondSK": "体術"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 285,
+    "name": "レウスSグリーヴ",
+    "subName": "リオレウス",
+    "blockPoint": 62,
+    "skill": {
+      "firstSK": "攻撃",
+      "secondSK": "破壊王"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 286,
+    "name": "ミツネSグリーヴ",
+    "subName": "タマミツネ",
+    "blockPoint": 60,
+    "skill": {
+      "firstSK": "泡沫の舞"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3",
+      "secondSL": "Lv,1",
+      "thirdSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 287,
+    "name": "ナルガSグリーヴ",
+    "subName": "ナルガクルガ",
+    "blockPoint": 60,
+    "skill": {
+      "firstSK": "回避性能",
+      "secondSK": "見切り"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 288,
+    "name": "ジャナフSグリーヴ",
+    "subName": "アンジャナフ",
+    "blockPoint": 60,
+    "skill": {
+      "firstSK": "ランナー"
+    },
+    "skillLevel": {
+      "firstSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 289,
+    "name": "カガチSグリーヴ",
+    "subName": "トビカガチ",
+    "blockPoint": 58,
+    "skill": {
+      "firstSK": "体術",
+      "secondSK": "見切り"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,2",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 290,
+    "name": "ベリオSグリーヴ",
+    "subName": "ベリオロス",
+    "blockPoint": 58,
+    "skill": {
+      "firstSK": "納刀術"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 291,
+    "name": "イソネSグリーヴ",
+    "subName": "イソネミクニ",
+    "blockPoint": 58,
+    "skill": {
+      "firstSK": "精霊の加護"
+    },
+    "skillLevel": {
+      "firstSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 292,
+    "name": "ガブラスSベルト",
+    "subName": "ガブラス",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "弱点特効"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 293,
+    "name": "神凪・願【緋袴】",
+    "subName": "特殊",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "回避性能",
+      "secondSK": "挑戦者"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 294,
+    "name": "依巫・祈【緋袴】",
+    "subName": "特殊",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "広域化",
+      "secondSK": "満足感",
+      "thirdSK": "幸運"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 295,
+    "name": "ヴァイクSグリーヴ",
+    "subName": "特殊",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "装填拡張"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 296,
+    "name": "マギュルSライース",
+    "subName": "特殊",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "反動軽減"
+    },
+    "skillLevel": {
+      "firstSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,2",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 297,
+    "name": "メルホアSライース",
+    "subName": "特殊",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "体力回復量UP",
+      "secondSK": "回復速度"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 298,
+    "name": "アルブーロSサンダル",
+    "subName": "特殊",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "散弾・拡散矢強化",
+      "secondSK": "貫通弾・貫通矢強化"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 299,
+    "name": "ドーベルSグリーヴ",
+    "subName": "特殊",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "龍属性攻撃強化",
+      "secondSK": "集中",
+      "thirdSK": "火事場力"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 300,
+    "name": "レイアSグリーヴ",
+    "subName": "リオレイア",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "属性やられ耐性",
+      "secondSK": "満足感"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 301,
+    "name": "バサルSグリーヴ",
+    "subName": "バサルモス",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "砲弾装填",
+      "secondSK": "防御"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3"
+    },
+    "flag": false
+  },
+  {
+    "id": 302,
+    "name": "ジュラグリーヴ",
+    "subName": "ジュラトドス",
+    "blockPoint": 48,
+    "skill": {
+      "firstSK": "ガード強化"
+    },
+    "skillLevel": {
+      "firstSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,2",
+      "secondSL": "Lv,1",
+      "thirdSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 303,
+    "name": "プケプケSグリーヴ",
+    "subName": "プケプケ",
+    "blockPoint": 50,
+    "skill": {
+      "firstSK": "体術",
+      "secondSK": "誘弾強化"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1",
+      "thirdSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 304,
+    "name": "テンゴSグリーヴ",
+    "subName": "ビジュテング",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "渾身"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2",
+      "secondSL": "Lv,1",
+      "thirdSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 305,
+    "name": "ルドロスSグリーヴ",
+    "subName": "ロアルドロス",
+    "blockPoint": 48,
+    "skill": {
+      "firstSK": "強化持続"
+    },
+    "skillLevel": {
+      "firstSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,3"
+    },
+    "flag": false
+  },
+  {
+    "id": 306,
+    "name": "ラングロSグリーヴ",
+    "subName": "ラングロトラ",
+    "blockPoint": 50,
+    "skill": {
+      "firstSK": "高速変形",
+      "secondSK": "回避距離UP"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 307,
+    "name": "リノプロSグリーヴ",
+    "subName": "リノプロス",
+    "blockPoint": 42,
+    "skill": {
+      "firstSK": "貫通矢・貫通弾強化",
+      "secondSK": "耐震"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 308,
+    "name": "エーデルSフロール",
+    "subName": "特殊",
+    "blockPoint": 40,
+    "skill": {
+      "firstSK": "毒耐性"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 309,
+    "name": "インゴットSグリーヴ",
+    "subName": "特殊・鉱石系",
+    "blockPoint": 40,
+    "skill": {
+      "firstSK": "攻撃",
+      "secondSK": "見切り"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 310,
+    "name": "ヨツミSグリーヴ",
+    "subName": "ヨツミワドウ",
+    "blockPoint": 40,
+    "skill": {
+      "firstSK": "通常弾・通常矢強化",
+      "secondSK": "腹減り耐性"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 311,
+    "name": "フルフルSグリーヴ",
+    "subName": "フルフル",
+    "blockPoint": 38,
+    "skill": {
+      "firstSK": "集中",
+      "secondSK": "KO術",
+      "thirdSK": "回復速度"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 312,
+    "name": "アケノSグリーヴ",
+    "subName": "アケノシルム",
+    "blockPoint": 38,
+    "skill": {
+      "firstSK": "フルチャージ",
+      "secondSK": "火属性攻撃強化"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 313,
+    "name": "ウルクSグリーヴ",
+    "subName": "ウルクスス",
+    "blockPoint": 36,
+    "skill": {
+      "firstSK": "ジャンプ鉄人",
+      "secondSK": "見切り"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": "見切り"
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 314,
+    "name": "アシラSグリーヴ",
+    "subName": "アオアシラ",
+    "blockPoint": 36,
+    "skill": {},
+    "skillLevel": {},
+    "slot": {
+      "firstSL": "Lv,3",
+      "secondSL": "Lv,2",
+      "thirdSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 315,
+    "name": "フロギィSグリーヴ",
+    "subName": "ドスフロギィ・フロギィ",
+    "blockPoint": 38,
+    "skill": {
+      "firstSK": "装填拡張",
+      "secondSK": "回避距離UP"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 316,
+    "name": "クルルSグリーヴ",
+    "subName": "クルルヤック",
+    "blockPoint": 38,
+    "skill": {
+      "firstSK": "気絶耐性",
+      "secondSK": "見切り"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 317,
+    "name": "バギィSグリーヴ",
+    "subName": "ドスバギィ・バギィ",
+    "blockPoint": 36,
+    "skill": {
+      "firstSK": "攻撃"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 318,
+    "name": "イズチSグリーヴ",
+    "subName": "オサイズチ・イズチ",
+    "blockPoint": 36,
+    "skill": {
+      "firstSK": "回復速度",
+      "secondSK": "体術"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 319,
+    "name": "ブナハSブーツ",
+    "subName": "ブナハブラ",
+    "blockPoint": 34,
+    "skill": {
+      "firstSK": "麻痺属性強化",
+      "secondSK": "反動軽減"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 320,
+    "name": "スパイオSガンバ",
+    "subName": "特殊・昆虫系",
+    "blockPoint": 32,
+    "skill": {
+      "firstSK": "力の解放",
+      "secondSK": "毒耐性",
+      "thirdSK": "心眼"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1,
+      "thirdSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 321,
+    "name": "ボーンSグリーヴ",
+    "subName": "特殊・骨系",
+    "blockPoint": 32,
+    "skill": {
+      "firstSK": "泥雪耐性",
+      "secondSK": "集中"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 322,
+    "name": "アロイSグリーヴ",
+    "subName": "特殊・鉱石系",
+    "blockPoint": 32,
+    "skill": {
+      "firstSK": "砥石使用高速化",
+      "secondSK": "見切り"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 323,
+    "name": "ハンターSグリーヴ",
+    "subName": "特殊",
+    "blockPoint": 32,
+    "skill": {
+      "firstSK": "気絶耐性",
+      "secondSK": "攻撃"
     },
     "skillLevel": {
       "firstSK": 1,
@@ -14,6 +1036,167 @@
     },
     "slot": {
       "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 324,
+    "name": "チェーンSパンツ",
+    "subName": "特殊・鉱石系",
+    "blockPoint": 32,
+    "skill": {
+      "firstSK": "植生学",
+      "secondSK": "スタミナ急速回復"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 325,
+    "name": "レザーSパンツ",
+    "subName": "特殊",
+    "blockPoint": 30,
+    "skill": {
+      "firstSK": "地質学"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2"
+    },
+    "flag": false
+  },
+  {
+    "id": 326,
+    "name": "カムラノ装・【脚絆】覇",
+    "subName": "初期装備",
+    "blockPoint": 30,
+    "skill": {
+      "firstSK": "壁面移動",
+      "secondSK": "死中に活"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 327,
+    "name": "マカルパSグリーヴ",
+    "subName": "特殊",
+    "blockPoint": 52,
+    "skill": {
+      "firstSK": "泡沫の舞",
+      "secondSK": "早食い"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 328,
+    "name": "蒼世ノ侍【履物】",
+    "subName": "イベント",
+    "blockPoint": 72,
+    "skill": {
+      "firstSK": "納刀術",
+      "secondSK": "集中"
+    },
+    "skillLevel": {
+      "firstSK": 2,
+      "secondSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 329,
+    "name": "拘竜の革臑当S",
+    "subName": "ジャギィ",
+    "blockPoint": 42,
+    "skill": {
+      "firstSK": "乗り名人"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,2",
+      "secondSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 330,
+    "name": "ブリゲイドSグリーヴ",
+    "subName": "闘技場",
+    "blockPoint": 62,
+    "skill": {
+      "firstSK": "剥ぎ取り鉄人",
+      "secondSK": "植生学"
+    },
+    "skillLevel": {
+      "firstSK": 1,
+      "secondSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,1",
+      "secondSL": "Lv,1",
+      "thirdSL": "Lv,1"
+    },
+    "flag": false
+  },
+  {
+    "id": 331,
+    "name": "クロムタグリーヴ",
+    "subName": "鉱石系",
+    "blockPoint": 46,
+    "skill": {
+      "firstSK": "ひるみ軽減"
+    },
+    "skillLevel": {
+      "firstSK": 2
+    },
+    "slot": {
+      "firstSL": "Lv,3"
+    },
+    "flag": false
+  },
+  {
+    "id": 332,
+    "name": "ドロスSグリーヴ",
+    "subName": "ルドロス",
+    "blockPoint": 42,
+    "skill": {
+      "firstSK": "揺動"
+    },
+    "skillLevel": {
+      "firstSK": 1
+    },
+    "slot": {
+      "firstSL": "Lv,3",
+      "secondSL": "Lv,1"
     },
     "flag": false
   }

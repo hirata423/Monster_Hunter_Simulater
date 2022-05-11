@@ -8,7 +8,7 @@ export const LeginsFix = (props: BuguType) => {
     props;
   const { setLeginsList } = useLeginsDate();
 
-  const clickChecked = (prevList: any[]) => {
+  const clickChecked = (prevList: BuguType[]) => {
     const targetItem = {
       id,
       name,
@@ -34,7 +34,7 @@ export const LeginsFix = (props: BuguType) => {
   };
 
   return (
-    <Stack spacing="15px" m="15px" key={id}>
+    <Stack spacing="15px" m="15px" fontSize="15px" key={id}>
       <Flex>
         <Box>武具名　：{name}</Box>
         <Box ml="100px">

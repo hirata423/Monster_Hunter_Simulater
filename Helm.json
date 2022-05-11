@@ -1014,7 +1014,7 @@
     "subName": "特殊・鉱石系",
     "blockPoint": 32,
     "skill": {
-      "firstSK": "氷属性攻撃強化",
+      "firstSK": "水属性攻撃強化",
       "secondSK": "剛刃研磨"
     },
     "skillLevel": {

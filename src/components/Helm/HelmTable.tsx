@@ -1,5 +1,6 @@
 import { Box, Button, Flex, HStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+
 import { useHelmDate } from "../../hooks/useHelmsDate";
 import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
@@ -7,19 +8,21 @@ import { BuguType } from "../../types/BuguType";
 export const HelmTable = () => {
   const { helmList } = useHelmDate();
   const { total, setTotal } = useTotalDate();
-  const [color, setColor] = useState(true);
+  const [color, setColor] = useState("blue.200");
 
   const filterDate = helmList.filter((item: BuguType) => {
     return item.flag === true;
   });
 
   const addClick = () => {
-    setTotal([...total, ...filterDate]);
-    setColor(false);
-  };
-  const cancellClick = () => {
-    setTotal([]);
-    setColor(true);
+    if (color === "blue.200") {
+      setColor("orange.200");
+      setTotal([...total, ...filterDate]);
+    }
+    if (color === "orange.200") {
+      setColor("blue.200");
+      setTotal([]);
+    }
   };
 
   useEffect(() => {
@@ -28,11 +31,11 @@ export const HelmTable = () => {
 
   const skillmap = filterDate.map((item: BuguType) => {
     return (
-      <Box key={item.id}>
-        <Box fontSize="18px">
+      <Box fontSize="15px" key={item.id}>
+        <Box>
           {"防御力　"}：{item.blockPoint}
         </Box>
-        <Flex fontSize="18px">
+        <Flex>
           {"スキル　"}：
           <Box>
             <Box>
@@ -49,7 +52,7 @@ export const HelmTable = () => {
             </Box>
           </Box>
         </Flex>
-        <Flex fontSize="18px">
+        <Flex>
           {"スロット"}：
           <Flex>
             <HStack spacing="20px">
@@ -71,20 +74,9 @@ export const HelmTable = () => {
           size="sm"
           mb="46px"
           mr="6px"
-          backgroundColor="blue.200"
-          _hover={{ backgroundColor: "blue.100" }}
+          backgroundColor={color}
         >
-          一覧追加
-        </Button>
-
-        <Button
-          onClick={cancellClick}
-          size="sm"
-          mb="46px"
-          backgroundColor="orange.200"
-          _hover={{ backgroundColor: "orange.100" }}
-        >
-          一覧解除
+          {color === "blue.200" ? "一覧追加" : "一覧解除"}
         </Button>
       </Flex>
       <Box>{skillmap}</Box>

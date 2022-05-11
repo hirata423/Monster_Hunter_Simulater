@@ -8,6 +8,7 @@ type SkillLevelType = {
   skill: string;
   skillLevel: number;
   slot: string;
+  count?: number;
 };
 
 export const SkillLevelSumPage = () => {
@@ -87,7 +88,7 @@ export const SkillLevelSumPage = () => {
       } else {
         a.push({
           skill: v.skill,
-          skillLevel: v?.skillLevel,
+          skillLevel: v.skillLevel,
           slot: v.slot,
         });
       }
@@ -136,27 +137,33 @@ export const SkillLevelSumPage = () => {
     );
   });
 
-  const sumBlockPoint = total.reduce((acc: number, val: BuguType): number => {
-    return acc + val.blockPoint;
-  }, 0);
+  // const sumBlockPoint = total.reduce((acc: number, val: BuguType): number => {
+  //   return acc + val.blockPoint;
+  // }, 0);
 
   return (
-    <Stack spacing="30px">
-      <Button onClick={RegisterClick}>テストテスト</Button>
+    <Stack spacing="30px" mt="90px">
+      <Button
+        onClick={RegisterClick}
+        bgColor="blue.200"
+        _hover={{ backgroundColor: "blue.100" }}
+      >
+        防具リストに登録
+      </Button>
       <Flex>
-        <HStack spacing="150px">
+        <HStack spacing="150px" fontSize="23px">
           <Box>発動スキル</Box>
           <Box>スキルレベル</Box>
           <Box>スロット数</Box>
-          <Box>防御力合計</Box>
+          {/* <Box>防御力合計</Box> */}
         </HStack>
       </Flex>
       <Flex>
-        <HStack spacing="250px">
+        <HStack spacing="250px" fontSize="18px">
           <Box>{skillMapItem}</Box>
           <Box>{skillLevelMapItem}</Box>
           <Box>{slotMapItem}</Box>
-          <Box>{sumBlockPoint}</Box>
+          {/* <Box>{sumBlockPoint}</Box> */}
         </HStack>
       </Flex>
     </Stack>
