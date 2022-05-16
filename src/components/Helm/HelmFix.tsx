@@ -1,57 +1,75 @@
 import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
-import { useHelmDate } from "../../hooks/useHelmsDate";
 import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
 
 export const HelmFix = (props: BuguType) => {
   const { id, name, subName, blockPoint, skill, skillLevel, slot, flag } =
     props;
-  const { helmList, setHelmList } = useHelmDate();
-  // const { total, setTotal } = useTotalDate();
+  const { total, setTotal } = useTotalDate();
+  const [buttonColor, setButtonColor] = useState("blue.200");
 
-  const clickChecked = (prevList: BuguType[]) => {
-    const targetItem = {
-      id,
-      name,
-      subName,
-      blockPoint,
-      skill,
-      skillLevel,
-      slot,
-      flag: !flag,
-    };
+  const targetItem = {
+    id,
+    name,
+    subName,
+    blockPoint,
+    skill,
+    skillLevel,
+    slot,
+    flag: !flag,
+  };
 
-    const foo = prevList.map((item) => {
-      if (item.id === id) {
-        return targetItem;
-      }
-      return item;
+  // const removeBugu = (prevList: BuguType[]) => {
+  //   const foo = prevList.map((item) => {
+  //     if (item.id === id) {
+  //       return targetItem;
+  //     }
+  //     return item;
+  //   });
+  //   return foo;
+  // };
+
+  const removeBugu = (prevList: BuguType[]) => {
+    const removeItem = prevList.findIndex((item: BuguType) => {
+      return item.id === id;
     });
-    return foo;
+    const spliceItem = prevList.splice(removeItem, 1);
+    return spliceItem;
   };
 
-  const click = () => {
-    setHelmList((prevList) => [...clickChecked(prevList)]);
+  const settingButton = () => {
+    //一度装備→リスト登録すると、skillLevelSumにある3種のstateに情報が逃げてしまうから削除されずに加算されてしまう？
+    //→多分違う
+    if (buttonColor === "orange.300") {
+      setTotal((prevList) => [...removeBugu(prevList)]);
+      setButtonColor("blue.200");
+    }
+    if (buttonColor === "blue.200") {
+      setTotal((prevList) => [...prevList, targetItem]);
+      setButtonColor("orange.300");
+    }
   };
 
-  // const filterDate = helmList.filter((item: BuguType) => {
-  //   return item.flag === true;
-  // });
-  // setTotal([...total, ...filterDate]);
+  console.log("total", total);
 
   return (
-    <Stack spacing="15px" m="15px" fontSize="15px" key={id}>
+    <Stack spacing="15px" fontSize="15px" key={id}>
       <Flex>
         <Box>武具名　：{name}</Box>
         <Box ml="100px">
           <Button
-            onClick={click}
+            onClick={settingButton}
             size="sm"
-            backgroundColor={!flag ? "blue.200" : "orange.200"}
-            _hover={{ backgroundColor: !flag ? "blue.100" : "orange.100" }}
+            color="black"
+            backgroundColor={buttonColor}
+            _hover={{
+              backgroundColor:
+                buttonColor === "blue.200" ? "blue.100" : "orange.100",
+            }}
           >
-            {!flag ? "決定" : "解除"}
+            {buttonColor === "blue.200" ? "装着" : "脱着"}
           </Button>
         </Box>
       </Flex>
@@ -83,5 +101,3 @@ export const HelmFix = (props: BuguType) => {
     </Stack>
   );
 };
-
-export default HelmFix;

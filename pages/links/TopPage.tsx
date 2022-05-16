@@ -1,36 +1,29 @@
-import {
-  AspectRatio,
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
 
-import Buki from "../../src/components/Buki/Bukis";
-import Table from "../../src/components/Buki/BukiTable";
-import Helm from "../../src/components/Helm/Helm";
-import HelmTable from "../../src/components/Helm/HelmTable";
-import Arm from "../../src/components/Arm/Arm";
-import ArmmTable from "../../src/components/Arm/ArmTable";
-import Meil from "../../src/components/Meil/Meil";
-import MeilTable from "../../src/components/Meil/MeilTable";
-import Koil from "../../src/components/Koil/Koil";
-import KoilTable from "../../src/components/Koil/KoilTable";
-import Legins from "../../src/components/Legins/Legins";
-import LeginsTable from "../../src/components/Legins/LeginsTable";
+import { Buki } from "../../src/components/Buki/Bukis";
+import { Table } from "../../src/components/Buki/BukiTable";
+import { Helm } from "../../src/components/Helm";
+import { Arm } from "../../src/components/Arm";
+import { Meil } from "../../src/components/Meil";
+import { Koil } from "../../src/components/Koil";
+import { Legins } from "../../src/components/Legins";
 import { SkillLevelSumPage } from "../../src/components/SkillLevelSum";
-import HeaderBar from "../../src/components/HeaderBar";
-import Move from "../../src/components/move";
+import { HeaderBar } from "../../src/components/HeaderBar";
+import { Move } from "../../src/components/move";
 
 export const TopPage = () => {
   return (
     <>
       <HeaderBar />
 
-      <Box textAlign="left" fontSize="25px" m="40px" mt="80px">
+      <Box
+        textAlign="left"
+        fontSize="25px"
+        backgroundColor="blue.900"
+        color="white"
+      >
         <Flex>
-          <Stack spacing="58px" mr="50px">
+          <Stack spacing="58px" mr="50px" mt="80px" m="40px">
             {/* <Flex>
             <HStack spacing="80px">
               <Box>
@@ -44,60 +37,36 @@ export const TopPage = () => {
             <Heading fontSize="25px">防具名</Heading>
 
             <Flex>
-              <HStack spacing="80px">
-                <Box>
-                  <Helm />
-                </Box>
-                <Box>
-                  <HelmTable />
-                </Box>
-              </HStack>
+              <Box>
+                <Helm />
+              </Box>
             </Flex>
 
             <Flex>
-              <HStack spacing="80px">
-                <Box>
-                  <Arm />
-                </Box>
-                <Box>
-                  <ArmmTable />
-                </Box>
-              </HStack>
+              <Box>
+                <Arm />
+              </Box>
             </Flex>
 
             <Flex>
-              <HStack spacing="80px">
-                <Box>
-                  <Meil />
-                </Box>
-                <Box>
-                  <MeilTable />
-                </Box>
-              </HStack>
+              <Box>
+                <Meil />
+              </Box>
             </Flex>
 
             <Flex>
-              <HStack spacing="80px">
-                <Box>
-                  <Koil />
-                </Box>
-                <Box>
-                  <KoilTable />
-                </Box>
-              </HStack>
+              <Box>
+                <Koil />
+              </Box>
             </Flex>
 
             <Flex>
-              <HStack spacing="80px">
-                <Box>
-                  <Legins />
-                </Box>
-                <Box>
-                  <LeginsTable />
-                </Box>
-              </HStack>
+              <Box>
+                <Legins />
+              </Box>
             </Flex>
           </Stack>
+
           <Flex>
             <SkillLevelSumPage />
           </Flex>
@@ -109,5 +78,3 @@ export const TopPage = () => {
     </>
   );
 };
-
-export default TopPage;

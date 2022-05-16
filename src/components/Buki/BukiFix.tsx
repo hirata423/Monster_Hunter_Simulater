@@ -55,5 +55,3 @@ export const BukiFix = (props: Bukis) => {
     </Stack>
   );
 };
-
-export default BukiFix;

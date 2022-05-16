@@ -13,5 +13,3 @@ export const Move = () => {
     </>
   );
 };
-
-export default Move;

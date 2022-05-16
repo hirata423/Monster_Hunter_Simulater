@@ -1,9 +1,9 @@
-import { Box, Flex, Heading, Input, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Input, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 
 import { useMeilDate } from "../../hooks/useMeilDate";
 import { BuguType } from "../../types/BuguType";
-import MeilFix from "./MeilFix";
+import { MeilFix } from "./MeilFix";
 
 export const Meil = () => {
   const [defaultHelm, setDefaultHelm] = useState("");
@@ -25,7 +25,7 @@ export const Meil = () => {
     return (
       <Box
         display={!defaultHelm ? "none" : "block"}
-        borderBottom="1px solid black"
+        borderBottom="1px solid white"
         key={item.id}
         fontSize="18px"
       >
@@ -37,22 +37,27 @@ export const Meil = () => {
   return (
     <Flex>
       <Flex>
-        <Heading fontSize="25px">メイル　：</Heading>
+        <Image src="/images/meil.jpg" mt="-9px" />
       </Flex>
       <Box>
         <Box>
           <Input
             placeholder="キーワードを入力"
-            w="300px"
-            h="30px"
+            w="350px"
+            h="40px"
             top="-5px"
+            ml="-100px"
             value={defaultHelm}
             onChange={changeHelm}
           />
         </Box>
         {mapItem}
         <Stack spacing="15px" m="15px">
-          <Box display={defaultHelm ? "none" : "block"} fontSize="18px">
+          <Box
+            display={defaultHelm ? "none" : "block"}
+            ml="-100px"
+            fontSize="18px"
+          >
             武具名：
           </Box>
         </Stack>
@@ -60,5 +65,3 @@ export const Meil = () => {
     </Flex>
   );
 };
-
-export default Meil;

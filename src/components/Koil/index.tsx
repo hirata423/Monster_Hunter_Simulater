@@ -1,17 +1,17 @@
-import { Box, Flex, Heading, Input, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Input, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useLeginsDate } from "../../hooks/useLeginsDate";
+import { useKoilDate } from "../../hooks/useKoilDate";
 import { BuguType } from "../../types/BuguType";
-import LeginsFix from "./LeginsFix";
+import { KoilFix } from "./KoilFix";
 
-export const Legins = () => {
+export const Koil = () => {
   const [defaultHelm, setDefaultHelm] = useState("");
-  const { leginsList } = useLeginsDate();
+  const { koilList } = useKoilDate();
 
   const changeHelm = (e: any) => setDefaultHelm(e.target.value);
 
-  const filterItem = leginsList.filter((item: BuguType) => {
+  const filterItem = koilList.filter((item: BuguType) => {
     const itemKey =
       item.name +
       item.subName +
@@ -25,11 +25,11 @@ export const Legins = () => {
     return (
       <Box
         display={!defaultHelm ? "none" : "block"}
-        borderBottom="1px solid black"
+        borderBottom="1px solid white"
         key={item.id}
         fontSize="18px"
       >
-        <LeginsFix {...item} />
+        <KoilFix {...item} />
       </Box>
     );
   });
@@ -37,22 +37,27 @@ export const Legins = () => {
   return (
     <Flex>
       <Flex>
-        <Heading fontSize="25px">レギンス：</Heading>
+        <Image src="/images/koil.jpg" mt="-9px" />
       </Flex>
       <Box>
         <Box>
           <Input
             placeholder="キーワードを入力"
-            w="300px"
-            h="30px"
+            w="350px"
+            h="40px"
             top="-5px"
+            ml="-100px"
             value={defaultHelm}
             onChange={changeHelm}
           />
         </Box>
         {mapItem}
         <Stack spacing="15px" m="15px">
-          <Box display={defaultHelm ? "none" : "block"} fontSize="18px">
+          <Box
+            display={defaultHelm ? "none" : "block"}
+            ml="-100px"
+            fontSize="18px"
+          >
             武具名：
           </Box>
         </Stack>
@@ -60,5 +65,3 @@ export const Legins = () => {
     </Flex>
   );
 };
-
-export default Legins;

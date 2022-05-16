@@ -1,25 +1,27 @@
 import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
+import { useState } from "react";
 
-import { useLeginsDate } from "../../hooks/useLeginsDate";
+import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
 
 export const LeginsFix = (props: BuguType) => {
   const { id, name, subName, blockPoint, skill, skillLevel, slot, flag } =
     props;
-  const { setLeginsList } = useLeginsDate();
+  const { total, setTotal } = useTotalDate();
+  const [buttonColor, setButtonColor] = useState("blue.200");
+
+  const targetItem = {
+    id,
+    name,
+    subName,
+    blockPoint,
+    skill,
+    skillLevel,
+    slot,
+    flag: !flag,
+  };
 
   const clickChecked = (prevList: BuguType[]) => {
-    const targetItem = {
-      id,
-      name,
-      subName,
-      blockPoint,
-      skill,
-      skillLevel,
-      slot,
-      flag: !flag,
-    };
-
     const foo = prevList.map((item) => {
       if (item.id === id) {
         return targetItem;
@@ -30,7 +32,13 @@ export const LeginsFix = (props: BuguType) => {
   };
 
   const click = () => {
-    setLeginsList((prevList) => [...clickChecked(prevList)]);
+    if (buttonColor === "blue.200") {
+      setTotal((prevList) => [...prevList, targetItem]);
+      setButtonColor("orange.300");
+    }
+    if (buttonColor === "orange.300") {
+      setButtonColor("blue.200");
+    }
   };
 
   return (
@@ -41,10 +49,14 @@ export const LeginsFix = (props: BuguType) => {
           <Button
             onClick={click}
             size="sm"
-            backgroundColor={!flag ? "blue.200" : "orange.200"}
-            _hover={{ backgroundColor: !flag ? "blue.100" : "orange.100" }}
+            color="black"
+            backgroundColor={buttonColor}
+            _hover={{
+              backgroundColor:
+                buttonColor === "blue.200" ? "blue.100" : "orange.100",
+            }}
           >
-            {!flag ? "決定" : "解除"}
+            {buttonColor === "blue.200" ? "装着" : "脱着"}
           </Button>
         </Box>
       </Flex>
@@ -76,5 +88,3 @@ export const LeginsFix = (props: BuguType) => {
     </Stack>
   );
 };
-
-export default LeginsFix;

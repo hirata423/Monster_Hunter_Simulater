@@ -58,5 +58,3 @@ export const Buki = () => {
     </>
   );
 };
-
-export default Buki;

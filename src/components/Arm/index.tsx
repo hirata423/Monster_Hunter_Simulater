@@ -1,8 +1,8 @@
-import { Box, Flex, Heading, Input, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Input, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 import { useArmDate } from "../../hooks/useArmDate";
 import { BuguType } from "../../types/BuguType";
-import ArmFix from "./ArmFix";
+import { ArmFix } from "./ArmFix";
 
 export const Arm = () => {
   const [defaultArm, setDefaultArm] = useState("");
@@ -24,7 +24,7 @@ export const Arm = () => {
     return (
       <Box
         display={!defaultArm ? "none" : "block"}
-        borderBottom="1px solid black"
+        borderBottom="1px solid white"
         key={item.id}
         fontSize="18px"
       >
@@ -37,22 +37,27 @@ export const Arm = () => {
     <>
       <Flex>
         <Flex>
-          <Heading fontSize="25px">アーム　：</Heading>
+          <Image src="/images/arm.jpg" mt="-9px" />
         </Flex>
         <Box>
           <Box>
             <Input
               placeholder="キーワードを入力"
-              w="300px"
-              h="30px"
+              w="350px"
+              h="40px"
               top="-5px"
+              ml="-100px"
               value={defaultArm}
               onChange={changeArm}
             />
           </Box>
           {mapItem}
           <Stack spacing="15px" m="15px">
-            <Box display={defaultArm ? "none" : "block"} fontSize="18px">
+            <Box
+              display={defaultArm ? "none" : "block"}
+              ml="-100px"
+              fontSize="18px"
+            >
               武具名：
             </Box>
           </Stack>
@@ -61,5 +66,3 @@ export const Arm = () => {
     </>
   );
 };
-
-export default Arm;

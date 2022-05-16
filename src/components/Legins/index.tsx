@@ -1,17 +1,17 @@
-import { Box, Flex, Heading, Input, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Input, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useHelmDate } from "../../hooks/useHelmsDate";
+import { useLeginsDate } from "../../hooks/useLeginsDate";
 import { BuguType } from "../../types/BuguType";
-import HelmFix from "./HelmFix";
+import { LeginsFix } from "./LeginsFix";
 
-export const Helm = () => {
+export const Legins = () => {
   const [defaultHelm, setDefaultHelm] = useState("");
-  const { helmList } = useHelmDate();
+  const { leginsList } = useLeginsDate();
 
   const changeHelm = (e: any) => setDefaultHelm(e.target.value);
 
-  const filterItem = helmList.filter((item: BuguType) => {
+  const filterItem = leginsList.filter((item: BuguType) => {
     const itemKey =
       item.name +
       item.subName +
@@ -25,11 +25,11 @@ export const Helm = () => {
     return (
       <Box
         display={!defaultHelm ? "none" : "block"}
-        borderBottom="1px solid black"
+        borderBottom="1px solid white"
         key={item.id}
         fontSize="18px"
       >
-        <HelmFix {...item} />
+        <LeginsFix {...item} />
       </Box>
     );
   });
@@ -37,22 +37,27 @@ export const Helm = () => {
   return (
     <Flex>
       <Flex>
-        <Heading fontSize="25px">ヘルム　：</Heading>
+        <Image src="/images/legins.jpg" mt="-9px" />
       </Flex>
       <Box>
         <Box>
           <Input
             placeholder="キーワードを入力"
-            w="300px"
-            h="30px"
+            w="350px"
+            h="40px"
             top="-5px"
+            ml="-100px"
             value={defaultHelm}
             onChange={changeHelm}
           />
         </Box>
         {mapItem}
         <Stack spacing="15px" m="15px">
-          <Box display={defaultHelm ? "none" : "block"} fontSize="18px">
+          <Box
+            display={defaultHelm ? "none" : "block"}
+            ml="-100px"
+            fontSize="18px"
+          >
             武具名：
           </Box>
         </Stack>
@@ -61,4 +66,4 @@ export const Helm = () => {
   );
 };
 
-export default Helm;
+export default Legins;

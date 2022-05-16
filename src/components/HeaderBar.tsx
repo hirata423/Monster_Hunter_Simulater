@@ -17,5 +17,3 @@ export const HeaderBar = () => {
     </>
   );
 };
-
-export default HeaderBar;

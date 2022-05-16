@@ -15,7 +15,7 @@ export const SkillLevelSumPage = () => {
   const { total } = useTotalDate();
   const [skill, setSkill] = useState<any[]>([]);
   const [skillLevel, setSkillLevel] = useState<any[]>([]);
-  const [slot, seSlot] = useState<any[]>([]);
+  const [slot, setSlot] = useState<any[]>([]);
   //[]のstringにしたい↑↑ anyだと不安
 
   //表示するわけでは無いから、forEachにしたいけど、void型になる
@@ -49,14 +49,19 @@ export const SkillLevelSumPage = () => {
     return item.slot.thirdSL;
   });
 
-  const RegisterClick = () => {
+  const RegisterButton = () => {
+    if (total) {
+      setSkill([]);
+      setSkillLevel([]);
+      setSlot([]);
+    }
     setSkill([...totalMap, ...total2Map, ...total3Map]);
     setSkillLevel([
       ...totalSKLevelMap,
       ...totalSKLevel2Map,
       ...totalSKLevel3Map,
     ]);
-    seSlot([...totalSlotevelMap, ...totalSlotevel2Map, ...totalSlotevel3Map]);
+    setSlot([...totalSlotevelMap, ...totalSlotevel2Map, ...totalSlotevel3Map]);
   };
 
   const reSkill = skill.filter((v) => v);
@@ -137,37 +142,58 @@ export const SkillLevelSumPage = () => {
     );
   });
 
-  // const sumBlockPoint = total.reduce((acc: number, val: BuguType): number => {
-  //   return acc + val.blockPoint;
-  // }, 0);
+  const sumBlockPoint = total.reduce((acc: number, val: BuguType): number => {
+    return acc + val.blockPoint;
+  }, 0);
 
   return (
-    <Stack spacing="30px" mt="90px">
+    <Stack spacing="30px" mt="123px">
       <Button
-        onClick={RegisterClick}
+        onClick={RegisterButton}
         bgColor="blue.200"
         _hover={{ backgroundColor: "blue.100" }}
+        color="black"
+        w="500px"
       >
         防具リストに登録
       </Button>
-      <Flex>
-        <HStack spacing="150px" fontSize="23px">
-          <Box>発動スキル</Box>
-          <Box>スキルレベル</Box>
-          <Box>スロット数</Box>
-          {/* <Box>防御力合計</Box> */}
-        </HStack>
-      </Flex>
-      <Flex>
-        <HStack spacing="250px" fontSize="18px">
-          <Box>{skillMapItem}</Box>
-          <Box>{skillLevelMapItem}</Box>
-          <Box>{slotMapItem}</Box>
-          {/* <Box>{sumBlockPoint}</Box> */}
-        </HStack>
+      <Flex fontSize="18px">
+        {/* <HStack spacing="100px" fontSize="18px"> */}
+        <Stack>
+          <Box mr="102px">
+            <Box>発動スキル</Box>
+            <Box pl="9px" pt="9px">
+              {skillMapItem}
+            </Box>
+          </Box>
+        </Stack>
+
+        <Stack>
+          <Box mr="102px">
+            <Box>スキルレベル</Box>
+            <Box pl="50px" pt="9px">
+              {skillLevelMapItem}
+            </Box>
+          </Box>
+        </Stack>
+
+        <Stack>
+          <Box>
+            <Box>スロット数</Box>
+            <Box pl="27px" pt="9px">
+              {slotMapItem}
+            </Box>
+          </Box>
+        </Stack>
+
+        {/* <Flex>
+            <Stack>
+              <Box>防御力合計</Box>
+              <Box mt="" pl="27px">{sumBlockPoint}</Box>
+            </Stack>
+          </Flex> */}
+        {/* </HStack> */}
       </Flex>
     </Stack>
   );
 };
-
-export default SkillLevelSumPage;
