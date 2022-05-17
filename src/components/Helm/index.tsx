@@ -6,10 +6,10 @@ import { BuguType } from "../../types/BuguType";
 import { HelmFix } from "./HelmFix";
 
 export const Helm = () => {
-  const [defaultHelm, setDefaultHelm] = useState("");
+  const [defaultBugu, setDefaultBugu] = useState("");
   const { helmList } = useHelmDate();
 
-  const changeHelm = (e: any) => setDefaultHelm(e.target.value);
+  const changeBugu = (e: any) => setDefaultBugu(e.target.value);
 
   const filterItem = helmList.filter((item: BuguType) => {
     const itemKey =
@@ -18,13 +18,13 @@ export const Helm = () => {
       item.skill.firstSK +
       item.skill.secondSK +
       item.skill.thirdSK;
-    return itemKey.includes(defaultHelm);
+    return itemKey.includes(defaultBugu);
   });
 
   const mapItem = filterItem.map((item: BuguType) => {
     return (
       <Box
-        display={!defaultHelm ? "none" : "block"}
+        display={!defaultBugu ? "none" : "block"}
         borderBottom="1px solid white"
         key={item.id}
         fontSize="18px"
@@ -46,12 +46,12 @@ export const Helm = () => {
           h="40px"
           top="-5px"
           ml="-100px"
-          value={defaultHelm}
-          onChange={changeHelm}
+          value={defaultBugu}
+          onChange={changeBugu}
         />
       </Flex>
       <Box ml="120px" mt="-90px">
-        <Box display={defaultHelm ? "none" : "block"} fontSize="15px">
+        <Box display={defaultBugu ? "none" : "block"} fontSize="15px">
           武具名：
         </Box>
         {mapItem}

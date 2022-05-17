@@ -21,8 +21,10 @@ export const TopPage = () => {
         fontSize="25px"
         backgroundColor="blue.900"
         color="white"
+        w={{ base: "200%", md: "100%" }}
+        h="100%"
       >
-        <Flex>
+        <Flex ml={{ base: "40px", md: "20px" }}>
           <Stack spacing="58px" mr="50px" mt="80px" m="40px">
             {/* <Flex>
             <HStack spacing="80px">
@@ -34,7 +36,7 @@ export const TopPage = () => {
               </Box>
             </HStack>
           </Flex> */}
-            <Heading fontSize="25px">防具名</Heading>
+            <Heading fontSize="25px">防具パーツ</Heading>
 
             <Flex>
               <Box>
@@ -65,15 +67,22 @@ export const TopPage = () => {
                 <Legins />
               </Box>
             </Flex>
+
+            <Flex display={{ base: "block", lg: "none" }}>
+              <Box mt="-100px">
+                <SkillLevelSumPage />
+              </Box>
+            </Flex>
           </Stack>
 
-          <Flex>
+          <Flex display={{ base: "none", lg: "block" }} mr="30px">
             <SkillLevelSumPage />
           </Flex>
         </Flex>
-        <Box pl="780px">
+
+        {/* <Box pl="780px">
           <Move />
-        </Box>
+        </Box> */}
       </Box>
     </>
   );

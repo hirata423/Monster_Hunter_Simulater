@@ -6,10 +6,10 @@ import { BuguType } from "../../types/BuguType";
 import { LeginsFix } from "./LeginsFix";
 
 export const Legins = () => {
-  const [defaultHelm, setDefaultHelm] = useState("");
+  const [defaultBugu, setDefaultBugu] = useState("");
   const { leginsList } = useLeginsDate();
 
-  const changeHelm = (e: any) => setDefaultHelm(e.target.value);
+  const changeBugu = (e: any) => setDefaultBugu(e.target.value);
 
   const filterItem = leginsList.filter((item: BuguType) => {
     const itemKey =
@@ -18,16 +18,17 @@ export const Legins = () => {
       item.skill.firstSK +
       item.skill.secondSK +
       item.skill.thirdSK;
-    return itemKey.includes(defaultHelm);
+    return itemKey.includes(defaultBugu);
   });
 
   const mapItem = filterItem.map((item: BuguType) => {
     return (
       <Box
-        display={!defaultHelm ? "none" : "block"}
+        display={!defaultBugu ? "none" : "block"}
         borderBottom="1px solid white"
         key={item.id}
         fontSize="18px"
+        mb="25px"
       >
         <LeginsFix {...item} />
       </Box>
@@ -35,34 +36,26 @@ export const Legins = () => {
   });
 
   return (
-    <Flex>
+    <>
       <Flex>
         <Image src="/images/legins.jpg" mt="-9px" />
+        <Input
+          placeholder="キーワードを入力"
+          w="350px"
+          h="40px"
+          top="-5px"
+          ml="-100px"
+          value={defaultBugu}
+          onChange={changeBugu}
+        />
       </Flex>
-      <Box>
-        <Box>
-          <Input
-            placeholder="キーワードを入力"
-            w="350px"
-            h="40px"
-            top="-5px"
-            ml="-100px"
-            value={defaultHelm}
-            onChange={changeHelm}
-          />
+      <Box ml="120px" mt="-90px">
+        <Box display={defaultBugu ? "none" : "block"} fontSize="15px">
+          武具名：
         </Box>
         {mapItem}
-        <Stack spacing="15px" m="15px">
-          <Box
-            display={defaultHelm ? "none" : "block"}
-            ml="-100px"
-            fontSize="18px"
-          >
-            武具名：
-          </Box>
-        </Stack>
       </Box>
-    </Flex>
+    </>
   );
 };
 

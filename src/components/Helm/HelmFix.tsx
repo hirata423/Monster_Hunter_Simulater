@@ -57,7 +57,7 @@ export const HelmFix = (props: BuguType) => {
   return (
     <Stack spacing="15px" fontSize="15px" key={id}>
       <Flex>
-        <Box>武具名　：{name}</Box>
+        <Box>防具名　：{name}</Box>
         <Box ml="100px">
           <Button
             onClick={settingButton}
@@ -94,7 +94,7 @@ export const HelmFix = (props: BuguType) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="89px">{skill.thirdSK}</Box>
+          <Box ml="74px">{skill.thirdSK}</Box>
           <Box>{skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>

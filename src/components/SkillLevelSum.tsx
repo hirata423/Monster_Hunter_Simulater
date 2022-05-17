@@ -153,11 +153,11 @@ export const SkillLevelSumPage = () => {
         bgColor="blue.200"
         _hover={{ backgroundColor: "blue.100" }}
         color="black"
-        w="500px"
+        w="470px"
       >
         防具リストに登録
       </Button>
-      <Flex fontSize="18px">
+      <Flex fontSize="15px">
         {/* <HStack spacing="100px" fontSize="18px"> */}
         <Stack>
           <Box mr="102px">
@@ -171,7 +171,7 @@ export const SkillLevelSumPage = () => {
         <Stack>
           <Box mr="102px">
             <Box>スキルレベル</Box>
-            <Box pl="50px" pt="9px">
+            <Box pl="46px" pt="9px">
               {skillLevelMapItem}
             </Box>
           </Box>

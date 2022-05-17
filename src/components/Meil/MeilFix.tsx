@@ -43,9 +43,9 @@ export const MeilFix = (props: BuguType) => {
   };
 
   return (
-    <Stack spacing="15px" m="15px" fontSize="15px" key={id}>
+    <Stack spacing="15px" fontSize="15px" key={id}>
       <Flex>
-        <Box>武具名　：{name}</Box>
+        <Box>防具名　：{name}</Box>
         <Box ml="100px">
           <Button
             onClick={click}
@@ -82,7 +82,7 @@ export const MeilFix = (props: BuguType) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="89px">{skill.thirdSK}</Box>
+          <Box ml="74px">{skill.thirdSK}</Box>
           <Box>{skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>
