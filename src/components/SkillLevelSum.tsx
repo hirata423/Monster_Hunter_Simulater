@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 import { useTotalDate } from "../hooks/useTotalDate";
 import { BuguType } from "../types/BuguType";
@@ -8,7 +8,7 @@ type SkillLevelType = {
   skill: string;
   skillLevel: number;
   slot: string;
-  count?: number;
+  count: number;
 };
 
 export const SkillLevelSumPage = () => {
@@ -17,6 +17,7 @@ export const SkillLevelSumPage = () => {
   const [skillLevel, setSkillLevel] = useState<any[]>([]);
   const [slot, setSlot] = useState<any[]>([]);
   //[]のstringにしたい↑↑ anyだと不安
+  const toast = useToast();
 
   //表示するわけでは無いから、forEachにしたいけど、void型になる
   const totalMap = total.map((item: BuguType) => {
@@ -51,29 +52,41 @@ export const SkillLevelSumPage = () => {
 
   const RegisterButton = () => {
     if (total) {
-      setSkill([]);
-      setSkillLevel([]);
-      setSlot([]);
+      setSkill([...totalMap, ...total2Map, ...total3Map]);
+      setSkillLevel([
+        ...totalSKLevelMap,
+        ...totalSKLevel2Map,
+        ...totalSKLevel3Map,
+      ]);
+      setSlot([
+        ...totalSlotevelMap,
+        ...totalSlotevel2Map,
+        ...totalSlotevel3Map,
+      ]);
+
+      toast({
+        title: "装着済防具を登録しました！",
+        status: "success",
+        position: "top-right",
+        duration: 2000,
+        isClosable: true,
+      });
+    } else if ([...total, ...[]]) {
+      toast({
+        title: "防具が追加されてません！",
+        status: "warning",
+        position: "top-right",
+        duration: 2000,
+        isClosable: true,
+      });
     }
-    setSkill([...totalMap, ...total2Map, ...total3Map]);
-    setSkillLevel([
-      ...totalSKLevelMap,
-      ...totalSKLevel2Map,
-      ...totalSKLevel3Map,
-    ]);
-    setSlot([...totalSlotevelMap, ...totalSlotevel2Map, ...totalSlotevel3Map]);
   };
 
   const reSkill = skill.filter((v) => v);
   const reSkillLevel = skillLevel.filter((v) => v);
   // const reSlot = slot.filter((v) => v);
-
-  //配列番号の自動生成にするか、undefindを含むオブジェクとの削除
-  //重複分が削除されるskill名と同じidを持つ、skillLevelをreduceさせようと考えた
-  //予め定義した数字配列だとreduceしたときにundefindのせいでNanを返す
-  // const idNum = [
-  //   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  // ];
+  const test: number = 0;
+  //  const idIndex:number=1
 
   const skillList: SkillLevelType[] = [];
   for (let i = 0; i < reSkill.length; i++) {
@@ -81,6 +94,8 @@ export const SkillLevelSumPage = () => {
       skill: reSkill[i],
       skillLevel: reSkillLevel[i],
       slot: slot[i],
+      count: test,
+      // id:test[i]
     });
   }
   console.log("skillList", skillList);
@@ -95,6 +110,7 @@ export const SkillLevelSumPage = () => {
           skill: v.skill,
           skillLevel: v.skillLevel,
           slot: v.slot,
+          count: 1,
         });
       }
       return a;
@@ -102,6 +118,25 @@ export const SkillLevelSumPage = () => {
     []
   );
   console.log("reduceList", reduceList);
+
+  const reduceList2 = skillList.reduce(
+    (a: SkillLevelType[], v: SkillLevelType) => {
+      const element2 = a.find((p: SkillLevelType) => p.slot === v.slot);
+      if (element2) {
+        element2.count++;
+      } else {
+        a.push({
+          skill: v.skill,
+          skillLevel: v.skillLevel,
+          slot: v.slot,
+          count: 1,
+        });
+      }
+      return a;
+    },
+    []
+  );
+  console.log("reduceList2", reduceList2);
 
   // idを持たな為、indexで代用　※配列変更、filter等使う際は注意
   const skillMapItem = reduceList.map((item: SkillLevelType, index: number) => {
@@ -130,24 +165,29 @@ export const SkillLevelSumPage = () => {
     }
   );
 
-  const slotMapItem = skillList.map((item: SkillLevelType, index: number) => {
-    return (
-      <Box key={index}>
-        <Flex>
-          <HStack spacing="250px">
-            <Box>{item.slot}</Box>
-          </HStack>
-        </Flex>
-      </Box>
-    );
-  });
+  const slotCountMapItem = reduceList2.map(
+    (item: SkillLevelType, index: number) => {
+      if (index < 3) {
+        return (
+          <Box key={index}>
+            <Flex>
+              <HStack spacing="15px">
+                <Box>{item.slot}</Box>
+                <Box>×{item.count}</Box>
+              </HStack>
+            </Flex>
+          </Box>
+        );
+      }
+    }
+  );
 
-  const sumBlockPoint = total.reduce((acc: number, val: BuguType): number => {
-    return acc + val.blockPoint;
-  }, 0);
+  // const sumBlockPoint = total.reduce((acc: number, val: BuguType): number => {
+  //   return acc + val.blockPoint;
+  // }, 0);
 
   return (
-    <Stack spacing="30px" mt="123px">
+    <Stack spacing="35px" mt="123px">
       <Button
         onClick={RegisterButton}
         bgColor="blue.200"
@@ -158,11 +198,10 @@ export const SkillLevelSumPage = () => {
         防具リストに登録
       </Button>
       <Flex fontSize="15px">
-        {/* <HStack spacing="100px" fontSize="18px"> */}
         <Stack>
-          <Box mr="102px">
+          <Box ml="15px" mr="102px">
             <Box>発動スキル</Box>
-            <Box pl="9px" pt="9px">
+            <Box pl="7px" pt="9px">
               {skillMapItem}
             </Box>
           </Box>
@@ -171,7 +210,7 @@ export const SkillLevelSumPage = () => {
         <Stack>
           <Box mr="102px">
             <Box>スキルレベル</Box>
-            <Box pl="46px" pt="9px">
+            <Box pl="43px" pt="9px">
               {skillLevelMapItem}
             </Box>
           </Box>
@@ -180,8 +219,8 @@ export const SkillLevelSumPage = () => {
         <Stack>
           <Box>
             <Box>スロット数</Box>
-            <Box pl="27px" pt="9px">
-              {slotMapItem}
+            <Box pl="13px" pt="9px">
+              {slotCountMapItem}
             </Box>
           </Box>
         </Stack>
@@ -192,7 +231,6 @@ export const SkillLevelSumPage = () => {
               <Box mt="" pl="27px">{sumBlockPoint}</Box>
             </Stack>
           </Flex> */}
-        {/* </HStack> */}
       </Flex>
     </Stack>
   );

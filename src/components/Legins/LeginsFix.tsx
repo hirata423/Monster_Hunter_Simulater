@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 
 import { useTotalDate } from "../../hooks/useTotalDate";
@@ -9,6 +9,7 @@ export const LeginsFix = (props: BuguType) => {
     props;
   const { total, setTotal } = useTotalDate();
   const [buttonColor, setButtonColor] = useState("blue.200");
+  const toast = useToast();
 
   const targetItem = {
     id,
@@ -35,9 +36,23 @@ export const LeginsFix = (props: BuguType) => {
     if (buttonColor === "blue.200") {
       setTotal((prevList) => [...prevList, targetItem]);
       setButtonColor("orange.300");
+      toast({
+        title: "レギンスを装着しました！",
+        status: "info",
+        position: "top-right",
+        duration: 1300,
+        isClosable: true,
+      });
     }
     if (buttonColor === "orange.300") {
       setButtonColor("blue.200");
+      toast({
+        title: "レギンスを脱ぎました！",
+        status: "warning",
+        position: "top-right",
+        duration: 1300,
+        isClosable: true,
+      });
     }
   };
 

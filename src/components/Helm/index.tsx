@@ -17,7 +17,15 @@ export const Helm = () => {
       item.subName +
       item.skill.firstSK +
       item.skill.secondSK +
-      item.skill.thirdSK;
+      item.skill.thirdSK +
+      item.skill.fourthSK +
+      item.skillLevel.firstSK +
+      item.skillLevel.secondSK +
+      item.skillLevel.thirdSK +
+      item.skillLevel.fourthSK +
+      item.slot.firstSL +
+      item.slot.secondSL +
+      item.slot.thirdSL;
     return itemKey.includes(defaultBugu);
   });
 

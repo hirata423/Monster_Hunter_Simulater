@@ -9,13 +9,11 @@ import { Koil } from "../../src/components/Koil";
 import { Legins } from "../../src/components/Legins";
 import { SkillLevelSumPage } from "../../src/components/SkillLevelSum";
 import { HeaderBar } from "../../src/components/HeaderBar";
-import { Move } from "../../src/components/move";
 
 export const TopPage = () => {
   return (
     <>
       <HeaderBar />
-
       <Box
         textAlign="left"
         fontSize="25px"
@@ -36,8 +34,8 @@ export const TopPage = () => {
               </Box>
             </HStack>
           </Flex> */}
+            {/** position:"fixed"するなら,mt="120px" */}
             <Heading fontSize="25px">防具パーツ</Heading>
-
             <Flex>
               <Box>
                 <Helm />
@@ -75,14 +73,11 @@ export const TopPage = () => {
             </Flex>
           </Stack>
 
-          <Flex display={{ base: "none", lg: "block" }} mr="30px">
+          {/** position:"fixed"するなら,mt="120px" */}
+          <Box display={{ base: "none", lg: "block" }} mr="30px">
             <SkillLevelSumPage />
-          </Flex>
+          </Box>
         </Flex>
-
-        {/* <Box pl="780px">
-          <Move />
-        </Box> */}
       </Box>
     </>
   );

@@ -9,11 +9,13 @@ export const HeaderBar = () => {
         w={{ base: "200%", md: "100%" }}
         bgSize="cover"
         bgImg="url('/images/header.jpg')"
+        // position="fixed"
+        // zIndex="99"
       >
         <Heading
           color="white"
-          fontSize={{ base: "25px", md: "40" }}
-          pt={{ base: "21px", md: "21px", lg: "30px" }}
+          fontSize={{ base: "25px", md: "30", lg: "40px" }}
+          pt={{ base: "21px", md: "22px", lg: "25px" }}
           pl="30px"
         >
           MH’Rize スキルシュミレーター

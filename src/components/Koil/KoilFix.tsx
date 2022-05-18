@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 
 import { useKoilDate } from "../../hooks/useKoilDate";
@@ -10,6 +10,7 @@ export const KoilFix = (props: BuguType) => {
     props;
   const { total, setTotal } = useTotalDate();
   const [buttonColor, setButtonColor] = useState("blue.200");
+  const toast = useToast();
 
   const targetItem = {
     id,
@@ -36,9 +37,23 @@ export const KoilFix = (props: BuguType) => {
     if (buttonColor === "blue.200") {
       setTotal((prevList) => [...prevList, targetItem]);
       setButtonColor("orange.300");
+      toast({
+        title: "コイルを装着しました！",
+        status: "info",
+        position: "top-right",
+        duration: 1300,
+        isClosable: true,
+      });
     }
     if (buttonColor === "orange.300") {
       setButtonColor("blue.200");
+      toast({
+        title: "コイルを脱ぎました！",
+        status: "warning",
+        position: "top-right",
+        duration: 1300,
+        isClosable: true,
+      });
     }
   };
 

@@ -851,7 +851,7 @@
     },
     "skillLevel": {
       "firstSK": 1,
-      "secondSK": "見切り"
+      "secondSK": 1
     },
     "slot": {
       "firstSL": "Lv,1",
