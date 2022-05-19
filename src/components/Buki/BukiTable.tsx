@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
-import { useBukisDate } from "../../hooks/useBukisDate";
 import { Bukis } from "../../types/BukiTypes";
+import BukiList from "../../../Buki.json";
 
 export const Table = () => {
-  const { bukiList } = useBukisDate();
+  const bukiList: Bukis[] = BukiList;
 
   const filterDate = bukiList.filter((item: Bukis) => {
     return item.checked === true;

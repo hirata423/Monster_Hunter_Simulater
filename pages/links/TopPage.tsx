@@ -1,7 +1,5 @@
 import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
 
-import { Buki } from "../../src/components/Buki/Bukis";
-import { Table } from "../../src/components/Buki/BukiTable";
 import { Helm } from "../../src/components/Helm";
 import { Arm } from "../../src/components/Arm";
 import { Meil } from "../../src/components/Meil";
@@ -25,16 +23,6 @@ export const TopPage = () => {
       >
         <Flex ml={{ base: "40px", md: "20px" }}>
           <Stack spacing="58px" mr="50px" mt="80px" m="40px">
-            {/* <Flex>
-            <HStack spacing="80px">
-              <Box>
-                <Buki />
-              </Box>
-              <Box>
-                <Table />
-              </Box>
-            </HStack>
-          </Flex> */}
             {/** position:"fixed"するなら,mt="120px" */}
             <Heading fontSize="25px">防具パーツ</Heading>
 

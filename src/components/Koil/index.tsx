@@ -1,13 +1,13 @@
-import { Box, Flex, Heading, Image, Input, Stack } from "@chakra-ui/react";
+import { Box, Flex, Image, Input } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useKoilDate } from "../../hooks/useKoilDate";
 import { BuguType } from "../../types/BuguType";
 import { KoilFix } from "./KoilFix";
+import KoilList from "../../../Koil.json";
 
 export const Koil = () => {
   const [defaultBugu, setDefaultBugu] = useState("");
-  const { koilList } = useKoilDate();
+  const koilList: BuguType[] = KoilList;
 
   const changeBugu = (e: any) => setDefaultBugu(e.target.value);
 

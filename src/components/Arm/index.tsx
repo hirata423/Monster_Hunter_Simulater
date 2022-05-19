@@ -1,12 +1,12 @@
-import { Box, Flex, Heading, Image, Input, Stack } from "@chakra-ui/react";
+import { Box, Flex, Image, Input } from "@chakra-ui/react";
 import { useState } from "react";
-import { useArmDate } from "../../hooks/useArmDate";
 import { BuguType } from "../../types/BuguType";
 import { ArmFix } from "./ArmFix";
+import ArmList from "../../../Arm.json";
 
 export const Arm = () => {
   const [defaultBugu, setDefaultBugu] = useState("");
-  const { armList } = useArmDate();
+  const armList: BuguType[] = ArmList;
 
   const changeBugu = (e: any) => setDefaultBugu(e.target.value);
 

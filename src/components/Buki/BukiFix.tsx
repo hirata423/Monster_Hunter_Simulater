@@ -1,11 +1,11 @@
 import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
 
 import { Bukis } from "../../types/BukiTypes";
-import { useBukisDate } from "../../hooks/useBukisDate";
+import BukiList from "../../../Buki.json";
 
 export const BukiFix = (props: Bukis) => {
   const { id, name, subName, power, type, critical, checked } = props;
-  const { setBukiList } = useBukisDate();
+  const bukiList: Bukis[] = BukiList;
 
   const clickChecked = (prevList: any[]) => {
     const targetItem = {
@@ -27,9 +27,7 @@ export const BukiFix = (props: Bukis) => {
     return foo;
   };
 
-  const click = () => {
-    setBukiList((prevList) => [...clickChecked(prevList)]);
-  };
+  const click = () => {};
 
   return (
     <Stack spacing="15px" m="15px" key={id}>

@@ -1,13 +1,13 @@
-import { Box, Flex, Heading, Image, Input, Stack } from "@chakra-ui/react";
+import { Box, Flex, Image, Input } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useLeginsDate } from "../../hooks/useLeginsDate";
 import { BuguType } from "../../types/BuguType";
 import { LeginsFix } from "./LeginsFix";
+import LeginsList from "../../../Legins.json";
 
 export const Legins = () => {
   const [defaultBugu, setDefaultBugu] = useState("");
-  const { leginsList } = useLeginsDate();
+  const leginsList: BuguType[] = LeginsList;
 
   const changeBugu = (e: any) => setDefaultBugu(e.target.value);
 

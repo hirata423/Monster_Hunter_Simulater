@@ -1,13 +1,13 @@
-import { Box, Flex, Heading, Image, Input, Stack } from "@chakra-ui/react";
+import { Box, Flex, Image, Input } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useMeilDate } from "../../hooks/useMeilDate";
 import { BuguType } from "../../types/BuguType";
 import { MeilFix } from "./MeilFix";
+import MeilList from "../../../Meil.json";
 
 export const Meil = () => {
   const [defaultBugu, setDefaultBugu] = useState("");
-  const { meilList } = useMeilDate();
+  const meilList: BuguType[] = MeilList;
 
   const changeBugu = (e: any) => setDefaultBugu(e.target.value);
 

@@ -1,13 +1,13 @@
 import { Box, Flex, Image, Input } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useHelmDate } from "../../hooks/useHelmsDate";
 import { BuguType } from "../../types/BuguType";
 import { HelmFix } from "./HelmFix";
+import HelmList from "../../../Helm.json";
 
 export const Helm = () => {
   const [defaultBugu, setDefaultBugu] = useState("");
-  const { helmList } = useHelmDate();
+  const helmList: BuguType[] = HelmList;
 
   const changeBugu = (e: any) => setDefaultBugu(e.target.value);
 

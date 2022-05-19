@@ -1,13 +1,13 @@
 import { Box, Flex, Heading, HStack, Input, Stack } from "@chakra-ui/react";
 import { SetStateAction, useState } from "react";
 
-import { useBukisDate } from "../../hooks/useBukisDate";
-import { Bukis } from "../../types/BukiTypes";
 import { BukiFix } from "./BukiFix";
+import { Bukis } from "../../types/BukiTypes";
+import BukiList from "../../../Buki.json";
 
 export const Buki = () => {
   const [defaultBuki, setDefaultBuki] = useState("");
-  const { bukiList } = useBukisDate();
+  const bukiList: Bukis[] = BukiList;
 
   const changeBuki = (e: { target: { value: SetStateAction<string> } }) =>
     setDefaultBuki(e.target.value);
