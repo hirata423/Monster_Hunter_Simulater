@@ -16,25 +16,37 @@ export const SkillTab = (props: SkillType) => {
       border="1px"
     >
       <Stack>
-        <Box>スキル：{name}</Box>
-        <Box>スロットLv,{slotLv}</Box>
-        <Box>効果</Box>
-        <Wrap>
+        <Box
+          borderBottom="solid 1px White"
+          color="yellow.400"
+          textAlign="center"
+          fontWeight="900"
+          pb="8px"
+        >
+          {name}
+          {slotLv}
+        </Box>
+        <Box textAlign="center" fontWeight="900">
+          効果
+        </Box>
+        <Wrap borderBottom="solid 1px White">
           <WrapItem>{effect}</WrapItem>
         </Wrap>
-        <Box>詳細</Box>
+        <Box textAlign="center" fontWeight="900">
+          詳細
+        </Box>
         <Box>{levell.one}</Box>
-        <Box>{explanation.one}</Box>
+        <Box borderBottom="solid 1px White">{explanation.one}</Box>
         <Box>{levell.two}</Box>
-        <Box>{explanation.two}</Box>
+        <Box borderBottom="solid 1px White">{explanation.two}</Box>
         <Box>{levell.three}</Box>
-        <Box>{explanation.three}</Box>
+        <Box borderBottom="solid 1px White">{explanation.three}</Box>
         <Box>{levell.four}</Box>
-        <Box>{explanation.four}</Box>
+        <Box borderBottom="solid 1px White">{explanation.four}</Box>
         <Box>{levell.five}</Box>
-        <Box>{explanation.five}</Box>
+        <Box borderBottom="solid 1px White">{explanation.five}</Box>
         <Box>{levell.six}</Box>
-        <Box>{explanation.six}</Box>
+        <Box borderBottom="solid 1px White">{explanation.six}</Box>
         <Box>{levell.seven}</Box>
         <Box>{explanation.seven}</Box>
       </Stack>

@@ -16,6 +16,7 @@ export const TopPage = () => {
       <Box
         textAlign="left"
         fontSize="25px"
+        fontWeight="500"
         backgroundColor="blue.900"
         color="white"
         w={{ base: "300%", md: "120%" }}

@@ -17,27 +17,23 @@ export const SkillBox = () => {
 
   const mapItem = filterItme.map((item: SkillType) => {
     return (
-      <>
-        <Box key={item.id} display={!defaultValue ? "none" : "block"}>
-          <SkillTab {...item} />
-        </Box>
-      </>
+      <Box key={item.id} display={!defaultValue ? "none" : "block"}>
+        <SkillTab {...item} />
+      </Box>
     );
   });
 
   return (
-    <>
-      <Box>
-        <Input
-          placeholder="キーワードを入力"
-          value={defaultValue}
-          onChange={searchSkill}
-          w="280px"
-          h="40px"
-          mb="20px"
-        />
-        <Box>{mapItem}</Box>
-      </Box>
-    </>
+    <Box>
+      <Input
+        placeholder="キーワードを入力"
+        value={defaultValue}
+        onChange={searchSkill}
+        w="280px"
+        h="40px"
+        mb="20px"
+      />
+      <Box>{mapItem}</Box>
+    </Box>
   );
 };
