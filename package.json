@@ -1,12 +1,15 @@
 {
   "name": "monhun-app",
+  "homepage": "https://hirata423.github.io/monhun-app/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
@@ -25,6 +28,7 @@
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
+    "gh-pages": "^4.0.0",
     "typescript": "4.6.3"
   }
 }
