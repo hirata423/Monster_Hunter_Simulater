@@ -9,6 +9,7 @@ import { Koil } from "../../src/components/Koil";
 import { Legins } from "../../src/components/Legins";
 import { SkillLevelSumPage } from "../../src/components/SkillLevelSum";
 import { HeaderBar } from "../../src/components/HeaderBar";
+import { SkillBox } from "../../src/components/Skill/SkillBox";
 
 export const TopPage = () => {
   return (
@@ -19,7 +20,7 @@ export const TopPage = () => {
         fontSize="25px"
         backgroundColor="blue.900"
         color="white"
-        w={{ base: "200%", md: "100%" }}
+        w={{ base: "300%", md: "120%" }}
         h="100%"
       >
         <Flex ml={{ base: "40px", md: "20px" }}>
@@ -36,46 +37,41 @@ export const TopPage = () => {
           </Flex> */}
             {/** position:"fixed"するなら,mt="120px" */}
             <Heading fontSize="25px">防具パーツ</Heading>
-            <Flex>
-              <Box>
-                <Helm />
-              </Box>
-            </Flex>
 
-            <Flex>
-              <Box>
-                <Arm />
-              </Box>
-            </Flex>
+            <Box>
+              <Helm />
+            </Box>
 
-            <Flex>
-              <Box>
-                <Meil />
-              </Box>
-            </Flex>
+            <Box>
+              <Arm />
+            </Box>
 
-            <Flex>
-              <Box>
-                <Koil />
-              </Box>
-            </Flex>
+            <Box>
+              <Meil />
+            </Box>
 
-            <Flex>
-              <Box>
-                <Legins />
-              </Box>
-            </Flex>
+            <Box>
+              <Koil />
+            </Box>
 
-            <Flex display={{ base: "block", lg: "none" }}>
-              <Box mt="-100px">
-                <SkillLevelSumPage />
-              </Box>
-            </Flex>
+            <Box>
+              <Legins />
+            </Box>
+
+            <Box display={{ base: "block", lg: "none" }} mt="-100px">
+              <SkillLevelSumPage />
+            </Box>
           </Stack>
 
           {/** position:"fixed"するなら,mt="120px" */}
           <Box display={{ base: "none", lg: "block" }} mr="30px">
             <SkillLevelSumPage />
+          </Box>
+
+          <Box mt="122px" ml="10px">
+            <Box>
+              <SkillBox />
+            </Box>
           </Box>
         </Flex>
       </Box>

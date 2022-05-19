@@ -5,21 +5,21 @@ import { BuguType } from "../types/BuguType";
 
 type SkillLevelType = {
   // id: number;
-  skill: string;
+  skill?: string;
   skillLevel: number;
-  slot: string;
+  slot?: string;
   count: number;
 };
 
 export const SkillLevelSumPage = () => {
   const { total } = useTotalDate();
-  const [skill, setSkill] = useState<any[]>([]);
+  const [skill, setSkill] = useState<(string | undefined)[]>([]);
+  //型変えるとエラーでる
   const [skillLevel, setSkillLevel] = useState<any[]>([]);
-  const [slot, setSlot] = useState<any[]>([]);
-  //[]のstringにしたい↑↑ anyだと不安
+  const [slot, setSlot] = useState<(string | undefined)[]>([]);
   const toast = useToast();
 
-  //表示するわけでは無いから、forEachにしたいけど、void型になる
+  //forEachにした方がいい？　→void型になる
   const totalMap = total.map((item: BuguType) => {
     return item.skill.firstSK;
   });
@@ -51,27 +51,23 @@ export const SkillLevelSumPage = () => {
   });
 
   const RegisterButton = () => {
-    if (total) {
-      setSkill([...totalMap, ...total2Map, ...total3Map]);
-      setSkillLevel([
-        ...totalSKLevelMap,
-        ...totalSKLevel2Map,
-        ...totalSKLevel3Map,
-      ]);
-      setSlot([
-        ...totalSlotevelMap,
-        ...totalSlotevel2Map,
-        ...totalSlotevel3Map,
-      ]);
+    setSkill([...totalMap, ...total2Map, ...total3Map]);
+    setSkillLevel([
+      ...totalSKLevelMap,
+      ...totalSKLevel2Map,
+      ...totalSKLevel3Map,
+    ]);
+    setSlot([...totalSlotevelMap, ...totalSlotevel2Map, ...totalSlotevel3Map]);
 
-      toast({
-        title: "装着済防具を登録しました！",
-        status: "success",
-        position: "top-right",
-        duration: 2000,
-        isClosable: true,
-      });
-    } else if ([...total, ...[]]) {
+    toast({
+      title: "装着済防具を登録しました！",
+      status: "success",
+      position: "top-right",
+      duration: 2000,
+      isClosable: true,
+    });
+    //total配列が空の時は警告toast出したい
+    if (total === []) {
       toast({
         title: "防具が追加されてません！",
         status: "warning",
@@ -95,7 +91,7 @@ export const SkillLevelSumPage = () => {
       skillLevel: reSkillLevel[i],
       slot: slot[i],
       count: test,
-      // id:test[i]
+      // id:idIndex[i]
     });
   }
   console.log("skillList", skillList);
@@ -138,7 +134,7 @@ export const SkillLevelSumPage = () => {
   );
   console.log("reduceList2", reduceList2);
 
-  // idを持たな為、indexで代用　※配列変更、filter等使う際は注意
+  // idを持たない為、indexで代用　※配列変更、filter等使う際は注意
   const skillMapItem = reduceList.map((item: SkillLevelType, index: number) => {
     return (
       <Box key={index}>
