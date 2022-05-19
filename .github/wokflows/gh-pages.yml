@@ -1,5 +1,6 @@
-name: deploy
+name: github pages
 
+# mainブランチにプッシュしたときjobsに記述した操作を行う
 on:
   push:
     branches:
@@ -16,31 +17,31 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v1
         with:
-          node-version: "14.16"
+          node-version: "12.x"
 
       # npm install の際にキャッシュを使うよう設定
-      # - name: Cache dependencies
-      #   uses: actions/cache@v1
-      #   with:
-      #     path: ~/.npm
-      #     key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock) }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-node-
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       # package.jsonに基づき依存パッケージをインストールする
       - name: install
-        run: yarn install --frozen-lockfile
+        run: npm install --frozen-lockfile
 
       # Next.jsアプリをビルドする
       # プロジェクトルート直下に.nextディレクトリができる
       - name: build
-        run: yarn deploy
+        run: npm run build
 
       # 静的なHTMLとしてNext.jsアプリを生成する
       # プロジェクトルート直下にoutディレクトリができる
       # そのなかに、HTMLファイル群と、それらが読み込むJSファイル群を収めた_nextディレクトリがある
       - name: export
-        run: yarn export
+        run: npm run export
 
       # しかしGitHub Pagesの仕様として_から始まるディレクトリが見えず404となる
       # つまりHTMLからJSを読み込めない
@@ -48,7 +49,8 @@ jobs:
       - name: add nojekyll
         run: touch ./out/.nojekyll
 
-      # outディレクトリの中身をプッシュする
+      # gh-pagesブランチにoutディレクトリの中身をプッシュする
+      # gh-pagesブランチは自動的に作成される
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
