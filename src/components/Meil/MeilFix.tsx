@@ -1,7 +1,6 @@
 import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useMeilDate } from "../../hooks/useMeilDate";
 import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
 
@@ -23,14 +22,8 @@ export const MeilFix = (props: BuguType) => {
     flag: !flag,
   };
 
-  const clickChecked = (prevList: BuguType[]) => {
-    const foo = prevList.map((item) => {
-      if (item.id === id) {
-        return targetItem;
-      }
-      return item;
-    });
-    return foo;
+  const removeBugu = () => {
+    setTotal((prev) => [...prev.filter((item) => item.id !== id)]);
   };
 
   const click = () => {
@@ -46,6 +39,7 @@ export const MeilFix = (props: BuguType) => {
       });
     }
     if (buttonColor === "orange.300") {
+      removeBugu();
       setButtonColor("blue.200");
       toast({
         title: "メイルを脱ぎました！",

@@ -1,5 +1,5 @@
 import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
@@ -22,22 +22,8 @@ export const HelmFix = (props: BuguType) => {
     flag: !flag,
   };
 
-  // const removeBugu = (prevList: BuguType[]) => {
-  //   const foo = prevList.map((item) => {
-  //     if (item.id === id) {
-  //       return targetItem;
-  //     }
-  //     return item;
-  //   });
-  //   return foo;
-  // };
-
-  const removeBugu = (prevList: BuguType[]) => {
-    const removeItem = prevList.findIndex((item: BuguType) => {
-      return item.id === id;
-    });
-    const spliceItem = prevList.splice(removeItem, 1);
-    return spliceItem;
+  const removeBugu = () => {
+    setTotal((prev) => [...prev.filter((item) => item.id !== id)]);
   };
 
   const settingButton = () => {
@@ -53,7 +39,7 @@ export const HelmFix = (props: BuguType) => {
       });
     }
     if (buttonColor === "orange.300") {
-      setTotal((prevList) => [...removeBugu(prevList)]);
+      removeBugu();
       setButtonColor("blue.200");
       toast({
         title: "ヘルムを脱ぎました！",
