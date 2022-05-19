@@ -1,6 +1,5 @@
 {
   "name": "monhun-app",
-  "homepage": "https://hirata423.github.io/monhun-app/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "env NODE_ENV='production' next build"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",

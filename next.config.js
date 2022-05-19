@@ -5,5 +5,5 @@ const nextConfig = {
 
 module.exports = {
   nextConfig,
-  assetPrefix: "/repository-name",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/hlsjs-playground" : "",
 };
