@@ -46,6 +46,7 @@ export const Helm = () => {
   return (
     <>
       <Flex>
+        {/* eslint-disable*/}
         <Image src="/images/helm.jpg" mt="-11px" />
 
         <Input

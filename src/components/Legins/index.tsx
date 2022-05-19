@@ -38,6 +38,7 @@ export const Legins = () => {
   return (
     <>
       <Flex>
+        {/* eslint-disable*/}
         <Image src="/images/legins.jpg" mt="-9px" />
         <Input
           placeholder="キーワードを入力"

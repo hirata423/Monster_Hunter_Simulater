@@ -38,6 +38,7 @@ export const Koil = () => {
   return (
     <>
       <Flex>
+        {/* eslint-disable*/}
         <Image src="/images/koil.jpg" mt="-9px" />
         <Input
           placeholder="キーワードを入力"

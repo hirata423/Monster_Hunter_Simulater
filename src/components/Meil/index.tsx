@@ -38,6 +38,7 @@ export const Meil = () => {
   return (
     <>
       <Flex>
+        {/* eslint-disable*/}
         <Image src="/images/meil.jpg" mt="-9px" />
         <Input
           placeholder="キーワードを入力"
