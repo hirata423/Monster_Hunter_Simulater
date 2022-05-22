@@ -58,7 +58,9 @@ export const TopPage = () => {
           </Box>
 
           <Box mt="122px" ml="10px">
-            <Box>{/* <SkillBox /> */}</Box>
+            <Box>
+              <SkillBox />
+            </Box>
           </Box>
         </Flex>
       </Box>
