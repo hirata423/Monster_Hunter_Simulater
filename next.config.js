@@ -9,7 +9,7 @@ const nextConfig = {
 
 const urlPrefix = process.env.URL_PREFIX ? "/" + process.env.URL_PREFIX : "";
 
-module.export = {
+module.exports = {
   nextConfig,
   assetPrefix: urlPrefix,
   basePath: urlPrefix,
