@@ -1,6 +1,6 @@
 import { Box, Input } from "@chakra-ui/react";
 import { useState } from "react";
-import SkillName from "../../../SkillName.json";
+// import SkillName from "../../../SkillName.json";
 import { SkillType } from "../../types/SkillTypes";
 import { SkillTab } from "./SkillTab";
 
