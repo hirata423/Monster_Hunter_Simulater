@@ -1,9 +1,16 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-};
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   reactStrictMode: true,
+// };
 
-module.exports = {
-  nextConfig,
-  assetPrefix: process.env.NODE_ENV === "production" ? "/hlsjs-playground" : "",
+// module.exports = {
+//  nextConfig
+// };
+
+const urlPrefix = process.env.URL_PREFIX ? "/" + process.env.URL_PREFIX : "";
+
+module.export = {
+  assetPrefix: urlPrefix,
+  basePath: urlPrefix,
+  trailingSlash: true,
 };
