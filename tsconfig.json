@@ -23,14 +23,5 @@
     "**/*.tsx",
     "src/components/Parts/PraimaryInput"
   ],
-  "exclude": [
-    "node_modules",
-    "./Arm.json",
-    "./Helm.json",
-    "./Meil.json",
-    "./Koil.json",
-    "./Legins.json",
-    "./Buki.json",
-    "./SkillName.json"
-  ]
+  "exclude": ["node_modules"]
 }
