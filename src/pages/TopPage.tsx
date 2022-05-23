@@ -9,7 +9,7 @@ import { SkillLevelSumPage } from "../components/SkillLevelSum";
 import { HeaderBar } from "../components/HeaderBar";
 import { SkillBox } from "../components/Skill";
 
-export const TopPage = () => {
+const TopPage = () => {
   return (
     <>
       <HeaderBar />
@@ -67,3 +67,5 @@ export const TopPage = () => {
     </>
   );
 };
+
+export default TopPage;
