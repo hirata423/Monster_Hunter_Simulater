@@ -7,7 +7,7 @@ import { Koil } from "../../src/components/Koil";
 import { Legins } from "../../src/components/Legins";
 import { SkillLevelSumPage } from "../../src/components/SkillLevelSum";
 import { HeaderBar } from "../../src/components/HeaderBar";
-import { SkillBox } from "../../src/components/Skill/SkillBox";
+import { SkillBox } from "../../src/components/Skill";
 
 export const TopPage = () => {
   return (
