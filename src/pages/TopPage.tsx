@@ -1,13 +1,13 @@
 import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
 
-import { Helm } from "../../components/Helm";
-import { Arm } from "../../components/Arm";
-import { Meil } from "../../components/Meil";
-import { Koil } from "../../components/Koil";
-import { Legins } from "../../components/Legins";
-import { SkillLevelSumPage } from "../../components/SkillLevelSum";
-import { HeaderBar } from "../../components/HeaderBar";
-import { SkillBox } from "../../components/Skill";
+import { Helm } from "../components/Helm";
+import { Arm } from "../components/Arm";
+import { Meil } from "../components/Meil";
+import { Koil } from "../components/Koil";
+import { Legins } from "../components/Legins";
+import { SkillLevelSumPage } from "../components/SkillLevelSum";
+import { HeaderBar } from "../components/HeaderBar";
+import { SkillBox } from "../components/Skill";
 
 export const TopPage = () => {
   return (

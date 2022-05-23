@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { TopPage } from "./links/TopPage";
+import { TopPage } from "./TopPage";
 
 const Home: NextPage = () => {
   return (
