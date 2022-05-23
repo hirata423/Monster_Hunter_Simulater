@@ -17,11 +17,6 @@
     "downlevelIteration": true,
     "baseUrl": "./"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/components/Parts/PraimaryInput"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

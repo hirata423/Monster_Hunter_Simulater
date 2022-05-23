@@ -3,9 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-module.exports = {
-  nextConfig,
-};
+module.exports = nextConfig;
 
 // const urlPrefix = process.env.URL_PREFIX ? "/" + process.env.URL_PREFIX : "";
 
