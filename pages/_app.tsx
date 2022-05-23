@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import { TotalDateProvider } from "../src/provider/TotalDateProvider";
 
-function MyApp({ Component, pageProps }: AppProps) {
+export const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider>
       <TotalDateProvider>
@@ -10,6 +10,4 @@ function MyApp({ Component, pageProps }: AppProps) {
       </TotalDateProvider>
     </ChakraProvider>
   );
-}
-
-export default MyApp;
+};

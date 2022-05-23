@@ -1,12 +1,10 @@
 import type { NextPage } from "next";
 import { TopPage } from "./links/TopPage";
 
-const Home: NextPage = () => {
+export const Home: NextPage = () => {
   return (
     <>
-      <TopPage></TopPage>
+      <TopPage />
     </>
   );
 };
-
-export default Home;
