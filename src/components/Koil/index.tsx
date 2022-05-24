@@ -40,17 +40,19 @@ export const Koil = () => {
       <Flex>
         {/* eslint-disable*/}
         <Image src="/images/koil.jpg" mt="-9px" />
-        <Input
-          placeholder="キーワードを入力"
-          w="350px"
-          h="40px"
-          top="-5px"
-          ml="-100px"
-          value={defaultBugu}
-          onChange={changeBugu}
-        />
+
+        <Box pl="25px">
+          <Input
+            placeholder="キーワードを入力"
+            w="350px"
+            h="40px"
+            top="-5px"
+            value={defaultBugu}
+            onChange={changeBugu}
+          />
+        </Box>
       </Flex>
-      <Box ml="120px" mt="-90px">
+      <Box pl="90px" pt="-190px">
         <Box display={defaultBugu ? "none" : "block"} fontSize="15px">
           武具名：
         </Box>

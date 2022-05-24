@@ -14,16 +14,15 @@ const TopPage = () => {
     <>
       <HeaderBar />
       <Box
-        textAlign="left"
+        p="25px"
+        color="white"
         fontSize="25px"
         fontWeight="500"
         backgroundColor="blue.900"
-        color="white"
-        w={{ base: "300%", md: "120%" }}
-        h="100%"
+        w={{ base: "71vh", md: "109.5vh", lg: "195vh" }}
       >
-        <Flex ml={{ base: "40px", md: "20px" }}>
-          <Stack spacing="58px" mr="50px" mt="80px" m="40px">
+        <Flex>
+          <Stack spacing="58px" pr={{ base: "0px", lg: "25px" }}>
             {/** position:"fixed"するなら,mt="120px" */}
             <Heading fontSize="25px">防具パーツ</Heading>
 
@@ -47,20 +46,39 @@ const TopPage = () => {
               <Legins />
             </Box>
 
-            <Box display={{ base: "block", lg: "none" }} mt="-100px">
+            {/* //縦に並ばせる */}
+            <Box display={{ base: "block", lg: "none" }}>
+              <Heading fontSize="25px" mb="30px">
+                装着済リスト
+              </Heading>
               <SkillLevelSumPage />
+            </Box>
+
+            <Box display={{ base: "block", md: "none" }}>
+              <Heading fontSize="25px" mb="30px">
+                スキル検索
+              </Heading>
+              <SkillBox />
             </Box>
           </Stack>
 
           {/** position:"fixed"するなら,mt="120px" */}
-          <Box display={{ base: "none", lg: "block" }} mr="30px">
-            <SkillLevelSumPage />
+          {/* //横に並ばせる */}
+          <Box display={{ base: "none", lg: "block" }} pr="50px">
+            <Stack spacing="53px">
+              <Heading fontSize="25px">装着済リスト</Heading>
+              <SkillLevelSumPage />
+            </Stack>
           </Box>
 
-          <Box mt="122px" ml="10px">
-            <Box>
+          <Box
+            display={{ base: "none", md: "block" }}
+            ml={{ base: "0", md: "-20px" }}
+          >
+            <Stack spacing="53px" ml="10px">
+              <Heading fontSize="25px">スキル検索</Heading>
               <SkillBox />
-            </Box>
+            </Stack>
           </Box>
         </Flex>
       </Box>

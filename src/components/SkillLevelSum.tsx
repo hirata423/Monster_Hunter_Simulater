@@ -183,19 +183,19 @@ export const SkillLevelSumPage = () => {
   // }, 0);
 
   return (
-    <Stack spacing="35px" mt="123px">
+    <Stack spacing="35px">
       <Button
         onClick={RegisterButton}
         bgColor="blue.200"
         _hover={{ backgroundColor: "blue.100" }}
         color="black"
-        w="470px"
+        w="450px"
       >
         防具リストに登録
       </Button>
-      <Flex fontSize="15px">
+      <Flex fontSize="14px">
         <Stack>
-          <Box ml="15px" mr="102px">
+          <Box ml="13px" mr="102px">
             <Box>発動スキル</Box>
             <Box pl="7px" pt="9px">
               {skillMapItem}
