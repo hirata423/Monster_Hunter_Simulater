@@ -189,8 +189,7 @@
     "subName": "ディアブロス",
     "blockPoint": 64,
     "skill": {
-      "firstSK": "攻めの守勢",
-      "secondSK": "スタミナ急速回復"
+      "firstSK": "攻めの守勢"
     },
     "skillLevel": {
       "firstSK": 1
@@ -406,7 +405,7 @@
       "thirdSK": "見切り"
     },
     "skillLevel": {
-      "firstSK": 2,
+      "firstSK": 1,
       "secondSK": 1,
       "thirdSK": 1
     },
@@ -1126,23 +1125,6 @@
   },
   {
     "id": 195,
-    "name": "拘竜の革篭手S",
-    "subName": "ジャギィ",
-    "blockPoint": 40,
-    "skill": {
-      "firstSK": "攻撃"
-    },
-    "skillLevel": {
-      "firstSK": 2
-    },
-    "slot": {
-      "firstSL": "Lv,1",
-      "secondSL": "Lv,1"
-    },
-    "flag": false
-  },
-  {
-    "id": 196,
     "name": "蒼世ノ侍【袖】",
     "subName": "イベント",
     "blockPoint": 72,

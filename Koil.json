@@ -140,7 +140,7 @@
     "subName": "特殊",
     "blockPoint": 68,
     "skill": {
-      "firstSK": "耐震",
+      "firstSK": "耳栓",
       "secondSK": "匠"
     },
     "skillLevel": {
@@ -905,14 +905,15 @@
     "subName": "ドスバギィ・バギィ",
     "blockPoint": 36,
     "skill": {
-      "firstSK": "氷属性攻撃強化"
+      "firstSK": "攻撃",
+      "secondSK": "睡眠耐性"
     },
     "skillLevel": {
-      "firstSK": 2
+      "firstSK": 2,
+      "secondSK": 1
     },
     "slot": {
-      "firstSL": "Lv,2",
-      "secondSL": "Lv,1"
+      "firstSL": "Lv,1"
     },
     "flag": false
   },
