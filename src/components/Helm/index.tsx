@@ -8,7 +8,6 @@ import HelmList from "../../../Helm.json";
 export const Helm = () => {
   const [defaultBugu, setDefaultBugu] = useState("");
   const helmList: BuguType[] = HelmList;
-
   const changeBugu = (e: any) => setDefaultBugu(e.target.value);
 
   const filterItem = helmList.filter((item: BuguType) => {
@@ -19,13 +18,7 @@ export const Helm = () => {
       item.skill.secondSK +
       item.skill.thirdSK +
       item.skill.fourthSK;
-    // item.skillLevel.firstSK +
-    // item.skillLevel.secondSK +
-    // item.skillLevel.thirdSK +
-    // item.skillLevel.fourthSK +
-    // item.slot.firstSL +
-    // item.slot.secondSL +
-    // item.slot.thirdSL;
+
     return itemKey.includes(defaultBugu);
   });
 

@@ -183,7 +183,7 @@ export const SkillLevelSumPage = () => {
   // }, 0);
 
   return (
-    <Stack spacing="30px">
+    <Stack spacing="30px" alignItems="center">
       <Button
         onClick={RegisterButton}
         bgColor="blue.200"
@@ -195,7 +195,7 @@ export const SkillLevelSumPage = () => {
       </Button>
       <Flex fontSize={{ base: "13px", lg: "15px" }}>
         <Stack>
-          <Box mr="87px">
+          <Box pr="87px">
             <Box>発動スキル</Box>
             <Box pl="7px" pt="9px">
               {skillMapItem}
@@ -204,7 +204,7 @@ export const SkillLevelSumPage = () => {
         </Stack>
 
         <Stack>
-          <Box mr="90px">
+          <Box pr="90px">
             <Box>スキルレベル</Box>
             <Box pl="43px" pt="9px">
               {skillLevelMapItem}
