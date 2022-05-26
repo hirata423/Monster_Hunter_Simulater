@@ -16,7 +16,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 1,
@@ -34,7 +35,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 2,
@@ -52,7 +54,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 3,
@@ -66,7 +69,8 @@
       "firstSK": 4
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 4,
@@ -84,7 +88,8 @@
       "thirdSK": 1
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 5,
@@ -102,7 +107,8 @@
       "thirdSK": 1
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 6,
@@ -120,7 +126,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 7,
@@ -140,7 +147,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 8,
@@ -156,7 +164,8 @@
       "secondSK": 2
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 9,
@@ -175,7 +184,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 10,
@@ -196,7 +206,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 11,
@@ -215,7 +226,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 12,
@@ -233,7 +245,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 13,
@@ -252,7 +265,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 14,
@@ -269,7 +283,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 15,
@@ -288,7 +303,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 16,
@@ -308,7 +324,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 17,
@@ -324,7 +341,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 18,
@@ -342,7 +360,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 19,
@@ -361,7 +380,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 20,
@@ -378,7 +398,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 21,
@@ -394,7 +415,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 22,
@@ -412,7 +434,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 23,
@@ -433,7 +456,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 24,
@@ -449,7 +473,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 25,
@@ -466,7 +491,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 26,
@@ -482,7 +508,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 27,
@@ -502,7 +529,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 28,
@@ -522,7 +550,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 29,
@@ -539,7 +568,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 30,
@@ -556,7 +586,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 31,
@@ -573,7 +604,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 32,
@@ -590,7 +622,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 33,
@@ -611,7 +644,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 34,
@@ -628,7 +662,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 35,
@@ -647,7 +682,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 36,
@@ -666,7 +702,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 37,
@@ -684,7 +721,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 38,
@@ -704,7 +742,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 39,
@@ -723,7 +762,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 40,
@@ -742,7 +782,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 41,
@@ -760,7 +801,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 42,
@@ -777,7 +819,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 43,
@@ -794,7 +837,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 44,
@@ -812,7 +856,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 45,
@@ -830,7 +875,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 46,
@@ -848,7 +894,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 47,
@@ -866,7 +913,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 48,
@@ -885,7 +933,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 49,
@@ -903,7 +952,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 50,
@@ -920,7 +970,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 51,
@@ -937,7 +988,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 52,
@@ -954,7 +1006,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 53,
@@ -972,7 +1025,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 54,
@@ -988,7 +1042,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 55,
@@ -1006,7 +1061,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 56,
@@ -1024,7 +1080,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 57,
@@ -1040,7 +1097,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 58,
@@ -1058,7 +1116,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 59,
@@ -1077,7 +1136,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 60,
@@ -1095,7 +1155,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 61,
@@ -1112,7 +1173,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 189,
@@ -1128,7 +1190,8 @@
       "secondSK": 1
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 190,
@@ -1142,7 +1205,8 @@
       "firstSK": 1
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 191,
@@ -1159,7 +1223,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 192,
@@ -1175,7 +1240,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 193,
@@ -1191,7 +1257,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 194,
@@ -1208,7 +1275,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 197,
@@ -1227,7 +1295,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 198,
@@ -1243,7 +1312,8 @@
       "secondSK": 2
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   },
   {
     "id": 199,
@@ -1260,6 +1330,7 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/helm.jpg"
   }
 ]

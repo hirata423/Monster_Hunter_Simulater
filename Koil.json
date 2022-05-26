@@ -17,7 +17,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 202,
@@ -35,7 +36,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 203,
@@ -57,7 +59,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 204,
@@ -75,7 +78,8 @@
       "thirdSK": 1
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 205,
@@ -93,7 +97,8 @@
       "thirdSK": 1
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 206,
@@ -112,7 +117,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 207,
@@ -132,7 +138,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 208,
@@ -150,7 +157,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 209,
@@ -170,7 +178,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 210,
@@ -188,7 +197,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 211,
@@ -205,7 +215,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 212,
@@ -224,7 +235,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 213,
@@ -241,7 +253,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 214,
@@ -260,7 +273,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 215,
@@ -279,7 +293,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 216,
@@ -295,7 +310,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 217,
@@ -311,7 +327,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 218,
@@ -328,7 +345,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 219,
@@ -346,7 +364,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 220,
@@ -365,7 +384,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 221,
@@ -383,7 +403,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 222,
@@ -401,7 +422,8 @@
       "secondSL": "Lv,1",
       "thirdSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 223,
@@ -418,7 +440,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 224,
@@ -436,7 +459,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 225,
@@ -454,7 +478,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 226,
@@ -471,7 +496,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 227,
@@ -489,7 +515,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 228,
@@ -507,7 +534,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 229,
@@ -523,7 +551,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 230,
@@ -539,7 +568,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 231,
@@ -557,7 +587,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 232,
@@ -574,7 +605,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 233,
@@ -592,7 +624,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 234,
@@ -610,7 +643,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 235,
@@ -628,7 +662,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 236,
@@ -649,7 +684,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 237,
@@ -668,7 +704,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 238,
@@ -687,7 +724,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 239,
@@ -705,7 +743,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 240,
@@ -724,7 +763,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 241,
@@ -741,7 +781,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 242,
@@ -757,7 +798,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 243,
@@ -773,7 +815,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 244,
@@ -789,7 +832,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 245,
@@ -808,7 +852,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 246,
@@ -825,7 +870,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 247,
@@ -841,7 +887,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 248,
@@ -860,7 +907,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 249,
@@ -878,7 +926,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 250,
@@ -897,7 +946,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 251,
@@ -915,7 +965,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 252,
@@ -932,7 +983,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 253,
@@ -951,7 +1003,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 254,
@@ -965,7 +1018,8 @@
       "firstSK": 2
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 255,
@@ -982,7 +1036,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 256,
@@ -1001,7 +1056,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 257,
@@ -1018,7 +1074,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 258,
@@ -1037,7 +1094,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 259,
@@ -1055,7 +1113,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 260,
@@ -1074,7 +1133,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 261,
@@ -1090,7 +1150,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 262,
@@ -1111,7 +1172,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 263,
@@ -1128,7 +1190,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 264,
@@ -1145,7 +1208,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 265,
@@ -1159,7 +1223,8 @@
       "secondSL": "Lv,2",
       "thirdSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   },
   {
     "id": 266,
@@ -1176,6 +1241,7 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/koil.jpg"
   }
 ]

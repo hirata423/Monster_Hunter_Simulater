@@ -16,7 +16,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 268,
@@ -34,7 +35,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 269,
@@ -54,7 +56,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 270,
@@ -72,7 +75,8 @@
       "thirdSK": 1
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 271,
@@ -90,7 +94,8 @@
       "thirdSK": 1
     },
     "slot": {},
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 272,
@@ -108,7 +113,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 273,
@@ -126,7 +132,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 274,
@@ -142,7 +149,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 275,
@@ -161,7 +169,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 276,
@@ -182,7 +191,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 277,
@@ -200,7 +210,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 278,
@@ -218,7 +229,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 279,
@@ -236,7 +248,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 280,
@@ -253,7 +266,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 281,
@@ -271,7 +285,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 282,
@@ -292,7 +307,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 283,
@@ -311,7 +327,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 284,
@@ -329,7 +346,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 285,
@@ -348,7 +366,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 286,
@@ -366,7 +385,8 @@
       "secondSL": "Lv,1",
       "thirdSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 287,
@@ -384,7 +404,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 288,
@@ -400,7 +421,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 289,
@@ -419,7 +441,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 290,
@@ -436,7 +459,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 291,
@@ -453,7 +477,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 292,
@@ -470,7 +495,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 293,
@@ -488,7 +514,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 294,
@@ -508,7 +535,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 295,
@@ -525,7 +553,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 296,
@@ -542,7 +571,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 297,
@@ -561,7 +591,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 298,
@@ -580,7 +611,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 299,
@@ -600,7 +632,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 300,
@@ -618,7 +651,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 301,
@@ -636,7 +670,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 302,
@@ -654,7 +689,8 @@
       "secondSL": "Lv,1",
       "thirdSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 303,
@@ -674,7 +710,8 @@
       "secondSL": "Lv,1",
       "thirdSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 304,
@@ -692,7 +729,8 @@
       "secondSL": "Lv,1",
       "thirdSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 305,
@@ -708,7 +746,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 306,
@@ -727,7 +766,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 307,
@@ -746,7 +786,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 308,
@@ -763,7 +804,8 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 309,
@@ -781,7 +823,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 310,
@@ -799,7 +842,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 311,
@@ -820,7 +864,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 312,
@@ -838,7 +883,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 313,
@@ -857,7 +903,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 314,
@@ -871,7 +918,8 @@
       "secondSL": "Lv,2",
       "thirdSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 315,
@@ -890,7 +938,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 316,
@@ -908,7 +957,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 317,
@@ -925,7 +975,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 318,
@@ -944,7 +995,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 319,
@@ -963,7 +1015,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 320,
@@ -983,7 +1036,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 321,
@@ -1001,7 +1055,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 322,
@@ -1019,7 +1074,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 323,
@@ -1037,7 +1093,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 324,
@@ -1056,7 +1113,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 325,
@@ -1072,7 +1130,8 @@
     "slot": {
       "firstSL": "Lv,2"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 326,
@@ -1090,7 +1149,8 @@
     "slot": {
       "firstSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 327,
@@ -1109,7 +1169,8 @@
       "firstSL": "Lv,1",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 328,
@@ -1128,7 +1189,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 329,
@@ -1145,7 +1207,8 @@
       "firstSL": "Lv,2",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 330,
@@ -1165,7 +1228,8 @@
       "secondSL": "Lv,1",
       "thirdSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 331,
@@ -1181,7 +1245,8 @@
     "slot": {
       "firstSL": "Lv,3"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   },
   {
     "id": 332,
@@ -1198,6 +1263,7 @@
       "firstSL": "Lv,3",
       "secondSL": "Lv,1"
     },
-    "flag": false
+    "flag": false,
+    "icon": "./public/images/legins.jpg"
   }
 ]

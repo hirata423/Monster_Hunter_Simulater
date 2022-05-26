@@ -1,3 +1,5 @@
+import { URL, Url } from "url";
+
 export type BuguType = {
   id: number;
   name: string;
@@ -21,4 +23,5 @@ export type BuguType = {
     thirdSL?: string;
   };
   flag: boolean;
+  icon?: string;
 };
