@@ -5,12 +5,13 @@ import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
 
 export const HelmFix = (props: BuguType) => {
-  const { id, name, subName, blockPoint, skill, skillLevel, slot, flag } =
+  const { id, name, subName, blockPoint, skill, skillLevel, slot, flag, icon } =
     props;
-  const { total, setTotal } = useTotalDate();
+  const { setTotal } = useTotalDate();
   const [buttonColor, setButtonColor] = useState("blue.200");
   const toast = useToast();
 
+  //現状、flagの意味が無いから、trueでもfalseでも追加と削除がされる
   const targetItem = {
     id,
     name,
@@ -51,7 +52,7 @@ export const HelmFix = (props: BuguType) => {
     }
   };
 
-  console.log("total", total);
+  // console.log("total", total);
 
   return (
     <Stack spacing="15px" fontSize="15px" key={id}>

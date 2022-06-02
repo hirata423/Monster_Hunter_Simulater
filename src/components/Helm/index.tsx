@@ -4,6 +4,7 @@ import { useState } from "react";
 import { BuguType } from "../../types/BuguType";
 import { HelmFix } from "./HelmFix";
 import HelmList from "../../../Helm.json";
+import { TotalSkill } from "../TotalSkill";
 
 export const Helm = () => {
   const [defaultBugu, setDefaultBugu] = useState("");

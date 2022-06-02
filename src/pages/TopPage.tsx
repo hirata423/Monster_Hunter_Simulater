@@ -7,12 +7,16 @@ import { Koil } from "../components/Koil";
 import { Legins } from "../components/Legins";
 import { SkillLevelSumPage } from "../components/SkillLevelSum";
 import { HeaderBar } from "../components/HeaderBar";
-import { SkillBox } from "../components/Skill";
+import { SkillSearch } from "../components/SkillSearch";
+import { TotalSkill } from "src/components/TotalSkill";
 
 const TopPage = () => {
   return (
     <>
       <HeaderBar />
+
+      <TotalSkill />
+
       <Box
         p="25px"
         color="white"
@@ -31,11 +35,11 @@ const TopPage = () => {
             </Box>
 
             <Box>
-              <Arm />
+              <Meil />
             </Box>
 
             <Box>
-              <Meil />
+              <Arm />
             </Box>
 
             <Box>
@@ -58,7 +62,7 @@ const TopPage = () => {
               <Heading fontSize="25px" mb="30px">
                 スキル検索
               </Heading>
-              <SkillBox />
+              <SkillSearch />
             </Box>
           </Stack>
 
@@ -77,7 +81,7 @@ const TopPage = () => {
           >
             <Stack spacing="53px" ml="10px">
               <Heading fontSize="25px">スキル検索</Heading>
-              <SkillBox />
+              <SkillSearch />
             </Stack>
           </Box>
         </Flex>
