@@ -1,4 +1,4 @@
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 export const HeaderBar = () => {
   return (
@@ -6,7 +6,7 @@ export const HeaderBar = () => {
       bgSize="cover"
       bgPosition="center"
       bgImage="url('/images/header.jpg')"
-      w={{ base: "71vh", md: "109.5vh", lg: "195vh" }}
+      w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
       h={{ base: "10vh", md: "12vh" }}
       // position="fixed"
       // zIndex="99"

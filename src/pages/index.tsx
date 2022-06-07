@@ -1,11 +1,11 @@
 import { Box } from "@chakra-ui/react";
 import type { NextPage } from "next";
-import TopPage from "./TopPage";
+import Login from "./Login";
 
 const Home: NextPage = () => {
   return (
-    <Box m="0">
-      <TopPage />
+    <Box m="0" p="0">
+      <Login />
     </Box>
   );
 };

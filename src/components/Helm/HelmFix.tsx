@@ -5,9 +5,9 @@ import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
 
 export const HelmFix = (props: BuguType) => {
-  const { id, name, subName, blockPoint, skill, skillLevel, slot, flag, icon } =
+  const { id, name, subName, blockPoint, skill, skillLevel, slot, flag } =
     props;
-  const { setTotal } = useTotalDate();
+  const { total, setTotal } = useTotalDate();
   const [buttonColor, setButtonColor] = useState("blue.200");
   const toast = useToast();
 
