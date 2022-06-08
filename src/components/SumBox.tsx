@@ -13,7 +13,7 @@ type SkillLevelType = {
   count: number;
 };
 
-export const SkillLevelSumPage = () => {
+export const SumBox = () => {
   const { total } = useTotalDate();
   const [idNum, setIdNum] = useState<number[]>([]);
   const [newName, setName] = useState<string[]>([]);

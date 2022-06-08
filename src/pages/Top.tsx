@@ -5,7 +5,7 @@ import { Arm } from "../components/Arm";
 import { Meil } from "../components/Meil";
 import { Koil } from "../components/Koil";
 import { Legins } from "../components/Legins";
-import { SkillLevelSumPage } from "../components/SkillLevelSum";
+import { SumBox } from "../components/SumBox";
 import { HeaderBar } from "../components/HeaderBar";
 import { SkillSearch } from "../components/SkillSearch";
 import { TotalSkill } from "src/components/TotalSkill";
@@ -57,7 +57,7 @@ const TopPage = () => {
               <Heading fontSize="25px" mb="30px">
                 装着済リスト
               </Heading>
-              <SkillLevelSumPage />
+              <SumBox />
             </Box>
 
             <Box display={{ base: "block", md: "none" }}>
@@ -73,7 +73,7 @@ const TopPage = () => {
           <Box display={{ base: "none", lg: "block" }} pr="50px">
             <Stack spacing="53px">
               <Heading fontSize="25px">装着済リスト</Heading>
-              <SkillLevelSumPage />
+              <SumBox />
             </Stack>
           </Box>
 
