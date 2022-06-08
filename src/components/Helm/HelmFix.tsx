@@ -1,17 +1,14 @@
 import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
-import { useState } from "react";
 
 import { useTotalDate } from "../../hooks/useTotalDate";
 import { BuguType } from "../../types/BuguType";
 
 export const HelmFix = (props: BuguType) => {
-  const { id, name, subName, blockPoint, skill, skillLevel, slot, flag } =
+  const { id, name, subName, blockPoint, skill, skillLevel, slot, flag, icon } =
     props;
-  const { total, setTotal } = useTotalDate();
-  const [buttonColor, setButtonColor] = useState("blue.200");
+  const { setTotal } = useTotalDate();
   const toast = useToast();
 
-  //現状、flagの意味が無いから、trueでもfalseでも追加と削除がされる
   const targetItem = {
     id,
     name,
@@ -20,39 +17,20 @@ export const HelmFix = (props: BuguType) => {
     skill,
     skillLevel,
     slot,
-    flag: !flag,
+    flag,
+    icon,
   };
 
-  const removeBugu = () => {
-    setTotal((prev) => [...prev.filter((item) => item.id !== id)]);
+  const submitBugu = () => {
+    setTotal((prevList) => [...prevList, targetItem]);
+    toast({
+      title: "アームを装着しました！",
+      status: "info",
+      position: "top-right",
+      duration: 1300,
+      isClosable: true,
+    });
   };
-
-  const settingButton = () => {
-    if (buttonColor === "blue.200") {
-      setTotal((prevList) => [...prevList, targetItem]);
-      setButtonColor("orange.300");
-      toast({
-        title: "ヘルムを装着しました！",
-        status: "info",
-        position: "top-right",
-        duration: 1300,
-        isClosable: true,
-      });
-    }
-    if (buttonColor === "orange.300") {
-      removeBugu();
-      setButtonColor("blue.200");
-      toast({
-        title: "ヘルムを脱ぎました！",
-        status: "warning",
-        position: "top-right",
-        duration: 1300,
-        isClosable: true,
-      });
-    }
-  };
-
-  // console.log("total", total);
 
   return (
     <Stack spacing="15px" fontSize="15px" key={id}>
@@ -60,26 +38,24 @@ export const HelmFix = (props: BuguType) => {
         <Box>防具名　：{name}</Box>
         <Box ml="100px">
           <Button
-            onClick={settingButton}
+            onClick={submitBugu}
             size="sm"
             color="black"
-            backgroundColor={buttonColor}
+            backgroundColor="blue.200"
             _hover={{
-              backgroundColor:
-                buttonColor === "blue.200" ? "blue.100" : "orange.100",
+              backgroundColor: "blue.200",
             }}
           >
-            {buttonColor === "blue.200" ? "装着" : "脱着"}
+            装着
           </Button>
         </Box>
       </Flex>
+
       <Box>防御力　：{blockPoint}</Box>
-      <Flex>
-        <HStack spacing="30px">
-          <Box>スロット：{slot.firstSL}</Box>
-          <Box>{slot.secondSL}</Box>
-        </HStack>
-      </Flex>
+      <HStack spacing="30px">
+        <Box>スロット：{slot.firstSL}</Box>
+        <Box>{slot.secondSL}</Box>
+      </HStack>
       <Flex>
         <HStack spacing="30px">
           <Flex>
@@ -94,8 +70,8 @@ export const HelmFix = (props: BuguType) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="74px">{skill.thirdSK}</Box>
-          <Box>{skillLevel.thirdSK}</Box>
+          <Box ml="74px"> {skill.thirdSK}</Box>
+          <Box> {skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>
     </Stack>

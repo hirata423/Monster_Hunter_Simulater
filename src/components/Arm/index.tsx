@@ -1,5 +1,6 @@
 import { Box, Flex, Image, Input } from "@chakra-ui/react";
 import { useState } from "react";
+
 import { BuguType } from "../../types/BuguType";
 import { ArmFix } from "./ArmFix";
 import ArmList from "../../../Arm.json";
@@ -7,7 +8,6 @@ import ArmList from "../../../Arm.json";
 export const Arm = () => {
   const [defaultBugu, setDefaultBugu] = useState("");
   const armList: BuguType[] = ArmList;
-
   const changeBugu = (e: any) => setDefaultBugu(e.target.value);
 
   const filterItem = armList.filter((item: BuguType) => {
