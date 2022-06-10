@@ -14,15 +14,15 @@ import { auth } from "src/firebase";
 import { useRouter } from "next/router";
 
 const TopPage = () => {
-  const router = useRouter();
-  auth.onAuthStateChanged((user) => {
-    if (!user) {
-      console.log("未サインイン");
-      router.push("/");
-    } else {
-      console.log("サインイン済");
-    }
-  });
+  // const router = useRouter();
+  // auth.onAuthStateChanged((user) => {
+  //   if (!user) {
+  //     console.log("未サインイン");
+  //     router.push("/");
+  //   } else {
+  //     console.log("サインイン済");
+  //   }
+  // });
 
   return (
     <>
