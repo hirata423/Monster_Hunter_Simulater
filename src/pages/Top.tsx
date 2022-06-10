@@ -14,6 +14,11 @@ import { auth } from "src/firebase";
 import { useRouter } from "next/router";
 
 const TopPage = () => {
+  //Vercelでデプロイ時にエラー
+  //Error: No router instance found. you should only use "next/router"
+  //inside the client side of your app. https://nextjs.org/docs/messages/no-router-instance
+  //isReadeyを使う？？
+
   // const router = useRouter();
   // auth.onAuthStateChanged((user) => {
   //   if (!user) {
