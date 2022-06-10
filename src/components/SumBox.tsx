@@ -1,8 +1,7 @@
-import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
+import { Box, Flex, HStack, Stack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useTotalDate } from "../hooks/useTotalDate";
 import { BuguType } from "../types/BuguType";
-import { TakeOffBugu } from "./takeoffBugu";
 
 type SkillLevelType = {
   id: number;
@@ -194,14 +193,6 @@ export const SumBox = () => {
   //   return acc + val.blockPoint;
   // }, 0);
 
-  const nametest = total.map((item: BuguType) => {
-    return (
-      <Box key={item.id}>
-        <TakeOffBugu {...item} />
-      </Box>
-    );
-  });
-
   return (
     <>
       <Stack spacing="30px" alignItems="center" pt="7px">
@@ -241,9 +232,6 @@ export const SumBox = () => {
           </Flex> */}
         </Flex>
       </Stack>
-      <Flex>
-        <Box fontSize={{ base: "13px", lg: "15px" }}>{nametest}</Box>
-      </Flex>
     </>
   );
 };

@@ -1,11 +1,24 @@
 import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
 
 import { useTotalDate } from "../../hooks/useTotalDate";
-import { BuguType } from "../../types/BuguType";
 
-export const HelmFix = (props: BuguType) => {
-  const { id, name, subName, blockPoint, skill, skillLevel, slot, flag, icon } =
-    props;
+export const HelmFix = (props: any) => {
+  const {
+    setDefaultHelm,
+    setAble,
+    id,
+    name,
+    subName,
+    blockPoint,
+    skill,
+    skillLevel,
+    slot,
+    flag,
+    icon,
+  } = props;
+  // const { id, name, subName, blockPoint, skill, skillLevel, slot, flag, icon } =
+  //   item;
+
   const { setTotal } = useTotalDate();
   const toast = useToast();
 
@@ -24,12 +37,14 @@ export const HelmFix = (props: BuguType) => {
   const submitBugu = () => {
     setTotal((prevList) => [...prevList, targetItem]);
     toast({
-      title: "アームを装着しました！",
+      title: "ヘルムを装着しました！",
       status: "info",
       position: "top-right",
       duration: 1300,
       isClosable: true,
     });
+    setAble(true);
+    setDefaultHelm("ヘルムは追加済です");
   };
 
   return (
@@ -41,9 +56,9 @@ export const HelmFix = (props: BuguType) => {
             onClick={submitBugu}
             size="sm"
             color="black"
-            backgroundColor="blue.200"
+            backgroundColor="blue.300"
             _hover={{
-              backgroundColor: "blue.200",
+              backgroundColor: "blue.100",
             }}
           >
             装着

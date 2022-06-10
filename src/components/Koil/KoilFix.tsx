@@ -1,11 +1,21 @@
 import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
-
 import { useTotalDate } from "../../hooks/useTotalDate";
-import { BuguType } from "../../types/BuguType";
 
-export const KoilFix = (props: BuguType) => {
-  const { id, name, subName, blockPoint, skill, skillLevel, slot, flag, icon } =
-    props;
+export const KoilFix = (props: any) => {
+  const {
+    id,
+    name,
+    subName,
+    blockPoint,
+    skill,
+    skillLevel,
+    slot,
+    flag,
+    icon,
+    setAble,
+    setDefaultKoil,
+  } = props;
+
   const { setTotal } = useTotalDate();
   const toast = useToast();
 
@@ -24,12 +34,14 @@ export const KoilFix = (props: BuguType) => {
   const submitBugu = () => {
     setTotal((prevList) => [...prevList, targetItem]);
     toast({
-      title: "アームを装着しました！",
+      title: "フォールドを装着しました！",
       status: "info",
       position: "top-right",
       duration: 1300,
       isClosable: true,
     });
+    setAble(true);
+    setDefaultKoil("フォールドは追加済です");
   };
 
   return (
@@ -41,9 +53,9 @@ export const KoilFix = (props: BuguType) => {
             onClick={submitBugu}
             size="sm"
             color="black"
-            backgroundColor="blue.200"
+            backgroundColor="blue.300"
             _hover={{
-              backgroundColor: "blue.200",
+              backgroundColor: "blue.100",
             }}
           >
             装着
