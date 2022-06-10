@@ -64,7 +64,6 @@ export const SumBox = () => {
     return item.slot.thirdSL;
   });
 
-  // const RegisterButtonA = () => {
   useEffect(() => {
     setIdNum([...totalId]);
     setName([...totalNameMap]);
@@ -83,7 +82,7 @@ export const SumBox = () => {
     setSlot([...totalSlotevelMap, ...totalSlotevel2Map, ...totalSlotevel3Map]);
     console.log("effect");
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [totalId]);
+  }, [total]);
 
   const reSkill = skill.filter((v) => v);
   const reSkillLevel = skillLevel.filter((v) => v);
