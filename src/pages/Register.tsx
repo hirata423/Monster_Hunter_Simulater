@@ -38,7 +38,6 @@ const Register = () => {
 
       <Box
         w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
-        h="auto"
         pt="30px"
         pb="30px"
         backgroundColor="blue.900"

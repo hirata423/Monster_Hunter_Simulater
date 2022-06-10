@@ -43,8 +43,7 @@ const Login = () => {
       <HeaderBar />
 
       <Box
-        // w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
-        h="auto"
+        w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
         pt="30px"
         pb="30px"
         backgroundColor="blue.900"
