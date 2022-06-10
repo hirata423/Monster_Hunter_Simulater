@@ -5,7 +5,7 @@ import { HeaderBar } from "src/components/HeaderBar";
 import React, { FormEvent, useCallback, useState } from "react";
 import { useRouter } from "next/router";
 
-export const Login = () => {
+const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 

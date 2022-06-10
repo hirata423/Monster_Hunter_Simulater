@@ -82,7 +82,8 @@ export const SumBox = () => {
     ]);
     setSlot([...totalSlotevelMap, ...totalSlotevel2Map, ...totalSlotevel3Map]);
     console.log("effect");
-  }, [total]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [totalId]);
 
   const reSkill = skill.filter((v) => v);
   const reSkillLevel = skillLevel.filter((v) => v);

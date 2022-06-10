@@ -103,3 +103,5 @@ const TopPage = () => {
     </>
   );
 };
+
+export default TopPage;
