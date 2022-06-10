@@ -195,7 +195,7 @@ export const SumBox = () => {
 
   return (
     <>
-      <Stack spacing="30px" alignItems="center" pt="7px">
+      <Stack spacing="30px" alignItems="center" pt="7px" w="450px">
         <Flex fontSize={{ base: "13px", lg: "15px" }}>
           <Stack>
             <Box pr="87px">

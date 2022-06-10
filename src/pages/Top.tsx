@@ -27,9 +27,8 @@ const TopPage = () => {
   return (
     <>
       <HeaderBar />
-      <Logout />
       {/*開発中機能 */}
-      <TotalSkill />
+      {/* <TotalSkill /> */}
 
       <Box
         p="25px"
@@ -93,12 +92,13 @@ const TopPage = () => {
             display={{ base: "none", md: "block" }}
             ml={{ base: "0", md: "-20px" }}
           >
-            <Stack spacing="53px" ml="10px">
+            <Stack spacing="53px" ml="15px">
               <Heading fontSize="25px">スキル検索</Heading>
               <SkillSearch />
             </Stack>
           </Box>
         </Flex>
+        <Logout />
       </Box>
     </>
   );

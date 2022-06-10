@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { auth } from "src/firebase";
 
@@ -42,8 +42,15 @@ export const Logout = () => {
     // });
   };
   return (
-    <>
-      <Button onClick={clickLogout}>Logout</Button>
-    </>
+    <Box pt="100px" textAlign="right">
+      <Button
+        color="black"
+        bgColor="green.300"
+        _hover={{ bgColor: "green.100" }}
+        onClick={clickLogout}
+      >
+        Logout
+      </Button>
+    </Box>
   );
 };

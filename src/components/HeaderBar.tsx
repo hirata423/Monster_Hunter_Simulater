@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 
 export const HeaderBar = () => {
   return (
@@ -11,15 +11,17 @@ export const HeaderBar = () => {
       // position="fixed"
       // zIndex="99"
     >
-      <Heading
-        color="white"
-        fontSize={{ base: "25px", md: "30", lg: "40px" }}
-        pt={{ base: "18px", md: "22px", lg: "25px" }}
-        pb={{ base: "18px", md: "22px", lg: "25px" }}
-        pl="30px"
-      >
-        MH’Rize スキルシュミレーター
-      </Heading>
+      <Flex>
+        <Heading
+          color="white"
+          fontSize={{ base: "25px", md: "30", lg: "40px" }}
+          pt={{ base: "18px", md: "22px", lg: "20px" }}
+          // pb={{ base: "18px", md: "22px", lg: "25px" }}
+          pl={{ base: "15px", md: "30px" }}
+        >
+          MH’Rize スキルシュミレーター
+        </Heading>
+      </Flex>
     </Box>
   );
 };
