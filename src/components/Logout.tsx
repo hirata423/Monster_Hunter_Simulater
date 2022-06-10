@@ -54,3 +54,5 @@ export const Logout = () => {
     </Box>
   );
 };
+
+export default Logout;
