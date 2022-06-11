@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Spinner, Stack } from "@chakra-ui/react";
 
 import { Helm } from "../components/Helm";
 import { Arm } from "../components/Arm";
@@ -12,6 +12,7 @@ import { TotalSkill } from "src/components/TotalSkill";
 import { Logout } from "src/components/Logout";
 import { auth } from "src/firebase";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const TopPage = () => {
   //Vercelでデプロイ時にエラー
@@ -19,15 +20,29 @@ const TopPage = () => {
   //inside the client side of your app. https://nextjs.org/docs/messages/no-router-instance
   //isReadeyを使う？？
 
-  // const router = useRouter();
-  // auth.onAuthStateChanged((user) => {
-  //   if (!user) {
-  //     console.log("未サインイン");
-  //     router.push("/");
-  //   } else {
-  //     console.log("サインイン済");
-  //   }
-  // });
+  const router = useRouter();
+  const isReady = useRouter();
+
+  useEffect(() => {
+    if (isReady) {
+      auth.onAuthStateChanged((user) => {
+        if (!user) {
+          console.log("未サインイン");
+          router.push("/");
+        } else {
+          console.log("サインイン済");
+        }
+      });
+    } else {
+      <Spinner
+        thickness="4px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="blue.500"
+        size="xl"
+      />;
+    }
+  });
 
   return (
     <>

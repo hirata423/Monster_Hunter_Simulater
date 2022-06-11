@@ -44,8 +44,8 @@ const Login = () => {
 
       <Box
         w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
-        h="100vh"
-        pt="30px"
+        h="130vh"
+        pt={{ base: "30px", md: "90px" }}
         pb="30px"
         backgroundColor="blue.900"
         color="white"
