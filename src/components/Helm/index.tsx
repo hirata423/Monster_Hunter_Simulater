@@ -4,12 +4,12 @@ import { useState } from "react";
 import { BuguType } from "../../types/BuguType";
 import { HelmFix } from "./HelmFix";
 import HelmList from "../../../Helm.json";
-import { useTotalDate } from "src/hooks/useTotalDate";
+import { useTotalData } from "src/hooks/useTotalData";
 
 export const Helm = () => {
   const [defaultHelm, setDefaultHelm] = useState("");
   const [able, setAble] = useState(false);
-  const { total, setTotal } = useTotalDate();
+  const { total, setTotal } = useTotalData();
   const helmList: BuguType[] = HelmList;
   const changeBugu = (e: any) => setDefaultHelm(e.target.value);
   const toast = useToast();

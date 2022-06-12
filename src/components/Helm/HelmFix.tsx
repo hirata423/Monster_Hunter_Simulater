@@ -1,6 +1,5 @@
 import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
-
-import { useTotalDate } from "../../hooks/useTotalDate";
+import { useTotalData } from "../../hooks/useTotalData";
 
 export const HelmFix = (props: any) => {
   const {
@@ -19,7 +18,7 @@ export const HelmFix = (props: any) => {
   // const { id, name, subName, blockPoint, skill, skillLevel, slot, flag, icon } =
   //   item;
 
-  const { setTotal } = useTotalDate();
+  const { setTotal } = useTotalData();
   const toast = useToast();
 
   const targetItem = {
@@ -43,8 +42,8 @@ export const HelmFix = (props: any) => {
       duration: 1300,
       isClosable: true,
     });
-    setAble(true);
     setDefaultHelm("ヘルムは追加済です");
+    setAble(true);
   };
 
   return (

@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import { DeleteIcon } from "@chakra-ui/icons";
 
-import { useTotalDate } from "src/hooks/useTotalDate";
+import { useTotalData } from "src/hooks/useTotalData";
 import { BuguType } from "../../types/BuguType";
 import { MeilFix } from "./MeilFix";
 import MeilList from "../../../Meil.json";
@@ -18,7 +18,7 @@ import MeilList from "../../../Meil.json";
 export const Meil = () => {
   const [defaultMeil, setDefaultMeil] = useState("");
   const [able, setAble] = useState(false);
-  const { total, setTotal } = useTotalDate();
+  const { total, setTotal } = useTotalData();
   const meilList: BuguType[] = MeilList;
   const changeBugu = (e: any) => setDefaultMeil(e.target.value);
   const toast = useToast();

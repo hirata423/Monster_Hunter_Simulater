@@ -1,13 +1,13 @@
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
-import { TotalDateProvider } from "../provider/TotalDateProvider";
+import { TotalDataProvider } from "../provider/TotalDataProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
-      <TotalDateProvider>
+      <TotalDataProvider>
         <Component {...pageProps} />
-      </TotalDateProvider>
+      </TotalDataProvider>
     </ChakraProvider>
   );
 }

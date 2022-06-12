@@ -1,14 +1,14 @@
 import { Box, Button, Flex, Image, Input, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useTotalDate } from "src/hooks/useTotalDate";
+import { useTotalData } from "src/hooks/useTotalData";
 import { BuguType } from "../../types/BuguType";
 import { KoilFix } from "./KoilFix";
 import KoilList from "../../../Koil.json";
 
 export const Koil = () => {
   const [defaultKoil, setDefaultKoil] = useState("");
-  const { total, setTotal } = useTotalDate();
+  const { total, setTotal } = useTotalData();
   const [able, setAble] = useState(false);
   const koilList: BuguType[] = KoilList;
   const changeBugu = (e: any) => setDefaultKoil(e.target.value);

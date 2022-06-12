@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Image, Input, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useTotalDate } from "src/hooks/useTotalDate";
+import { useTotalData } from "src/hooks/useTotalData";
 import { BuguType } from "../../types/BuguType";
 import { ArmFix } from "./ArmFix";
 import ArmList from "../../../Arm.json";
@@ -9,7 +9,7 @@ import ArmList from "../../../Arm.json";
 export const Arm = () => {
   const [defaultArm, setDefaultArm] = useState("");
   const [able, setAble] = useState(false);
-  const { total, setTotal } = useTotalDate();
+  const { total, setTotal } = useTotalData();
   const armList: BuguType[] = ArmList;
   const changeBugu = (e: any) => setDefaultArm(e.target.value);
   const toast = useToast();

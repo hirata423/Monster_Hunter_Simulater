@@ -45,7 +45,7 @@
     "blockPoint": 74,
     "skill": {
       "firstSK": "匠",
-      "secondSK": "通常弾強化・連射矢強化"
+      "secondSK": "通常弾・連射矢強化"
     },
     "skillLevel": {
       "firstSK": 2,

@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Image, Input, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useTotalDate } from "src/hooks/useTotalDate";
+import { useTotalData } from "src/hooks/useTotalData";
 import { BuguType } from "../../types/BuguType";
 import { LeginsFix } from "./LeginsFix";
 import LeginsList from "../../../Legins.json";
@@ -9,7 +9,7 @@ import LeginsList from "../../../Legins.json";
 export const Legins = () => {
   const [defaultLegins, setDefaultLegins] = useState("");
   const [able, setAble] = useState(false);
-  const { total, setTotal } = useTotalDate();
+  const { total, setTotal } = useTotalData();
   const leginsList: BuguType[] = LeginsList;
   const changeBugu = (e: any) => setDefaultLegins(e.target.value);
   const toast = useToast();

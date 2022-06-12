@@ -5,11 +5,11 @@ import BukiList from "../../../Buki.json";
 export const Table = () => {
   const bukiList: Bukis[] = BukiList;
 
-  const filterDate = bukiList.filter((item: Bukis) => {
+  const filterData = bukiList.filter((item: Bukis) => {
     return item.checked === true;
   });
 
-  // const mapDate = filterDate.map((item: Bukis) => {
+  // const mapData = filterData.map((item: Bukis) => {
   //   return (
   //     <Box key={item.id}>
   //       <Box>{item.power}</Box>
@@ -17,13 +17,13 @@ export const Table = () => {
   //   );
   // });
 
-  const sum = filterDate.reduce((acc: number, val: Bukis): number => {
+  const sum = filterData.reduce((acc: number, val: Bukis): number => {
     return acc + val.power;
   }, 0);
 
   return (
     <>
-      {/* <Box>{mapDate}</Box> */}
+      {/* <Box>{mapData}</Box> */}
       <Box>{sum}</Box>
     </>
   );

@@ -7,21 +7,21 @@ import {
 } from "react";
 import { BuguType } from "../types/BuguType";
 
-export type TotalDateContextType = {
+export type TotalDataContextType = {
   total: BuguType[];
   setTotal: Dispatch<SetStateAction<BuguType[]>>;
 };
 
-export const TotalDateCotext = createContext<TotalDateContextType>(
-  {} as TotalDateContextType
+export const TotalDataCotext = createContext<TotalDataContextType>(
+  {} as TotalDataContextType
 );
 
-export const TotalDateProvider = (props: { children: ReactNode }) => {
+export const TotalDataProvider = (props: { children: ReactNode }) => {
   const { children } = props;
   const [total, setTotal] = useState<BuguType[]>([]);
   return (
-    <TotalDateCotext.Provider value={{ total, setTotal }}>
+    <TotalDataCotext.Provider value={{ total, setTotal }}>
       {children}
-    </TotalDateCotext.Provider>
+    </TotalDataCotext.Provider>
   );
 };

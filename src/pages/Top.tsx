@@ -38,7 +38,7 @@ const TopPage = () => {
         thickness="4px"
         speed="0.65s"
         emptyColor="gray.200"
-        color="blue.500"
+        color="green.500"
         size="xl"
       />;
     }
@@ -48,7 +48,7 @@ const TopPage = () => {
     <>
       <HeaderBar />
       {/*開発中機能 */}
-      {/* <TotalSkill /> */}
+      <TotalSkill />
 
       <Box
         p="25px"

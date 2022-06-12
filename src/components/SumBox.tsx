@@ -1,6 +1,6 @@
 import { Box, Flex, HStack, Stack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useTotalDate } from "../hooks/useTotalDate";
+import { useTotalData } from "../hooks/useTotalData";
 import { BuguType } from "../types/BuguType";
 
 type SkillLevelType = {
@@ -13,7 +13,7 @@ type SkillLevelType = {
 };
 
 export const SumBox = () => {
-  const { total } = useTotalDate();
+  const { total } = useTotalData();
   const [idNum, setIdNum] = useState<number[]>([]);
   const [newName, setName] = useState<string[]>([]);
   const [skill, setSkill] = useState<(string | undefined)[]>([]);
@@ -80,7 +80,6 @@ export const SumBox = () => {
       ...totalSKLevel4Map,
     ]);
     setSlot([...totalSlotevelMap, ...totalSlotevel2Map, ...totalSlotevel3Map]);
-    console.log("effect");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [total]);
 

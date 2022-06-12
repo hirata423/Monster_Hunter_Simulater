@@ -1,6 +1,6 @@
 import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
 
-import { useTotalDate } from "../../hooks/useTotalDate";
+import { useTotalData } from "../../hooks/useTotalData";
 
 export const ArmFix = (props: any) => {
   const {
@@ -16,7 +16,7 @@ export const ArmFix = (props: any) => {
     setAble,
     setDefaultArm,
   } = props;
-  const { setTotal } = useTotalDate();
+  const { setTotal } = useTotalData();
   const toast = useToast();
 
   const targetItem = {

@@ -1,5 +1,5 @@
 import { Box, Button, Flex, HStack, Stack, useToast } from "@chakra-ui/react";
-import { useTotalDate } from "../../hooks/useTotalDate";
+import { useTotalData } from "../../hooks/useTotalData";
 
 export const MeilFix = (props: any) => {
   const {
@@ -15,7 +15,7 @@ export const MeilFix = (props: any) => {
     setAble,
     setDefaultMeil,
   } = props;
-  const { setTotal } = useTotalDate();
+  const { setTotal } = useTotalData();
   const toast = useToast();
 
   const targetItem = {
