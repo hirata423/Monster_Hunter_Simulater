@@ -48,7 +48,7 @@ const TopPage = () => {
     <>
       <HeaderBar />
       {/*開発中機能 */}
-      <TotalSkill />
+      {/* <TotalSkill /> */}
 
       <Box
         p="25px"
