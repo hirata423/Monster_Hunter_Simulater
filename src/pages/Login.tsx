@@ -23,7 +23,7 @@ const Login = () => {
   const signInGoogle = async () => {
     await auth
       .signInWithPopup(provider)
-      .catch((error: any) => alert("アカウント情報が見つかりませんでした"));
+      .catch((error) => alert("アカウント情報が見つかりませんでした"));
     router.push("/Top");
   };
 

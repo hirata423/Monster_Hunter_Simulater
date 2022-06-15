@@ -10,6 +10,8 @@ import {
   MenuList,
   Radio,
   RadioGroup,
+  Stack,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -20,8 +22,10 @@ import MeilList from "../../../Meil.json";
 import KoilList from "../../../Koil.json";
 import Legins from "../../../Legins.json";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { HelmFix } from "../Helm/HelmFix";
 
-export const TotalSkill = () => {
+export const TotalSkill = (props: any) => {
+  const { setDefaultHelm, setAble } = props;
   const [defaultValue, setDefalutValue] = useState("");
   const helmList: BuguType[] = HelmList;
   const armList: BuguType[] = ArmList;
@@ -55,36 +59,89 @@ export const TotalSkill = () => {
   //   "./public/images/legins.jpg",
   // ];
 
+  ////////////////////////////////////////////////////////////////////
+
+  const submitBugu = () => {
+    alert("test");
+  };
+
   const mapHelmItem = test.map((item: BuguType) => {
     if (item.icon === "./public/images/helm.jpg") {
       return (
-        <MenuItem key={item.id}>
-          <Flex>
-            <HStack spacing="10px">
-              <Box fontWeight="700">{item.name}</Box>
-              <Box>
-                {item.skill.firstSK}
-                {item.skillLevel.firstSK}
+        // <MenuItem key={item.id}>
+        //   <Flex>
+        //     <HStack spacing="10px">
+        //       <Box fontWeight="700">{item.name}</Box>
+        //       <Box>
+        //         {item.skill.firstSK}
+        //         {item.skillLevel.firstSK}
+        //       </Box>
+        //       <Box>
+        //         {item.skill.secondSK}
+        //         {item.skillLevel.secondSK}
+        //       </Box>
+        //       <Box>
+        //         {item.skill.thirdSK}
+        //         {item.skillLevel.thirdSK}
+        //       </Box>
+        //       <Box>
+        //         {item.skill.fourthSK}
+        //         {item.skillLevel.fourthSK}
+        //       </Box>
+        //       <Radio size="md" colorScheme="green" />
+        //     </HStack>
+        //   </Flex>
+        // </MenuItem>
+
+        <Box borderBottom="1px solid white" p="15px" key={item.id}>
+          <Stack spacing="15px" fontSize="15px">
+            <Flex>
+              <Box>防具名　：{item.name}</Box>
+              <Box ml="100px">
+                <Button
+                  onClick={submitBugu}
+                  size="sm"
+                  color="black"
+                  backgroundColor="blue.300"
+                  _hover={{
+                    backgroundColor: "blue.100",
+                  }}
+                >
+                  装着
+                </Button>
               </Box>
-              <Box>
-                {item.skill.secondSK}
-                {item.skillLevel.secondSK}
-              </Box>
-              <Box>
-                {item.skill.thirdSK}
-                {item.skillLevel.thirdSK}
-              </Box>
-              <Box>
-                {item.skill.fourthSK}
-                {item.skillLevel.fourthSK}
-              </Box>
-              <Radio size="md" colorScheme="green" />
+            </Flex>
+
+            <Box>防御力　：{item.blockPoint}</Box>
+            <HStack spacing="30px">
+              <Box>スロット：{item.slot.firstSL}</Box>
+              <Box>{item.slot.secondSL}</Box>
             </HStack>
-          </Flex>
-        </MenuItem>
+            <Flex>
+              <HStack spacing="30px">
+                <Flex>
+                  スキル　：<Box mr="15px">{item.skill.firstSK}</Box>
+                  <Box> {item.skillLevel.firstSK}</Box>
+                </Flex>
+                <Flex>
+                  <Box mr="15px"> {item.skill.secondSK}</Box>
+                  <Box> {item.skillLevel.secondSK}</Box>
+                </Flex>
+              </HStack>
+            </Flex>
+            <Flex>
+              <HStack spacing="15px">
+                <Box ml="74px"> {item.skill.thirdSK}</Box>
+                <Box> {item.skillLevel.thirdSK}</Box>
+              </HStack>
+            </Flex>
+          </Stack>
+          {/* <HelmFix {...item} /> */}
+        </Box>
       );
     }
   });
+
   // const mapMeilItem = test.map((item: BuguType) => {
   //   if (item.icon === "./public/images/meil.jpg") {
   //     return (
@@ -210,7 +267,15 @@ export const TotalSkill = () => {
           <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
             ヘルム
           </MenuButton>
-          <MenuList>{mapHelmItem}</MenuList>
+          <MenuList
+            bgColor="blue.900"
+            color="white"
+            borderRadius="10px"
+            ml="20px"
+            mt="10px"
+          >
+            {mapHelmItem}
+          </MenuList>
         </Menu>
 
         {/* <Box>{mapMeilItem}</Box>

@@ -18,7 +18,6 @@ const firebaseConfig = {
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 }
-
 export const db = firebase.firestore();
 export const storage = firebase.storage();
 export const auth = firebase.auth();

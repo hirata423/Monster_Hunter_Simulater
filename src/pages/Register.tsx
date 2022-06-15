@@ -1,4 +1,4 @@
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 
 import { Box, Button, Heading, Input, Stack } from "@chakra-ui/react";
 import { HeaderBar } from "src/components/HeaderBar";
@@ -8,12 +8,12 @@ import { useRouter } from "next/router";
 const Register = () => {
   const router = useRouter();
 
-  const [name, setName] = useState<string>("");
+  const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const changeName = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setName(e.target.value);
+    setUserName(e.target.value);
   const changeEmail = (e: React.ChangeEvent<HTMLInputElement>) =>
     setEmail(e.target.value);
   const changePass = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -21,9 +21,23 @@ const Register = () => {
 
   const clickSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
     try {
-      await auth.createUserWithEmailAndPassword(email, password);
+      const authUser = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      console.log("userName", userName);
+      console.log("email", authUser.user?.email);
+      console.log("uid", authUser.user?.uid);
+      if (userName) {
+        const uid = authUser.user?.uid;
+        const userData = {
+          uid: uid,
+          username: userName,
+          email: authUser.user?.email,
+        };
+        db.collection("users").doc(uid).set(userData);
+      }
       router.push("/Top");
     } catch (error) {
       alert("errormessage");
@@ -54,7 +68,7 @@ const Register = () => {
               id="username"
               type="username"
               onChange={changeName}
-              value={name}
+              value={userName}
               bgColor="White"
               color="black"
             ></Input>
