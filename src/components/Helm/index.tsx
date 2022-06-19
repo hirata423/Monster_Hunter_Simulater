@@ -10,6 +10,7 @@ export const Helm = () => {
   const [defaultHelm, setDefaultHelm] = useState("");
   const [able, setAble] = useState(false);
   const { total, setTotal } = useTotalData();
+  //firestoreから取得したデータを配列にすレバOK
   const helmList: BuguType[] = HelmList;
   const changeBugu = (e: any) => setDefaultHelm(e.target.value);
   const toast = useToast();

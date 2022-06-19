@@ -19,7 +19,7 @@ export const HeaderBar = () => {
           // pb={{ base: "18px", md: "22px", lg: "25px" }}
           pl={{ base: "15px", md: "30px" }}
         >
-          MH’Rize スキルシュミレーター
+          MH’Rize ツールアプリ（仮称）
         </Heading>
       </Flex>
     </Box>

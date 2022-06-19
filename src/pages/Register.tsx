@@ -26,9 +26,7 @@ const Register = () => {
         email,
         password
       );
-      console.log("userName", userName);
-      console.log("email", authUser.user?.email);
-      console.log("uid", authUser.user?.uid);
+
       if (userName) {
         const uid = authUser.user?.uid;
         const userData = {
@@ -38,6 +36,7 @@ const Register = () => {
         };
         db.collection("users").doc(uid).set(userData);
       }
+
       router.push("/Top");
     } catch (error) {
       alert("errormessage");

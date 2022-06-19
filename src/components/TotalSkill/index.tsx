@@ -61,9 +61,7 @@ export const TotalSkill = (props: any) => {
 
   ////////////////////////////////////////////////////////////////////
 
-  const submitBugu = () => {
-    alert("test");
-  };
+  console.log("setDefaultHelm", setDefaultHelm);
 
   const mapHelmItem = test.map((item: BuguType) => {
     if (item.icon === "./public/images/helm.jpg") {
@@ -94,49 +92,7 @@ export const TotalSkill = (props: any) => {
         // </MenuItem>
 
         <Box borderBottom="1px solid white" p="15px" key={item.id}>
-          <Stack spacing="15px" fontSize="15px">
-            <Flex>
-              <Box>防具名　：{item.name}</Box>
-              <Box ml="100px">
-                <Button
-                  onClick={submitBugu}
-                  size="sm"
-                  color="black"
-                  backgroundColor="blue.300"
-                  _hover={{
-                    backgroundColor: "blue.100",
-                  }}
-                >
-                  装着
-                </Button>
-              </Box>
-            </Flex>
-
-            <Box>防御力　：{item.blockPoint}</Box>
-            <HStack spacing="30px">
-              <Box>スロット：{item.slot.firstSL}</Box>
-              <Box>{item.slot.secondSL}</Box>
-            </HStack>
-            <Flex>
-              <HStack spacing="30px">
-                <Flex>
-                  スキル　：<Box mr="15px">{item.skill.firstSK}</Box>
-                  <Box> {item.skillLevel.firstSK}</Box>
-                </Flex>
-                <Flex>
-                  <Box mr="15px"> {item.skill.secondSK}</Box>
-                  <Box> {item.skillLevel.secondSK}</Box>
-                </Flex>
-              </HStack>
-            </Flex>
-            <Flex>
-              <HStack spacing="15px">
-                <Box ml="74px"> {item.skill.thirdSK}</Box>
-                <Box> {item.skillLevel.thirdSK}</Box>
-              </HStack>
-            </Flex>
-          </Stack>
-          {/* <HelmFix {...item} /> */}
+          <HelmFix {...item} defaultValue={defaultValue} setAble={setAble} />
         </Box>
       );
     }

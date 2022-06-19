@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Spinner, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Spinner, Stack, useToast } from "@chakra-ui/react";
 
 import { Helm } from "../components/Helm";
 import { Arm } from "../components/Arm";
@@ -22,6 +22,7 @@ const TopPage = () => {
 
   const router = useRouter();
   const isReady = useRouter();
+  const toast = useToast();
 
   useEffect(() => {
     if (isReady) {

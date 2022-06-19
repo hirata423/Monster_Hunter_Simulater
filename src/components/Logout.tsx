@@ -1,9 +1,10 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, useToast } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { auth } from "src/firebase";
 
 export const Logout = () => {
   const router = useRouter();
+  const toast = useToast();
   const clickLogout = async () => {
     // auth.onAuthStateChanged((user) => {
     //   if (!user) {
@@ -21,11 +22,26 @@ export const Logout = () => {
     await auth
       .signOut()
       .then(() => {
+        toast({
+          title: "ログアウトしました",
+          status: "success",
+          position: "top-right",
+          duration: 1300,
+          isClosable: true,
+        });
         console.log("サインアウトに成功");
         router.push("/");
       })
+
       .catch((error) => {
-        console.log("errormessage");
+        toast({
+          title: "ログアウトに失敗しました",
+          status: "error",
+          position: "top-right",
+          duration: 1300,
+          isClosable: true,
+        });
+        console.log("サインアウトに失敗");
       });
 
     // auth.onAuthStateChanged((user) => {
