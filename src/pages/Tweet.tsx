@@ -1,6 +1,8 @@
-import { Box, Button, Flex, HStack, Input, Wrap } from "@chakra-ui/react";
-import { BsPencilSquare } from "react-icons/bs";
-import { TweetCard } from "src/components/Tweet/TweetCard";
+import { Box } from "@chakra-ui/react";
+import React from "react";
+import GoTop from "src/components/GoTop";
+import { CreatePostBt } from "src/components/Tweet/CreatePostBt";
+import { PostList } from "src/components/Tweet/PostList";
 import { HeaderBar } from "../components/HeaderBar";
 
 export const Tweet = () => {
@@ -15,23 +17,9 @@ export const Tweet = () => {
         backgroundColor="blue.900"
         color="white"
       >
-        <Flex mt="50px" mb="80px" justify="center">
-          <HStack spacing="40px">
-            <Input w="450px"></Input>
-            {/* 新規投稿ボタン */}
-            <Button
-              size="lg"
-              bgColor="orange.400"
-              _hover={{ bgColor: "orange.200" }}
-              borderRadius="full"
-            >
-              <BsPencilSquare color="blsck" />
-            </Button>
-          </HStack>
-        </Flex>
-        <Wrap justify="center" borderTop="1px White solid">
-          <TweetCard />
-        </Wrap>
+        <CreatePostBt />
+        <PostList />
+        <GoTop />
       </Box>
     </>
   );

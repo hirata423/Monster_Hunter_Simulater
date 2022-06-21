@@ -2,30 +2,28 @@ import {
   Box,
   Button,
   Flex,
-  ListItem,
-  Slide,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
   UnorderedList,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
 export const CommentList = (props: any) => {
-  const { removeUndefind } = props;
+  const { removeUndefind, contents } = props;
   const [modal, setModal] = useState(true);
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onClose, onToggle } = useDisclosure();
 
   const commentDisplay = () => {
     setModal(!modal);
     onToggle();
   };
 
-  const CommentMapItem = removeUndefind.map((item: string, index: number) => {
-    return (
-      <Box key={index}>
-        <ListItem>{item}</ListItem>
-      </Box>
-    );
-  });
+  //comment,timestamp,ハートを押した投稿情報をログインユーザーの情報としtr紐付ける
 
   return (
     <>
@@ -33,23 +31,40 @@ export const CommentList = (props: any) => {
         display={removeUndefind == [] ? "none" : "block"}
         variant="link"
         onClick={commentDisplay}
+        fontSize={{ base: "12px", md: "16px" }}
       >
-        {modal ? "コメントを表示..." : "閉じる"}
+        コメントを表示...
       </Button>
-      <Slide direction="bottom" in={isOpen} style={{ zIndex: 10 }}>
-        <Flex justify="center">
-          <Box
-            w="800px"
-            p="40px"
-            mb="30px"
-            bg="White"
-            color="black"
-            rounded="lg"
-          >
-            <UnorderedList>{CommentMapItem}</UnorderedList>
-          </Box>
-        </Flex>
-      </Slide>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        scrollBehavior="inside"
+        size="4xl"
+      >
+        <ModalOverlay />
+        <ModalContent>
+          {/* // dbからログイン中のユーザー名を表示する */}
+          <ModalHeader fontSize={{ base: "12px", md: "20px" }}>
+            Comment List
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Flex justify="center">
+              <Box
+                w={{ base: "400px", md: "800px" }}
+                py="20px"
+                px="20px"
+                bg="White"
+                color="black"
+                rounded="lg"
+              >
+                <Flex justify="right" mb="20px" bg="white"></Flex>
+                <UnorderedList>{contents}</UnorderedList>
+              </Box>
+            </Flex>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 };

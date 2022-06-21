@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, Spinner, Stack, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Spinner,
+  Stack,
+  useToast,
+} from "@chakra-ui/react";
 
 import { Helm } from "../components/Helm";
 import { Arm } from "../components/Arm";
@@ -12,7 +20,8 @@ import { TotalSkill } from "src/components/TotalSkill";
 import { Logout } from "src/components/Logout";
 import { auth } from "src/firebase";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
+import GoPost from "../components/GoPost";
 
 const TopPage = () => {
   //Vercelでデプロイ時にエラー
@@ -49,7 +58,7 @@ const TopPage = () => {
     <>
       <HeaderBar />
       {/*開発中機能 */}
-      <TotalSkill />
+      {/* <TotalSkill /> */}
 
       <Box
         p="25px"
@@ -59,6 +68,7 @@ const TopPage = () => {
         backgroundColor="blue.900"
         w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
       >
+        <GoPost />
         <Flex>
           <Stack spacing="58px" pr={{ base: "0px", lg: "25px" }}>
             {/** position:"fixed"するなら,mt="120px" */}

@@ -58,7 +58,7 @@ export const Logout = () => {
     // });
   };
   return (
-    <Box pt="100px" textAlign="right">
+    <Box pt="100px" textAlign="right" mr="20px">
       <Button
         color="black"
         bgColor="green.300"
