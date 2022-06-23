@@ -1,0 +1,35 @@
+<!-- {/* Twitterボタン */}
+            {/* <Button
+              size="lg"
+              bgColor="blue.400"
+              _hover={{ bgColor: "blue.200" }}
+              borderRadius="full"
+            >
+              <FaTwitter color="blsck" />
+            </Button> */}
+
+            {/* Luneボタン */}
+            {/* <Button
+              size="lg"
+              bgColor="green.500"
+              _hover={{ bgColor: "green.200" }}
+              borderRadius="full"
+            >
+              <BsLine color="blsck" />
+            </Button> */} -->
+
+<!-- //コメント投稿、コメント表示、お気に入りボタン -->
+
+<!-- {/* <Box>
+              <Flex justify="space-between">
+                <Box>{now}</Box>
+                <Flex mr="5px">
+                  <HStack spacing="20px">
+                    {/* //投稿作成中は非表示にする */}
+  
+            {/* <CommentBt />
+                    <HeartBt />
+                  </HStack>
+                </Flex>
+              </Flex>
+            </Box>  */} -->

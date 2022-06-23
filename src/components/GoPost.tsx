@@ -7,7 +7,7 @@ export const GoPost = () => {
   const clickTweetPage = useCallback(() => router.push("/Tweet"), [router]);
 
   return (
-    <Box textAlign="right" mr="20px">
+    <Box textAlign="right" mr={{ base: "10px", md: "20px" }}>
       <Button
         color="black"
         bgColor="green.300"

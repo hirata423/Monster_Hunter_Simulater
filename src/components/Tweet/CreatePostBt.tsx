@@ -20,9 +20,14 @@ export const CreatePostBt = () => {
 
   return (
     <>
-      <Box textAlign="right" mr="20px">
+      <Box
+        textAlign="right"
+        mr={{ base: "10px", md: "20px" }}
+        borderBottom="1px solid white"
+      >
         <Button
           size="lg"
+          mb="20px"
           bgColor="green.300"
           _hover={{ cursor: "pointer", bgColor: "green.100" }}
           borderRadius="full"

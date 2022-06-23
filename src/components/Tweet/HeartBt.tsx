@@ -13,11 +13,11 @@ export const HeartBt = () => {
     <>
       <Icon
         as={BsHeartFill}
-        fontSize={{ base: "12px", md: "16px" }}
+        fontSize={{ base: "11px", md: "16px" }}
         onClick={pushheart}
         color={heartColor ? "White" : "red"}
       />
-      <Box fontSize={{ base: "13px", md: "16px" }}>{heartColor ? 0 : 1}</Box>
+      <Box fontSize={{ base: "11px", md: "16px" }}>{heartColor ? 0 : 1}</Box>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Input } from "@chakra-ui/react";
 import React from "react";
 import GoTop from "src/components/GoTop";
 import { CreatePostBt } from "src/components/Tweet/CreatePostBt";
@@ -10,9 +10,10 @@ export const Tweet = () => {
     <>
       <HeaderBar />
       <Box
-        w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
-        h="1000vh"
-        // h="auto"
+        // w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
+        w="100%"
+        // h="1000vh"
+        h="auto"
         pt={{ base: "30px", md: "50px" }}
         backgroundColor="blue.900"
         color="white"
@@ -20,6 +21,8 @@ export const Tweet = () => {
         <CreatePostBt />
         <PostList />
         <GoTop />
+
+        {/* <Input type="file" /> */}
       </Box>
     </>
   );

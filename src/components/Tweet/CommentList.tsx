@@ -31,7 +31,7 @@ export const CommentList = (props: any) => {
         display={removeUndefind == [] ? "none" : "block"}
         variant="link"
         onClick={commentDisplay}
-        fontSize={{ base: "12px", md: "16px" }}
+        fontSize={{ base: "11px", md: "16px" }}
       >
         コメントを表示...
       </Button>
@@ -39,12 +39,12 @@ export const CommentList = (props: any) => {
         isOpen={isOpen}
         onClose={onClose}
         scrollBehavior="inside"
-        size="4xl"
+        size="2xl"
       >
         <ModalOverlay />
         <ModalContent>
           {/* // dbからログイン中のユーザー名を表示する */}
-          <ModalHeader fontSize={{ base: "12px", md: "20px" }}>
+          <ModalHeader fontSize={{ base: "16px", md: "20px" }}>
             Comment List
           </ModalHeader>
           <ModalCloseButton />
@@ -52,14 +52,16 @@ export const CommentList = (props: any) => {
             <Flex justify="center">
               <Box
                 w={{ base: "400px", md: "800px" }}
-                py="20px"
-                px="20px"
+                py={{ base: "10px", md: "20px" }}
+                px={{ base: "10px", md: "20px" }}
                 bg="White"
                 color="black"
                 rounded="lg"
               >
-                <Flex justify="right" mb="20px" bg="white"></Flex>
-                <UnorderedList>{contents}</UnorderedList>
+                <Flex justify="right" bg="white"></Flex>
+                <UnorderedList m="0" p="0">
+                  {contents}
+                </UnorderedList>
               </Box>
             </Flex>
           </ModalBody>

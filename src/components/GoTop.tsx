@@ -7,7 +7,7 @@ export const GoTop = () => {
   const clickTweetPage = useCallback(() => router.push("/Top"), [router]);
 
   return (
-    <Box textAlign="right" mr="20px" pt="100px">
+    <Box textAlign="right" mr={{ base: "10px", md: "20px" }} pt="100px">
       <Button
         color="black"
         bgColor="green.300"

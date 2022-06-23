@@ -4,13 +4,13 @@ import "firebase/firestore";
 import "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_DOMAIN,
-  dataBaseURL: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_DATABASE_ID,
-  projectId: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_PROJYECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_APP_ID,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_DOMAIN,
+  dataBaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJYECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // console.log(firebaseConfig);

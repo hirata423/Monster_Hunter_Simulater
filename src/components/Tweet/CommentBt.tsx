@@ -6,6 +6,7 @@ import {
   Flex,
   FormControl,
   FormLabel,
+  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -124,7 +125,7 @@ export const CommentBt = () => {
         <ModalContent>
           <ModalHeader>Create Comment</ModalHeader>
           <ModalCloseButton />
-          <ModalBody py={4}>
+          <ModalBody>
             <FormControl>
               {/* // dbからログイン中のユーザー名を表示する */}
               <FormLabel fontWeight="700">HunterName</FormLabel>
@@ -146,7 +147,7 @@ export const CommentBt = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-      <Box fontSize={{ base: "13px", md: "16px" }}>{removeUndefind.length}</Box>
+      <Box fontSize={{ base: "11px", md: "16px" }}>{removeUndefind.length}</Box>
 
       <CommentList removeUndefind={removeUndefind} contents={contents} />
     </>
