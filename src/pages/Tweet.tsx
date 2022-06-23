@@ -10,9 +10,7 @@ export const Tweet = () => {
     <>
       <HeaderBar />
       <Box
-        // w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
         w="100%"
-        // h="1000vh"
         h="auto"
         pt={{ base: "30px", md: "50px" }}
         backgroundColor="blue.900"

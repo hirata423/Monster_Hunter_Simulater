@@ -4,6 +4,7 @@ import { Box, Button, Heading, Input, Stack } from "@chakra-ui/react";
 import { HeaderBar } from "src/components/HeaderBar";
 import { FormEvent, useCallback, useState } from "react";
 import { useRouter } from "next/router";
+import { Icon, ViewOffIcon } from "@chakra-ui/icons";
 
 const Register = () => {
   const router = useRouter();
@@ -50,58 +51,65 @@ const Register = () => {
       <HeaderBar />
 
       <Box
-        w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
-        h="130vh"
-        pt={{ base: "30px", md: "90px" }}
-        pb="30px"
+        w="100%"
+        h="auto"
+        pt={{ base: "40px", md: "90px" }}
+        pb={{ base: "90px", md: "180px" }}
         backgroundColor="blue.900"
         color="white"
       >
         <Stack spacing="25px" align="center">
-          <Box justifyItems="left">
+          <Box>
             <Heading size="xl">New Account</Heading>
           </Box>
-          <Box boxSize="300px">
-            <Box>HunterName</Box>
+
+          <Box>
+            <Box py="3px">HunterName</Box>
             <Input
               id="username"
-              type="username"
+              type="text"
+              placeholder="HunterName"
               onChange={changeName}
               value={userName}
               bgColor="White"
               color="black"
-            ></Input>
-            <Box>E-mail</Box>
+              w={{ base: "270px", md: "370px" }}
+            />
+            <Box py="3px">E-mail</Box>
             <Input
               id="email"
               type="email"
+              placeholder="E-mail"
               onChange={changeEmail}
               value={email}
               bgColor="White"
               color="black"
-            ></Input>
-            <Box>Password</Box>
+              w={{ base: "270px", md: "370px" }}
+            />
+            <Box py="3px">Password</Box>
             <Input
               id="password"
               type="password"
+              placeholder="Password"
               onChange={changePass}
               value={password}
               bgColor="White"
               color="black"
-            ></Input>
+              w={{ base: "270px", md: "370px" }}
+            />
+            <Box>
+              <Button
+                type={"submit"}
+                onClick={clickSubmit}
+                bgColor="green.300"
+                color="black"
+                my="25px"
+                w={{ base: "270px", md: "370px" }}
+              >
+                Submit
+              </Button>
+            </Box>
 
-            <Button
-              type={"submit"}
-              onClick={clickSubmit}
-              mt="25px"
-              mr="20px"
-              mb="18px"
-              w="300px"
-              bgColor="green.300"
-              color="black"
-            >
-              Submit
-            </Button>
             <Box
               onClick={clickCreateNewAccount}
               _hover={{ cursor: "pointer", color: "green" }}

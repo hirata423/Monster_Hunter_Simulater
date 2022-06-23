@@ -43,43 +43,47 @@ const Login = () => {
       <HeaderBar />
 
       <Box
-        w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
-        h="130vh"
-        pt={{ base: "30px", md: "90px" }}
-        pb="30px"
+        w="100%"
+        h="auto"
+        pt={{ base: "40px", md: "90px" }}
+        pb={{ base: "90px", md: "180px" }}
         backgroundColor="blue.900"
         color="white"
       >
         <Stack spacing="25px" align="center">
-          <Box justifyItems="left">
+          <Box>
             <Heading>LogIn</Heading>
           </Box>
-          <Box boxSize="300px">
-            <Box>E-mail</Box>
+
+          <Box>
+            <Box py="5px">E-mail</Box>
             <Input
               id="email"
               type="email"
+              placeholder="E-mail"
               onChange={changeName}
               value={email}
               bgColor="White"
               color="black"
-            ></Input>
-            <Box>Password</Box>
+              w={{ base: "270px", md: "370px" }}
+            />
+            <Box py="5px">Password</Box>
             <Input
               id="password"
               type="password"
+              placeholder="Password"
               onChange={changePass}
               value={password}
               bgColor="White"
               color="black"
-            ></Input>
+              w={{ base: "270px", md: "370px" }}
+            />
 
-            <Flex>
+            <Flex justify="space-between">
               <Button
                 mt="25px"
-                mr="20px"
                 mb="18px"
-                w="140px"
+                w={{ base: "125px", md: "170px" }}
                 bgColor="blue.300"
                 color="black"
                 onClick={clickLogin}
@@ -88,7 +92,7 @@ const Login = () => {
               </Button>
               <Button
                 mt="25px"
-                w="140px"
+                w={{ base: "125px", md: "170px" }}
                 bgColor="green.300"
                 color="black"
                 onClick={signInGoogle}

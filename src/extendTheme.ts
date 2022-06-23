@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 
-export const breakpoints = {
+const breakpoints = {
   xs: "321px",
   sm: "376px",
   md: "426px",
