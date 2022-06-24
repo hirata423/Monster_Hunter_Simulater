@@ -7,11 +7,11 @@ export const SkillTab = (props: SkillType) => {
   return (
     <Box
       key={id}
-      fontSize="15px"
-      pt="10px"
-      pr="20px"
-      pl="10px"
-      w="283px"
+      fontSize={{ base: "13px", md: "15px" }}
+      p="18px"
+      w={{ base: "325px", md: "300px" }}
+      h="auto"
+      mb="20px"
       borderRadius="13px"
       border="1px"
     >
@@ -36,19 +36,33 @@ export const SkillTab = (props: SkillType) => {
           詳細
         </Box>
         <Box>{levell.one}</Box>
-        <Box borderBottom="solid 1px White">{explanation.one}</Box>
+        <Box borderBottom={explanation.one ? "solid 1px gray" : "none"}>
+          {explanation.one}
+        </Box>
         <Box>{levell.two}</Box>
-        <Box borderBottom="solid 1px White">{explanation.two}</Box>
+        <Box borderBottom={explanation.two ? "solid 1px gray" : "none"}>
+          {explanation.two}
+        </Box>
         <Box>{levell.three}</Box>
-        <Box borderBottom="solid 1px White">{explanation.three}</Box>
+        <Box borderBottom={explanation.three ? "solid 1px gray" : "none"}>
+          {explanation.three}
+        </Box>
         <Box>{levell.four}</Box>
-        <Box borderBottom="solid 1px White">{explanation.four}</Box>
+        <Box borderBottom={explanation.four ? "solid 1px gray" : "none"}>
+          {explanation.four}
+        </Box>
         <Box>{levell.five}</Box>
-        <Box borderBottom="solid 1px White">{explanation.five}</Box>
+        <Box borderBottom={explanation.five ? "solid 1px gray" : "none"}>
+          {explanation.five}
+        </Box>
         <Box>{levell.six}</Box>
-        <Box borderBottom="solid 1px White">{explanation.six}</Box>
+        <Box borderBottom={explanation.six ? "solid 1px gray" : "none"}>
+          {explanation.six}
+        </Box>
         <Box>{levell.seven}</Box>
-        <Box>{explanation.seven}</Box>
+        <Box borderBottom={explanation.seven ? "solid 1px gray" : "none"}>
+          {explanation.seven}
+        </Box>
       </Stack>
     </Box>
   );

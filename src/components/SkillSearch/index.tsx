@@ -1,4 +1,4 @@
-import { Box, Input } from "@chakra-ui/react";
+import { Box, Flex, HStack, Input, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 import SkillName from "../../../SkillName.json";
 import { SkillType } from "../../types/SkillTypes";
@@ -24,16 +24,18 @@ export const SkillSearch = () => {
   });
 
   return (
-    <Box>
-      <Input
-        placeholder="キーワードを入力"
-        value={defaultValue}
-        onChange={searchSkill}
-        w="280px"
-        h="40px"
-        mb="20px"
-      />
-      <Box>{mapItem}</Box>
-    </Box>
+    <Flex align="center" pl="10px">
+      <Stack>
+        <Input
+          placeholder="キーワードを入力"
+          value={defaultValue}
+          onChange={searchSkill}
+          w={{ base: "325px", md: "300px" }}
+          h={{ base: "35px", md: "40px" }}
+          mb="20px"
+        />
+        <Box>{mapItem}</Box>
+      </Stack>
+    </Flex>
   );
 };

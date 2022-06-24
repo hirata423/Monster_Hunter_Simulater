@@ -1,14 +1,5 @@
-import {
-  Box,
-  Button,
-  Flex,
-  IconButton,
-  Image,
-  Input,
-  useToast,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Input, useToast } from "@chakra-ui/react";
 import { useState } from "react";
-import { DeleteIcon } from "@chakra-ui/icons";
 
 import { useTotalData } from "src/hooks/useTotalData";
 import { BuguType } from "../../types/BuguType";
@@ -16,11 +7,12 @@ import { MeilFix } from "./MeilFix";
 import MeilList from "../../../Meil.json";
 
 export const Meil = () => {
-  const [defaultMeil, setDefaultMeil] = useState("");
-  const [able, setAble] = useState(false);
+  const [defaultMeil, setDefaultMeil] = useState<string>("");
+  const [able, setAble] = useState<boolean>(false);
   const { total, setTotal } = useTotalData();
   const meilList: BuguType[] = MeilList;
-  const changeBugu = (e: any) => setDefaultMeil(e.target.value);
+  const changeBugu = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setDefaultMeil(e.target.value);
   const toast = useToast();
 
   const filterItem = meilList.filter((item: BuguType) => {
@@ -65,14 +57,16 @@ export const Meil = () => {
   const takeOffBugu = total.map((item: BuguType) => {
     if (item.icon === "./public/images/meil.jpg") {
       return (
-        <Box key={item.id}>
-          <Flex>
+        <Box key={item.id} pt="3px">
+          <Flex justify="space-between">
             <Box>{item.name}</Box>
             <Box>
               <Button
-                size="sm"
-                ml="15px"
-                mt="-2px"
+                size=""
+                px="11px"
+                py="8px"
+                fontSize={{ base: "11px", md: "14px" }}
+                right="5px"
                 bgColor="orange.300"
                 _hover={{ bgColor: "orange.100" }}
                 color="black"
@@ -89,24 +83,30 @@ export const Meil = () => {
 
   return (
     <>
-      <Flex>
-        {/* eslint-disable*/}
-        <Image src="/images/meil.jpg" mt="-9px" />
-        <Box pl="25px">
+      <Flex align="center">
+        <Box boxSize={{ base: "39px", md: "48px" }}>
+          {/* eslint-disable*/}
+          <Image src="/images/meil.jpg" mt="-9px" />
+        </Box>
+
+        <Box pl={{ base: "13px", md: "25px" }}>
           <Input
+            top="-10px"
             placeholder="キーワードを入力"
-            w="350px"
-            h="40px"
-            top="-5px"
+            w={{ base: "280px", md: "300px" }}
+            h={{ base: "35px", md: "40px" }}
             disabled={able}
             value={defaultMeil}
             onChange={changeBugu}
           />
         </Box>
       </Flex>
-      <Box pl="90px" pt="-190px">
-        <Box display={defaultMeil ? "none" : "block"} fontSize="15px">
-          武具名：
+      <Box pl={{ base: "58px", md: "76px" }} mt="10px">
+        <Box
+          display={defaultMeil ? "none" : "block"}
+          fontSize={{ base: "11px", md: "14px" }}
+        >
+          防具名：
         </Box>
         {mapItem}
         <Box>

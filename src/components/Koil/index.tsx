@@ -7,11 +7,12 @@ import { KoilFix } from "./KoilFix";
 import KoilList from "../../../Koil.json";
 
 export const Koil = () => {
-  const [defaultKoil, setDefaultKoil] = useState("");
+  const [defaultKoil, setDefaultKoil] = useState<string>("");
+  const [able, setAble] = useState<boolean>(false);
   const { total, setTotal } = useTotalData();
-  const [able, setAble] = useState(false);
   const koilList: BuguType[] = KoilList;
-  const changeBugu = (e: any) => setDefaultKoil(e.target.value);
+  const changeBugu = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setDefaultKoil(e.target.value);
   const toast = useToast();
 
   const filterItem = koilList.filter((item: BuguType) => {
@@ -56,14 +57,16 @@ export const Koil = () => {
   const takeOffBugu = total.map((item: BuguType) => {
     if (item.icon === "./public/images/koil.jpg") {
       return (
-        <Box key={item.id}>
-          <Flex>
+        <Box key={item.id} pt="3px">
+          <Flex justify="space-between">
             <Box>{item.name}</Box>
             <Box>
               <Button
-                size="sm"
-                ml="15px"
-                mt="-2px"
+                size=""
+                px="11px"
+                py="8px"
+                fontSize={{ base: "11px", md: "14px" }}
+                right="5px"
                 bgColor="orange.300"
                 _hover={{ bgColor: "orange.100" }}
                 color="black"
@@ -80,24 +83,29 @@ export const Koil = () => {
 
   return (
     <>
-      <Flex>
-        {/* eslint-disable*/}
-        <Image src="/images/koil.jpg" mt="-9px" />
+      <Flex align="center">
+        <Box boxSize={{ base: "39px", md: "48px" }}>
+          {/* eslint-disable*/}
+          <Image src="/images/koil.jpg" mt="-9px" />
+        </Box>
 
-        <Box pl="25px">
+        <Box pl={{ base: "13px", md: "25px" }}>
           <Input
+            top="-10px"
             placeholder="キーワードを入力"
-            w="350px"
-            h="40px"
-            top="-5px"
+            w={{ base: "280px", md: "300px" }}
+            h={{ base: "35px", md: "40px" }}
             disabled={able}
             value={defaultKoil}
             onChange={changeBugu}
           />
         </Box>
       </Flex>
-      <Box pl="90px" pt="-190px">
-        <Box display={defaultKoil ? "none" : "block"} fontSize="15px">
+      <Box pl={{ base: "58px", md: "76px" }} mt="10px">
+        <Box
+          display={defaultKoil ? "none" : "block"}
+          fontSize={{ base: "11px", md: "14px" }}
+        >
           武具名：
         </Box>
         {mapItem}

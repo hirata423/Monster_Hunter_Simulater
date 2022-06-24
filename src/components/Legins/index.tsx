@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Image, Input, useToast } from "@chakra-ui/react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { useTotalData } from "src/hooks/useTotalData";
 import { BuguType } from "../../types/BuguType";
@@ -7,11 +7,12 @@ import { LeginsFix } from "./LeginsFix";
 import LeginsList from "../../../Legins.json";
 
 export const Legins = () => {
-  const [defaultLegins, setDefaultLegins] = useState("");
-  const [able, setAble] = useState(false);
+  const [defaultLegins, setDefaultLegins] = useState<string>("");
+  const [able, setAble] = useState<boolean>(false);
   const { total, setTotal } = useTotalData();
   const leginsList: BuguType[] = LeginsList;
-  const changeBugu = (e: any) => setDefaultLegins(e.target.value);
+  const changeBugu = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setDefaultLegins(e.target.value);
   const toast = useToast();
 
   const filterItem = leginsList.filter((item: BuguType) => {
@@ -60,14 +61,16 @@ export const Legins = () => {
   const takeOffBugu = total.map((item: BuguType) => {
     if (item.icon === "./public/images/legins.jpg") {
       return (
-        <Box key={item.id}>
-          <Flex>
+        <Box key={item.id} pt="3px">
+          <Flex justify="space-between">
             <Box>{item.name}</Box>
             <Box>
               <Button
-                size="sm"
-                ml="15px"
-                mt="-2px"
+                size=""
+                px="11px"
+                py="8px"
+                fontSize={{ base: "11px", md: "14px" }}
+                right="5px"
                 bgColor="orange.300"
                 _hover={{ bgColor: "orange.100" }}
                 color="black"
@@ -84,23 +87,29 @@ export const Legins = () => {
 
   return (
     <>
-      <Flex>
-        {/* eslint-disable*/}
-        <Image src="/images/legins.jpg" mt="-9px" />
-        <Box pl="25px">
+      <Flex align="center">
+        <Box boxSize={{ base: "39px", md: "48px" }}>
+          {/* eslint-disable*/}
+          <Image src="/images/legins.jpg" mt="-9px" />
+        </Box>
+
+        <Box pl={{ base: "13px", md: "25px" }}>
           <Input
+            top="-10px"
             placeholder="キーワードを入力"
-            w="350px"
-            h="40px"
-            top="-5px"
+            w={{ base: "280px", md: "300px" }}
+            h={{ base: "35px", md: "40px" }}
             disabled={able}
             value={defaultLegins}
             onChange={changeBugu}
           />
         </Box>
       </Flex>
-      <Box pl="90px" pt="-190px">
-        <Box display={defaultLegins ? "none" : "block"} fontSize="15px">
+      <Box pl={{ base: "58px", md: "76px" }} mt="10px">
+        <Box
+          display={defaultLegins ? "none" : "block"}
+          fontSize={{ base: "11px", md: "14px" }}
+        >
           武具名：
         </Box>
         {mapItem}

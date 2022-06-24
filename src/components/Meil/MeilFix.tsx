@@ -44,13 +44,21 @@ export const MeilFix = (props: any) => {
   };
 
   return (
-    <Stack spacing="15px" fontSize="15px" key={id}>
-      <Flex>
+    <Stack
+      spacing="15px"
+      fontSize={{ base: "11px", md: "13px", lg: "15px" }}
+      key={id}
+    >
+      <Flex justify="space-between">
         <Box>防具名　：{name}</Box>
         <Box ml="100px">
           <Button
             onClick={submitBugu}
-            size="sm"
+            size=""
+            px="11px"
+            py="8px"
+            fontSize={{ base: "11px", md: "14px" }}
+            right={{ base: "10px", md: "20px" }}
             color="black"
             backgroundColor="blue.300"
             _hover={{
@@ -81,7 +89,7 @@ export const MeilFix = (props: any) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="74px"> {skill.thirdSK}</Box>
+          <Box ml="54px"> {skill.thirdSK}</Box>
           <Box> {skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>

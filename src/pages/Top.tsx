@@ -31,7 +31,6 @@ const TopPage = () => {
 
   const router = useRouter();
   const isReady = useRouter();
-  const toast = useToast();
 
   useEffect(() => {
     if (isReady) {
@@ -61,18 +60,22 @@ const TopPage = () => {
       {/* <TotalSkill /> */}
 
       <Box
-        p="25px"
+        py={{ base: "13px", md: "20px", lg: "" }}
+        px={{ base: "13px", md: "20px", lg: "" }}
         color="white"
         fontSize="25px"
         fontWeight="500"
         backgroundColor="blue.900"
-        w={{ base: "71vh", md: "109.5vh", lg: "100%" }}
+        w="100%"
+        h="auto"
       >
         <GoPost />
-        <Flex>
-          <Stack spacing="58px" pr={{ base: "0px", lg: "25px" }}>
+        <Flex justify="center">
+          <Stack spacing="58px" pr={{ base: "0px", lg: "40px" }}>
             {/** position:"fixed"するなら,mt="120px" */}
-            <Heading fontSize="25px">防具パーツ</Heading>
+            <Heading fontSize={{ base: "18px", md: "25px" }}>
+              防具パーツ
+            </Heading>
 
             <Box>
               <Helm />
@@ -95,15 +98,16 @@ const TopPage = () => {
             </Box>
 
             {/* //縦に並ばせる */}
+
             <Box display={{ base: "block", lg: "none" }}>
-              <Heading fontSize="25px" mb="30px">
+              <Heading fontSize={{ base: "18px", md: "25px" }} mb="30px">
                 装着済リスト
               </Heading>
               <SumBox />
             </Box>
 
             <Box display={{ base: "block", md: "none" }}>
-              <Heading fontSize="25px" mb="30px">
+              <Heading fontSize={{ base: "18px", md: "25px" }} mb="30px">
                 スキル検索
               </Heading>
               <SkillSearch />
@@ -121,9 +125,9 @@ const TopPage = () => {
 
           <Box
             display={{ base: "none", md: "block" }}
-            ml={{ base: "0", md: "-20px" }}
+            ml={{ base: "0", md: "15px" }}
           >
-            <Stack spacing="53px" ml="15px">
+            <Stack spacing="62px">
               <Heading fontSize="25px">スキル検索</Heading>
               <SkillSearch />
             </Stack>

@@ -194,43 +194,45 @@ export const SumBox = () => {
 
   return (
     <>
-      <Stack spacing="30px" alignItems="center" pt="7px" w="450px">
-        <Flex fontSize={{ base: "13px", lg: "15px" }}>
-          <Stack>
-            <Box pr="87px">
-              <Box>発動スキル</Box>
-              <Box pl="7px" pt="9px">
-                {skillMapItem}
-              </Box>
+      <Flex
+        justify="space-between"
+        w="360px"
+        fontSize={{ base: "13px", lg: "15px" }}
+      >
+        <Stack>
+          <Box borderRight="solid gray 1px" pr="5px">
+            <Box fontWeight="700">発動スキル</Box>
+            <Box pl="7px" pt="9px">
+              {skillMapItem}
             </Box>
-          </Stack>
+          </Box>
+        </Stack>
 
-          <Stack>
-            <Box pr="90px">
-              <Box>スキルレベル</Box>
-              <Box pl="43px" pt="9px">
-                {skillLevelMapItem}
-              </Box>
+        <Stack>
+          <Box borderRight="solid gray 1px" pr={{ base: "33px", lg: "15px" }}>
+            <Box fontWeight="700">スキルレベル</Box>
+            <Box pl="43px" pt="9px">
+              {skillLevelMapItem}
             </Box>
-          </Stack>
+          </Box>
+        </Stack>
 
-          <Stack>
-            <Box>
-              <Box>スロット数</Box>
-              <Box pl="13px" pt="9px">
-                {slotCountMapItem}
-              </Box>
+        <Stack>
+          <Box>
+            <Box fontWeight="700">スロット数</Box>
+            <Box pl="13px" pt="9px">
+              {slotCountMapItem}
             </Box>
-          </Stack>
+          </Box>
+        </Stack>
 
-          {/* <Flex>
+        {/* <Flex>
             <Stack>
               <Box>防御力合計</Box>
               <Box mt="" pl="27px">{sumBlockPoint}</Box>
             </Stack>
           </Flex> */}
-        </Flex>
-      </Stack>
+      </Flex>
     </>
   );
 };
