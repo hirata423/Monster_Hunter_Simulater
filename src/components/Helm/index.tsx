@@ -1,10 +1,23 @@
-import { Box, Button, Flex, Image, Input, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Image,
+  Input,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Stack,
+  useToast,
+} from "@chakra-ui/react";
 import { useState } from "react";
 
 import { BuguType } from "../../types/BuguType";
 import { HelmFix } from "./HelmFix";
 import HelmList from "../../../Helm.json";
 import { useTotalData } from "src/hooks/useTotalData";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 export const Helm = () => {
   const [defaultHelm, setDefaultHelm] = useState<string>("");
@@ -87,19 +100,13 @@ export const Helm = () => {
   return (
     <>
       <Flex align="center">
-        <Box
-          boxSize={{ base: "39px", md: "48px" }}
-          // mt={{ base: "-5px", md: "-11px" }}
-        >
+        <Box boxSize={{ base: "39px", md: "48px" }}>
           {/* eslint-disable*/}
           <Image src="/images/helm.jpg" />
         </Box>
 
         <Box pl={{ base: "13px", md: "25px" }}>
           <Input
-            // w="350px"
-            // h="40px"
-            // top="-5px"
             placeholder="キーワードを入力"
             w={{ base: "280px", md: "300px" }}
             h={{ base: "35px", md: "40px" }}
@@ -116,7 +123,21 @@ export const Helm = () => {
         >
           防具名：
         </Box>
+
+        {/* <Menu>
+          <MenuButton
+            as={Button}
+            rightIcon={<ChevronDownIcon />}
+            color="green.500"
+            w="110px"
+          >
+            防具 × {mapItem.length}
+          </MenuButton>
+          <MenuList bgColor="blue.900">{mapItem}</MenuList>
+        </Menu> */}
+
         {mapItem}
+
         <Box fontSize={{ base: "13px", lg: "15px" }}>{takeOffBugu}</Box>
       </Box>
     </>

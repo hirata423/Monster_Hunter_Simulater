@@ -1,10 +1,18 @@
 import { auth, db } from "../firebase";
 
-import { Box, Button, Heading, Input, Stack } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Button,
+  Flex,
+  FormLabel,
+  Heading,
+  Input,
+  Stack,
+} from "@chakra-ui/react";
 import { HeaderBar } from "src/components/HeaderBar";
 import { FormEvent, useCallback, useState } from "react";
 import { useRouter } from "next/router";
-import { Icon, ViewOffIcon } from "@chakra-ui/icons";
 
 const Register = () => {
   const router = useRouter();
@@ -12,6 +20,7 @@ const Register = () => {
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [avatar, setAvatar] = useState<File[]>([]);
 
   const changeName = (e: React.ChangeEvent<HTMLInputElement>) =>
     setUserName(e.target.value);
@@ -19,6 +28,15 @@ const Register = () => {
     setEmail(e.target.value);
   const changePass = (e: React.ChangeEvent<HTMLInputElement>) =>
     setPassword(e.target.value);
+  const changeAvatar = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
+    setAvatar([...avatar, ...e.target.files]);
+  };
+
+  const avatarMap = avatar.map((item) => {
+    return item.name;
+  });
+  const myAvatar = `/images/${avatarMap}`;
 
   const clickSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -27,15 +45,16 @@ const Register = () => {
         email,
         password
       );
-
       if (userName) {
         const uid = authUser.user?.uid;
         const userData = {
           uid: uid,
           username: userName,
           email: authUser.user?.email,
+          avatar: myAvatar,
         };
         db.collection("users").doc(uid).set(userData);
+        console.log(userData);
       }
 
       router.push("/Top");
@@ -45,6 +64,15 @@ const Register = () => {
   };
 
   const clickCreateNewAccount = useCallback(() => router.push("/"), [router]);
+
+  const displayAvatarBox = avatar.map((item, index) => {
+    return (
+      <Box key={index}>
+        {/* eslint-disable-next-line */}
+        <Avatar src={URL.createObjectURL(item)} />
+      </Box>
+    );
+  });
 
   return (
     <>
@@ -58,10 +86,26 @@ const Register = () => {
         backgroundColor="blue.900"
         color="white"
       >
-        <Stack spacing="25px" align="center">
+        <Stack spacing="17px" align="center">
           <Box>
             <Heading size="xl">New Account</Heading>
           </Box>
+          <Flex>
+            <Stack spacing="1px">
+              <FormLabel>
+                <Input
+                  display="none"
+                  type="file"
+                  accept="/image/*"
+                  onChange={changeAvatar}
+                />
+                <Avatar size="md" display={avatar[0] ? "none" : "block"} />
+                <Box>{displayAvatarBox}</Box>
+              </FormLabel>
+
+              <Box py="3px">Avatar</Box>
+            </Stack>
+          </Flex>
 
           <Box>
             <Box py="3px">HunterName</Box>

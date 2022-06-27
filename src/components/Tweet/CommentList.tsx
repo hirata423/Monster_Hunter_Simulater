@@ -42,7 +42,7 @@ export const CommentList = (props: any) => {
         size="2xl"
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent bgColor="gray.200">
           {/* // dbからログイン中のユーザー名を表示する */}
           <ModalHeader fontSize={{ base: "16px", md: "20px" }}>
             Comment List
@@ -54,12 +54,16 @@ export const CommentList = (props: any) => {
                 w={{ base: "400px", md: "800px" }}
                 py={{ base: "10px", md: "20px" }}
                 px={{ base: "10px", md: "20px" }}
-                bg="White"
                 color="black"
                 rounded="lg"
               >
                 <Flex justify="right" bg="white"></Flex>
-                <UnorderedList m="0" p="0">
+                <UnorderedList
+                  m="0"
+                  p="10px"
+                  bgColor="white"
+                  borderRadius="5px"
+                >
                   {contents}
                 </UnorderedList>
               </Box>

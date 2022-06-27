@@ -6,7 +6,6 @@ import {
   Flex,
   FormControl,
   FormLabel,
-  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -17,32 +16,36 @@ import {
   Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsChatSquareDotsFill } from "react-icons/bs";
 import { auth, db } from "src/firebase";
 import { CommentList } from "./CommentList";
 
 type Log = {
   id: number;
-  imageUrl: string;
+  avatar?: string;
   hunterName: string;
   comment: string;
   time: string;
 };
 
-export const CommentBt = () => {
-  const [text, setText] = useState<string>("");
-  const [time, setTime] = useState<string[]>([]);
-  const [commentBox, setCommentBox] = useState<string[]>([]);
-  const removeUndefind = commentBox.filter((v) => v);
+type User = {
+  uid: string;
+  email: string;
+  username: string;
+  avatar?: string;
+};
 
+export const CommentBt = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
 
-  const commentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
-    setText(e.target.value);
-  const timeChange = (e: any) => setTime(e.target.value);
+  const [user, setUser] = useState<Partial<User>>();
+  const [time, setTime] = useState<string[]>([]);
+  const [comment, setComment] = useState<string>("");
+  const [commentBox, setCommentBox] = useState<string[]>([]);
+  const removeUndefind = commentBox.filter((v) => v);
 
   const today = new Date();
   const year = today.getFullYear();
@@ -50,49 +53,50 @@ export const CommentBt = () => {
   const date = today.getDate();
   const hours = today.getHours();
   const minutes = today.getMinutes();
-
   const now = [year + "/" + month + "/" + date + "/" + hours + ":" + minutes];
 
+  const commentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
+    setComment(e.target.value);
+  const timeChange = (e: any) => setTime(e.target.value);
+
   const Sent = () => {
-    setCommentBox((pre) => [...pre, text]);
+    setCommentBox((pre) => [...pre, comment]);
     onClose();
-    setText("");
+    setComment("");
     setTime([...time, ...now]);
   };
 
-  //テスト グローバルstateに、uid,huntername,avatar,comment,timestamp,を格納
-  const image = [
-    "/images/avatar2.jpg",
-    "/images/avatar1.jpg",
-    "/images/avatar2.jpg",
-    "/images/avatar1.jpg",
-  ];
-  const name = ["平田", "佐藤", "山田", "近藤"];
-
-  // const loginUser = auth.currentUser?.uid;
-  // const testdb = db.collection("users").where("uid", "==", loginUser);
-  // console.log(testdb);
+  const uid = auth.currentUser?.uid;
+  useEffect(() => {
+    db.collection("users")
+      .doc(uid)
+      .get()
+      .then((doc) => {
+        const data = doc.data();
+        setUser(data);
+      });
+    // eslint-disable-next-line
+  }, []);
+  const getName: any = user?.username;
+  const getAvatar: any = user?.avatar;
 
   const logBox: Log[] = [];
   for (let i = 0; i < removeUndefind.length; i++) {
     logBox.push({
       id: i,
-      //テスト
-      imageUrl: image[i],
-      hunterName: name[i],
+      avatar: getAvatar,
+      hunterName: getName,
       comment: removeUndefind[i],
       time: time[i],
     });
   }
-
-  console.log(logBox);
 
   const contents = logBox.map((item: Log) => {
     return (
       <Box key={item.id} mb="20px" borderBottom="1px solid gray">
         <Flex align="center" justify="space-between" mb="8px">
           <Flex align="center">
-            <Avatar size="sm" mr="8px" src={item.imageUrl} />
+            <Avatar size="sm" mr="8px" src={item.avatar} />
             <Box fontSize={{ base: "12px", md: "16px" }}>
               {item.hunterName ? item.hunterName : "名無しさん"}
             </Box>
@@ -122,7 +126,7 @@ export const CommentBt = () => {
         onClose={onClose}
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent bgColor="gray.200">
           <ModalHeader>Create Comment</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
@@ -132,9 +136,10 @@ export const CommentBt = () => {
               <Textarea
                 h="130px"
                 mt="3px"
+                bgColor="white"
                 ref={initialRef}
                 placeholder="ハッピーなコメントを！"
-                value={text}
+                value={comment}
                 onChange={commentChange}
               />
             </FormControl>
