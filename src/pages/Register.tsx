@@ -13,6 +13,7 @@ import {
 import { HeaderBar } from "src/components/HeaderBar";
 import { FormEvent, useCallback, useState } from "react";
 import { useRouter } from "next/router";
+import { URL } from "url";
 
 const Register = () => {
   const router = useRouter();
@@ -34,9 +35,8 @@ const Register = () => {
   };
 
   const avatarMap = avatar.map((item) => {
-    return item.name;
+    return URL.createObjectURL(item);
   });
-  const myAvatar = `/images/${avatarMap}`;
 
   const clickSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -51,7 +51,7 @@ const Register = () => {
           uid: uid,
           username: userName,
           email: authUser.user?.email,
-          avatar: myAvatar,
+          avatar: avatarMap,
         };
         db.collection("users").doc(uid).set(userData);
         console.log(userData);

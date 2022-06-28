@@ -68,9 +68,16 @@ export const PostBt = () => {
     if (!e.target.files) return;
     setImage([...image, ...e.target.files]);
   };
-  const imageMap = image.map((item) => {
-    return `/images/${item.name}`;
+
+  // const imageMap = image.map((item) => {
+  //   return `/images/${item.name}`;
+  // });
+
+  const testtest = image.map((item) => {
+    return URL.createObjectURL(item);
   });
+
+  console.log("testtest", testtest);
 
   const uid = auth.currentUser?.uid;
   useEffect(() => {
@@ -88,7 +95,7 @@ export const PostBt = () => {
 
   const addPost = () => {
     setIntroBox((pre) => [...pre, intro]);
-    setImageBox((pre) => [...pre, ...imageMap]);
+    setImageBox((pre) => [...pre, ...testtest]);
     setTimeStamp([...timeStamp, ...now]);
     setUserNameBox([getName]);
     setAvatarBox([getAvatar]);
