@@ -210,6 +210,9 @@ export const PostBt = () => {
                       borderRadius="5px"
                     >
                       <Flex justify="center" align="center">
+                        {/* // テンプレート文字列で（/images/）としているから表示されない。
+                        実際にはpublicディレにはimageはない */}
+
                         <Input
                           type="file"
                           accept="image/*"
