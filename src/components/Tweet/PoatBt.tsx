@@ -69,15 +69,11 @@ export const PostBt = () => {
     setImage([...image, ...e.target.files]);
   };
 
-  // const imageMap = image.map((item) => {
-  //   return `/images/${item.name}`;
-  // });
-
-  const testtest = image.map((item) => {
+  const imageMap = image.map((item) => {
     return URL.createObjectURL(item);
   });
 
-  console.log("testtest", testtest);
+  console.log("imageMap", imageMap);
 
   const uid = auth.currentUser?.uid;
   useEffect(() => {
@@ -95,7 +91,7 @@ export const PostBt = () => {
 
   const addPost = () => {
     setIntroBox((pre) => [...pre, intro]);
-    setImageBox((pre) => [...pre, ...testtest]);
+    setImageBox((pre) => [...pre, ...imageMap]);
     setTimeStamp([...timeStamp, ...now]);
     setUserNameBox([getName]);
     setAvatarBox([getAvatar]);
@@ -217,9 +213,6 @@ export const PostBt = () => {
                       borderRadius="5px"
                     >
                       <Flex justify="center" align="center">
-                        {/* // テンプレート文字列で（/images/）としているから表示されない。
-                        実際にはpublicディレにはimageはない */}
-
                         <Input
                           type="file"
                           accept="image/*"

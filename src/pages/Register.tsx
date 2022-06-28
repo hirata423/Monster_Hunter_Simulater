@@ -13,7 +13,6 @@ import {
 import { HeaderBar } from "src/components/HeaderBar";
 import { FormEvent, useCallback, useState } from "react";
 import { useRouter } from "next/router";
-import { URL } from "url";
 
 const Register = () => {
   const router = useRouter();
@@ -33,6 +32,15 @@ const Register = () => {
     if (!e.target.files) return;
     setAvatar([...avatar, ...e.target.files]);
   };
+
+  //Avatar画像のプレビュー用
+  const displayAvatarBox = avatar.map((item, index) => {
+    return (
+      <Box key={index}>
+        <Avatar src={URL.createObjectURL(item)} />
+      </Box>
+    );
+  });
 
   const avatarMap = avatar.map((item) => {
     return URL.createObjectURL(item);
@@ -54,7 +62,7 @@ const Register = () => {
           avatar: avatarMap,
         };
         db.collection("users").doc(uid).set(userData);
-        console.log(userData);
+        // console.log(userData);
       }
 
       router.push("/Top");
@@ -64,15 +72,6 @@ const Register = () => {
   };
 
   const clickCreateNewAccount = useCallback(() => router.push("/"), [router]);
-
-  const displayAvatarBox = avatar.map((item, index) => {
-    return (
-      <Box key={index}>
-        {/* eslint-disable-next-line */}
-        <Avatar src={URL.createObjectURL(item)} />
-      </Box>
-    );
-  });
 
   return (
     <>
