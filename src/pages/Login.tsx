@@ -1,7 +1,7 @@
 import { auth, db, provider } from "../firebase";
 
 import { Box, Button, Flex, Heading, Input, Stack } from "@chakra-ui/react";
-import { HeaderBar } from "src/components/HeaderBar";
+import { HeaderBar } from "src/components/Parts/Header/HeaderBar";
 import React, { FormEvent, useCallback, useState } from "react";
 import { useRouter } from "next/router";
 

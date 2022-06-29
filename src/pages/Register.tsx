@@ -10,7 +10,7 @@ import {
   Input,
   Stack,
 } from "@chakra-ui/react";
-import { HeaderBar } from "src/components/HeaderBar";
+import { HeaderBar } from "src/components/Parts/Header/HeaderBar";
 import { FormEvent, useCallback, useState } from "react";
 import { useRouter } from "next/router";
 

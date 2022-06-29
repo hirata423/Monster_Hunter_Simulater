@@ -8,20 +8,20 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-import { Helm } from "../components/Helm";
-import { Arm } from "../components/Arm";
-import { Meil } from "../components/Meil";
-import { Koil } from "../components/Koil";
-import { Legins } from "../components/Legins";
-import { SumBox } from "../components/SumBox";
-import { HeaderBar } from "../components/HeaderBar";
-import { SkillSearch } from "../components/SkillSearch";
-import { TotalSkill } from "src/components/TotalSkill";
-import { Logout } from "src/components/Logout";
+import { Helm } from "../components/Simulator/Helm";
+import { Arm } from "../components/Simulator/Arm";
+import { Meil } from "../components/Simulator/Meil";
+import { Koil } from "../components/Simulator/Koil";
+import { Legins } from "../components/Simulator/Legins";
+import { SumBox } from "../components/Simulator/SumBox/Index";
+import { HeaderBar } from "../components/Parts/Header/HeaderBar";
+import { SkillSearch } from "../components/Simulator/SkillSearch";
+import { TotalSkill } from "src/components/Simulator/TotalSkill";
+import { Logout } from "src/components/Parts/Buttons/LogoutBt";
 import { auth } from "src/firebase";
 import { useRouter } from "next/router";
 import { useCallback, useEffect } from "react";
-import GoPost from "../components/GoPost";
+import GoPost from "../components/Parts/Buttons/GoPostBt";
 
 const TopPage = () => {
   //Vercelでデプロイ時にエラー
@@ -70,6 +70,7 @@ const TopPage = () => {
         h="auto"
       >
         <GoPost />
+
         <Flex justify="center">
           <Stack spacing="58px" pr={{ base: "0px", lg: "40px" }}>
             {/** position:"fixed"するなら,mt="120px" */}
@@ -133,7 +134,9 @@ const TopPage = () => {
             </Stack>
           </Box>
         </Flex>
-        <Logout />
+        <Box pt="100px">
+          <Logout />
+        </Box>
       </Box>
     </>
   );
