@@ -1,145 +1,145 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Spinner,
-  Stack,
-  useToast,
-} from "@chakra-ui/react";
-
-import { Helm } from "../components/Simulator/Helm";
-import { Arm } from "../components/Simulator/Arm";
-import { Meil } from "../components/Simulator/Meil";
-import { Koil } from "../components/Simulator/Koil";
-import { Legins } from "../components/Simulator/Legins";
-import { SumBox } from "../components/Simulator/SumBox/Index";
-import { HeaderBar } from "../components/Parts/Header/HeaderBar";
-import { SkillSearch } from "../components/Simulator/SkillSearch";
-import { TotalSkill } from "src/components/Simulator/TotalSkill";
-import { Logout } from "src/components/Parts/Buttons/LogoutBt";
-import { auth } from "src/firebase";
+import { Avatar, Box, Flex, HStack, Image, Stack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { useCallback, useEffect } from "react";
-import GoPost from "../components/Parts/Buttons/GoPostBt";
+import { useCallback } from "react";
+import { HeaderBar } from "src/components/Parts/Header/HeaderBar";
 
-const TopPage = () => {
-  //Vercelでデプロイ時にエラー
-  //Error: No router instance found. you should only use "next/router"
-  //inside the client side of your app. https://nextjs.org/docs/messages/no-router-instance
-  //isReadeyを使う？？
-
+export const Top = () => {
   const router = useRouter();
-  const isReady = useRouter();
-
-  useEffect(() => {
-    if (isReady) {
-      auth.onAuthStateChanged((user) => {
-        if (!user) {
-          console.log("未サインイン");
-          router.push("/");
-        } else {
-          console.log("サインイン済");
-        }
-      });
-    } else {
-      <Spinner
-        thickness="4px"
-        speed="0.65s"
-        emptyColor="gray.200"
-        color="green.500"
-        size="xl"
-      />;
-    }
-  });
+  const goSimulatorPg = useCallback(() => router.push("/Simulator"), [router]);
+  const goPostPg = useCallback(() => router.push("/Post"), [router]);
 
   return (
     <>
       <HeaderBar />
-      {/*開発中機能 */}
-      {/* <TotalSkill /> */}
-
       <Box
         py={{ base: "13px", md: "20px", lg: "" }}
         px={{ base: "13px", md: "20px", lg: "" }}
-        color="white"
         fontSize="25px"
         fontWeight="500"
-        backgroundColor="blue.900"
+        backgroundColor="gray.300"
         w="100%"
         h="auto"
       >
-        <GoPost />
+        <Flex justify="space-between" align="center" py="10px"></Flex>
+        <Box
+          fontSize={{ base: "17px", md: "25px" }}
+          fontWeight="700"
+          color="black"
+        >
+          Top
+        </Box>
 
-        <Flex justify="center">
-          <Stack spacing="58px" pr={{ base: "0px", lg: "40px" }}>
-            {/** position:"fixed"するなら,mt="120px" */}
-            <Heading fontSize={{ base: "18px", md: "25px" }}>
-              防具パーツ
-            </Heading>
+        <Box
+          borderBottom="1px solid gray"
+          mb={{ base: "13px", md: "20px", lg: "" }}
+        ></Box>
 
-            <Box>
-              <Helm />
+        <Flex
+          fontSize={{ base: "13px", md: "25px" }}
+          fontWeight="900"
+          justify="center"
+          my={{ base: "20px", md: "50px" }}
+          onClick={goSimulatorPg}
+          _hover={{ color: "blue", cursor: "pointer" }}
+        >
+          ＜防具・スキルシュミレーター＞
+        </Flex>
+
+        <Flex align="center" justify="center" mt="30px">
+          <HStack spacing="30px">
+            <Box w={{ base: "300px", md: "550px" }}>
+              {/* eslint-disable-next-line */}
+              <Image src="/images/siumlation.jpg" />
             </Box>
-
-            <Box>
-              <Meil />
+            {/* //横表示 */}
+            <Box
+              display={{ base: "none", lg: "block" }}
+              w={{ base: "300px", md: "550px" }}
+              fontSize={{ base: "11px", md: "20px" }}
+              fontWeight="800"
+            >
+              <Stack>
+                <Box>１、検索バーに入力（防具名・モンスター名・スキル名）</Box>
+                <Box>２、装着ボタンで登録→着脱ボタンで解除</Box>
+                <Box>３、装着済リストに各項目の合計値が表示</Box>
+                <Box>４、スキル検索でスキル詳細を検索可能</Box>
+              </Stack>
             </Box>
+          </HStack>
+        </Flex>
 
-            <Box>
-              <Arm />
-            </Box>
-
-            <Box>
-              <Koil />
-            </Box>
-
-            <Box>
-              <Legins />
-            </Box>
-
-            {/* //縦に並ばせる */}
-
-            <Box display={{ base: "block", lg: "none" }}>
-              <Heading fontSize={{ base: "18px", md: "25px" }} mb="30px">
-                装着済リスト
-              </Heading>
-              <SumBox />
-            </Box>
-
-            <Box display={{ base: "block", md: "none" }}>
-              <Heading fontSize={{ base: "18px", md: "25px" }} mb="30px">
-                スキル検索
-              </Heading>
-              <SkillSearch />
-            </Box>
-          </Stack>
-
-          {/** position:"fixed"するなら,mt="120px" */}
-          {/* //横に並ばせる */}
-          <Box display={{ base: "none", lg: "block" }} pr="50px">
-            <Stack spacing="53px">
-              <Heading fontSize="25px">装着済リスト</Heading>
-              <SumBox />
-            </Stack>
-          </Box>
-
+        {/* //縦表示 */}
+        <Flex justify="center" align="center" mt="10px">
           <Box
-            display={{ base: "none", md: "block" }}
-            ml={{ base: "0", md: "15px" }}
+            display={{ base: "block", lg: "none" }}
+            w={{ base: "300px", md: "550px" }}
+            fontSize={{ base: "11px", md: "20px" }}
+            fontWeight="800"
           >
-            <Stack spacing="62px">
-              <Heading fontSize="25px">スキル検索</Heading>
-              <SkillSearch />
+            <Stack>
+              <Box>１、検索バーに入力（防具名・モンスター名・スキル名）</Box>
+              <Box>２、装着ボタンで登録→着脱ボタンで解除</Box>
+              <Box>３、装着済リストに各項目の合計値が表示</Box>
+              <Box>４、スキル検索でスキル詳細を検索可能</Box>
             </Stack>
           </Box>
         </Flex>
-        <Box pt="100px">
-          <Logout />
-        </Box>
+
+        <Flex
+          fontSize={{ base: "13px", md: "25px" }}
+          fontWeight="900"
+          justify="center"
+          mt={{ base: "20px", md: "80px" }}
+          mb={{ base: "10px", md: "50px" }}
+          onClick={goPostPg}
+          _hover={{ color: "blue", cursor: "pointer" }}
+        >
+          ＜投稿ツール＞
+        </Flex>
+
+        <Flex align="center" justify="center" mt="30px">
+          <HStack>
+            {/* //横表示 */}
+            <Box
+              display={{ base: "none", lg: "block" }}
+              w={{ base: "300px", md: "550px" }}
+              fontSize={{ base: "11px", md: "20px" }}
+              fontWeight="800"
+            >
+              <Stack>
+                <Box>１、投稿ボタンから投稿を作成して登録</Box>
+                <Box>２、作成した投稿が一蘭に追加</Box>
+                <Box>３、「コメント」「いいね！」が可能</Box>
+              </Stack>
+            </Box>
+            <Box w={{ base: "300px", md: "550px" }}>
+              {/* eslint-disable-next-line */}
+              <Image
+                src="/images/post2.jpg"
+                h={{ base: "165px", md: "330px" }}
+              />
+            </Box>
+          </HStack>
+        </Flex>
+
+        {/* //縦表示 */}
+        <Flex justify="center" align="center" mt="10px">
+          <Box
+            display={{ base: "block", lg: "none" }}
+            w={{ base: "300px", md: "550px" }}
+            fontSize={{ base: "11px", md: "20px" }}
+            fontWeight="800"
+          >
+            <Stack>
+              <Box>１、投稿ボタンから投稿を作成して登録</Box>
+              <Box>２、作成した投稿が一蘭に追加</Box>
+              <Box>３、「コメント」「いいね！」が可能</Box>
+            </Stack>
+          </Box>
+        </Flex>
       </Box>
     </>
   );
 };
 
-export default TopPage;
+export default Top;

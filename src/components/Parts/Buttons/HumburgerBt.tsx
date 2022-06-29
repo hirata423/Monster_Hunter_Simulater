@@ -9,18 +9,20 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import { route } from "next/dist/server/router";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { BiIdCard, BiJoystick, BiMessageEdit } from "react-icons/bi";
-import { RiLogoutCircleLine } from "react-icons/ri";
+import { RiLoginCircleLine, RiLogoutCircleLine } from "react-icons/ri";
+import { AiOutlineDesktop } from "react-icons/ai";
 
 export const HumburgerBt = () => {
   const router = useRouter();
 
-  const goAccountPg = useCallback(() => router.push("/Top"), [router]);
+  const goTopPg = useCallback(() => router.push("/Top"), [router]);
   const goPostPg = useCallback(() => router.push("/Post"), [router]);
-  const goSimulatorPg = useCallback(() => router.push("/Top"), [router]);
+  const goSimulatorPg = useCallback(() => router.push("/Simulator"), [router]);
+  const goAccountPg = useCallback(() => router.push("/Account"), [router]);
+  const login = useCallback(() => router.push("/Login"), [router]);
   const goLoginPg = useCallback(() => router.push("/Login"), [router]);
 
   return (
@@ -31,17 +33,18 @@ export const HumburgerBt = () => {
         icon={<HamburgerIcon />}
         variant="outline"
       />
+
       <MenuList>
-        <MenuItem onClick={goAccountPg}>
-          <Flex align="center">
+        <MenuItem onClick={goTopPg}>
+          <Flex align="center" color="black">
             <HStack>
-              <Icon as={BiIdCard} /> <Box>アカウント</Box>
+              <Icon as={AiOutlineDesktop} /> <Box>トップ</Box>
             </HStack>
           </Flex>
         </MenuItem>
 
         <MenuItem onClick={goPostPg}>
-          <Flex align="center">
+          <Flex align="center" color="black">
             <HStack>
               <Icon as={BiMessageEdit} />
               <Box> 投稿</Box>
@@ -50,15 +53,31 @@ export const HumburgerBt = () => {
         </MenuItem>
 
         <MenuItem onClick={goSimulatorPg}>
-          <Flex align="center">
+          <Flex align="center" color="black">
             <HStack>
               <Icon as={BiJoystick} /> <Box>シュミレーター</Box>
             </HStack>
           </Flex>
         </MenuItem>
 
+        <MenuItem onClick={goAccountPg}>
+          <Flex align="center" color="black">
+            <HStack>
+              <Icon as={BiIdCard} /> <Box>アカウント</Box>
+            </HStack>
+          </Flex>
+        </MenuItem>
+
+        <MenuItem onClick={login}>
+          <Flex align="center" color="black">
+            <HStack>
+              <Icon as={RiLoginCircleLine} /> <Box>ログイン</Box>
+            </HStack>
+          </Flex>
+        </MenuItem>
+
         <MenuItem onClick={goLoginPg}>
-          <Flex align="center">
+          <Flex align="center" color="black">
             <HStack>
               <Icon as={RiLogoutCircleLine} /> <Box>ログアウト</Box>
             </HStack>

@@ -2,9 +2,9 @@ import { Box, Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 
-export const GoTop = () => {
+export const GoSimulator = () => {
   const router = useRouter();
-  const clickTweetPage = useCallback(() => router.push("/Top"), [router]);
+  const clickTweetPage = useCallback(() => router.push("/Simulator"), [router]);
 
   return (
     <Box textAlign="right" mr={{ base: "10px", md: "20px" }} pt="100px">
@@ -14,10 +14,10 @@ export const GoTop = () => {
         _hover={{ cursor: "pointer", bgColor: "green.100" }}
         onClick={clickTweetPage}
       >
-        Top
+        Simulator
       </Button>
     </Box>
   );
 };
 
-export default GoTop;
+export default GoSimulator;
