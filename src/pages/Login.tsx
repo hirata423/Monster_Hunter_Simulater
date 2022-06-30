@@ -24,7 +24,7 @@ const Login = () => {
     await auth
       .signInWithPopup(provider)
       .catch((error) => alert("アカウント情報が見つかりませんでした"));
-    router.push("/Top");
+    router.push("/Simulator");
   };
 
   const clickLogin = async (e: FormEvent) => {
@@ -32,7 +32,7 @@ const Login = () => {
 
     try {
       await auth.signInWithEmailAndPassword(email, password);
-      router.push("/Top");
+      router.push("/Simulator");
     } catch (error) {
       alert("アカウント情報が見つかりませんでした");
     }

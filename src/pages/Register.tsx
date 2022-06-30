@@ -71,7 +71,7 @@ const Register = () => {
     }
   };
 
-  const clickCreateNewAccount = useCallback(() => router.push("/"), [router]);
+  const backToLoginPage = useCallback(() => router.push("/Login"), [router]);
 
   return (
     <>
@@ -154,7 +154,7 @@ const Register = () => {
             </Box>
 
             <Box
-              onClick={clickCreateNewAccount}
+              onClick={backToLoginPage}
               _hover={{ cursor: "pointer", color: "green" }}
             >
               Back to Loginpage

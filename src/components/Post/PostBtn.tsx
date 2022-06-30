@@ -22,6 +22,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { BsPencilSquare } from "react-icons/bs";
 import { auth, db } from "src/firebase";
+import { User } from "src/types/StoreUserTypes";
 import { PostList } from "./PostList";
 
 type Post = {
@@ -33,14 +34,7 @@ type Post = {
   timestamp: string;
 };
 
-type User = {
-  uid: string;
-  email: string;
-  username: string;
-  avatar?: string;
-};
-
-export const PostBt = () => {
+export const PostBtn = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
@@ -73,8 +67,8 @@ export const PostBt = () => {
     return URL.createObjectURL(item);
   });
 
-  const uid = auth.currentUser?.uid;
   useEffect(() => {
+    const uid = auth.currentUser?.uid;
     db.collection("users")
       .doc(uid)
       .get()
@@ -86,9 +80,6 @@ export const PostBt = () => {
   }, []);
   const getName: any = user?.username;
   const getAvatar: any = user?.avatar;
-
-  //デプロイ後に表示されないのは、URL.createobjectURL()で一時的なURLを生成しているから？
-  console.log(getAvatar);
 
   const addPost = () => {
     setIntroBox((pre) => [...pre, intro]);

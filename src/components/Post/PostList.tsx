@@ -7,8 +7,8 @@ import {
   Textarea,
   WrapItem,
 } from "@chakra-ui/react";
-import { CommentBt } from "./CommentBt";
-import { HeartBt } from "./HeartBt";
+import { CommentBtn } from "./CommentBtn";
+import { HeartBtn } from "./HeartBtn";
 
 export const PostList = (props: any) => {
   const { id, username, avatar, intro, image, timestamp } = props;
@@ -35,10 +35,11 @@ export const PostList = (props: any) => {
               mt="10px"
               mb="15px"
               w={{ base: "290px", md: "560px" }}
-              h={{ base: "20px", md: "70px" }}
+              h={{ base: "20px", md: "90px" }}
               bgColor="white"
               color="black"
               defaultValue={intro}
+              disabled={true}
             />
 
             {/* eslint-disable*/}
@@ -56,8 +57,8 @@ export const PostList = (props: any) => {
               <Box fontSize={{ base: "11px", md: "16px" }}>{timestamp}</Box>
               <Flex mr="5px">
                 <HStack spacing={{ base: "6px", md: "13px", lg: "20px" }}>
-                  <CommentBt />
-                  <HeartBt />
+                  <CommentBtn />
+                  <HeartBtn />
                 </HStack>
               </Flex>
             </Flex>

@@ -1,29 +1,31 @@
 import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { auth, db } from "src/firebase";
 
+import { HeaderBar } from "../components/Parts/Header/HeaderBar";
 import { Helm } from "../components/Simulator/Helm";
 import { Arm } from "../components/Simulator/Arm";
 import { Meil } from "../components/Simulator/Meil";
 import { Koil } from "../components/Simulator/Koil";
 import { Legins } from "../components/Simulator/Legins";
 import { SumBox } from "../components/Simulator/SumBox/Index";
-import { HeaderBar } from "../components/Parts/Header/HeaderBar";
 import { SkillSearch } from "../components/Simulator/SkillSearch";
 import { TotalSkill } from "src/components/Simulator/TotalSkill";
-import { Logout } from "src/components/Parts/Buttons/LogoutBt";
-import { auth } from "src/firebase";
-import { useRouter } from "next/router";
-import { useCallback, useEffect } from "react";
-import GoPost from "../components/Parts/Buttons/GoPostBt";
 
-const TopPage = () => {
+import { LogoutBtn } from "src/components/Parts/Buttons/LogoutBtn";
+import { GoPostBtn } from "../components/Parts/Buttons/GoPostBtn";
+import { Loading } from "src/components/Parts/Spinner/Loading";
+import { User } from "src/types/StoreUserTypes";
+
+const Simulator = () => {
+  const [user, setUser] = useState<Partial<User>>();
   //Vercelでデプロイ時にエラー
   //Error: No router instance found. you should only use "next/router"
   //inside the client side of your app. https://nextjs.org/docs/messages/no-router-instance
-  //isReadeyを使う？？
-
+  //isReadeyを使うと解消
   const router = useRouter();
   const isReady = useRouter();
-
   useEffect(() => {
     if (isReady) {
       auth.onAuthStateChanged((user) => {
@@ -35,6 +37,7 @@ const TopPage = () => {
         }
       });
     } else {
+      <Loading />;
     }
   });
 
@@ -126,13 +129,13 @@ const TopPage = () => {
           </Box>
         </Flex>
         <Box pt="100px">
-          <GoPost />
+          <GoPostBtn />
           <Box pt="20px"></Box>
-          <Logout />
+          <LogoutBtn />
         </Box>
       </Box>
     </>
   );
 };
 
-export default TopPage;
+export default Simulator;

@@ -2,7 +2,7 @@ import { Box, Icon } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsHeartFill } from "react-icons/bs";
 
-export const HeartBt = () => {
+export const HeartBtn = () => {
   const [heartColor, setHeartColor] = useState<boolean>(true);
 
   const pushheart = () => {

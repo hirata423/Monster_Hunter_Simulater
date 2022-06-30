@@ -15,7 +15,7 @@ import { BiIdCard, BiJoystick, BiMessageEdit } from "react-icons/bi";
 import { RiLoginCircleLine, RiLogoutCircleLine } from "react-icons/ri";
 import { AiOutlineDesktop } from "react-icons/ai";
 
-export const HumburgerBt = () => {
+export const HumburgerBtn = () => {
   const router = useRouter();
 
   const goTopPg = useCallback(() => router.push("/Top"), [router]);
@@ -23,7 +23,7 @@ export const HumburgerBt = () => {
   const goSimulatorPg = useCallback(() => router.push("/Simulator"), [router]);
   const goAccountPg = useCallback(() => router.push("/Account"), [router]);
   const login = useCallback(() => router.push("/Login"), [router]);
-  const goLoginPg = useCallback(() => router.push("/Login"), [router]);
+  const logauto = useCallback(() => router.push("/Login"), [router]);
 
   return (
     <Menu>
@@ -76,7 +76,7 @@ export const HumburgerBt = () => {
           </Flex>
         </MenuItem>
 
-        <MenuItem onClick={goLoginPg}>
+        <MenuItem onClick={logauto}>
           <Flex align="center" color="black">
             <HStack>
               <Icon as={RiLogoutCircleLine} /> <Box>ログアウト</Box>

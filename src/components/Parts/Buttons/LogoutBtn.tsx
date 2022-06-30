@@ -2,7 +2,7 @@ import { Box, Button, useToast } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { auth } from "src/firebase";
 
-export const Logout = () => {
+export const LogoutBtn = () => {
   const router = useRouter();
   const toast = useToast();
   const clickLogout = async () => {
@@ -70,5 +70,3 @@ export const Logout = () => {
     </Box>
   );
 };
-
-export default Logout;

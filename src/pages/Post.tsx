@@ -1,16 +1,16 @@
 import { Box } from "@chakra-ui/react";
 import React, { useEffect } from "react";
-import GoSimulator from "src/components/Parts/Buttons/GoSimulatorBt";
-import { PostBt } from "../components/Post/PostBt";
+import { GoSimulatorBtn } from "src/components/Parts/Buttons/GoSimulatorBtn";
+import { PostBtn } from "../components/Post/PostBtn";
 import { HeaderBar } from "../components/Parts/Header/HeaderBar";
-import Logout from "src/components/Parts/Buttons/LogoutBt";
+import { LogoutBtn } from "src/components/Parts/Buttons/LogoutBtn";
 import { useRouter } from "next/router";
 import { auth } from "src/firebase";
+import { Loading } from "src/components/Parts/Spinner/Loading";
 
-export const Tweet = () => {
+export const Post = () => {
   const router = useRouter();
   const isReady = useRouter();
-
   useEffect(() => {
     if (isReady) {
       auth.onAuthStateChanged((user) => {
@@ -22,9 +22,9 @@ export const Tweet = () => {
         }
       });
     } else {
+      <Loading />;
     }
   });
-
   return (
     <>
       <HeaderBar />
@@ -39,10 +39,10 @@ export const Tweet = () => {
           Post
         </Box>
 
-        <PostBt />
-        <GoSimulator />
+        <PostBtn />
+        <GoSimulatorBtn />
         <Box pt="20px">
-          <Logout />
+          <LogoutBtn />
         </Box>
 
         {/* <Input type="file" /> */}
@@ -51,4 +51,4 @@ export const Tweet = () => {
   );
 };
 
-export default Tweet;
+export default Post;

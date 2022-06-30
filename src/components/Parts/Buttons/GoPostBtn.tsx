@@ -2,7 +2,7 @@ import { Box, Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 
-export const GoPost = () => {
+export const GoPostBtn = () => {
   const router = useRouter();
   const clickTweetPage = useCallback(() => router.push("/Post"), [router]);
 
@@ -19,5 +19,3 @@ export const GoPost = () => {
     </Box>
   );
 };
-
-export default GoPost;

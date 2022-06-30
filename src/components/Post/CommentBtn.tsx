@@ -6,6 +6,7 @@ import {
   Flex,
   FormControl,
   FormLabel,
+  HStack,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -19,6 +20,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { BsChatSquareDotsFill } from "react-icons/bs";
 import { auth, db } from "src/firebase";
+import { User } from "src/types/StoreUserTypes";
 import { CommentList } from "./CommentList";
 
 type Log = {
@@ -29,14 +31,7 @@ type Log = {
   time: string;
 };
 
-type User = {
-  uid: string;
-  email: string;
-  username: string;
-  avatar?: string;
-};
-
-export const CommentBt = () => {
+export const CommentBtn = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
@@ -131,8 +126,17 @@ export const CommentBt = () => {
           <ModalCloseButton />
           <ModalBody>
             <FormControl>
-              {/* // dbからログイン中のユーザー名を表示する */}
-              <FormLabel fontWeight="700">HunterName</FormLabel>
+              <Flex align="center">
+                <FormLabel>
+                  <HStack>
+                    <Avatar size="sm" src={getAvatar} />
+                    <Box fontWeight="700">
+                      {getName ? getName : "名無しさん"}
+                    </Box>
+                  </HStack>
+                </FormLabel>
+              </Flex>
+
               <Textarea
                 h="130px"
                 mt="3px"

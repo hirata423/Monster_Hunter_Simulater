@@ -1,4 +1,4 @@
-import { Avatar, Box, Flex, HStack, Image, Stack } from "@chakra-ui/react";
+import { Box, Flex, HStack, Image, Stack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { HeaderBar } from "src/components/Parts/Header/HeaderBar";

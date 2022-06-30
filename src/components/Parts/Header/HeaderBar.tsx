@@ -1,32 +1,7 @@
-import { Avatar, Flex, HStack } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { auth, db } from "src/firebase";
-import { HumburgerBt } from "../Buttons/HumburgerBt";
-
-type User = {
-  uid: string;
-  email: string;
-  username: string;
-  avatar?: string;
-};
+import { Flex } from "@chakra-ui/react";
+import { HumburgerBtn } from "../Buttons/HumburgerBtn";
 
 export const HeaderBar = () => {
-  const [user, setUser] = useState<Partial<User>>();
-
-  const uid = auth.currentUser?.uid;
-  useEffect(() => {
-    db.collection("users")
-      .doc(uid)
-      .get()
-      .then((doc) => {
-        const data = doc.data();
-        setUser(data);
-      });
-    // eslint-disable-next-line
-  }, []);
-  const getName: any = user?.username;
-  const getAvatar: any = user?.avatar;
-
   return (
     <Flex
       bgSize="cover"
@@ -48,40 +23,8 @@ export const HeaderBar = () => {
         MH’Rize ツールアプリ（仮称）
       </Flex>
 
-      <Flex
-        justify="space-between"
-        align="center"
-        mr={{ base: "10px", md: "20px" }}
-      >
-        <HStack>
-          <Flex>
-            <HStack>
-              <Avatar
-                size="sm"
-                display={{ base: "none", md: "block" }}
-                src={getAvatar ? getAvatar : "none"}
-              />
-              <Avatar
-                size="xs"
-                display={{ base: "block", md: "none" }}
-                src={getAvatar ? getAvatar : "未ログイン"}
-              />
-              <Flex
-                fontSize={{ base: "7px", md: "15px" }}
-                fontWeight="700"
-                align="center"
-                justify="center"
-                color="white"
-              >
-                {getName ? getName : "未ログイン"}
-              </Flex>
-            </HStack>
-          </Flex>
-
-          <Flex align="center" color="white" mr={{ base: "10px", md: "20px" }}>
-            <HumburgerBt />
-          </Flex>
-        </HStack>
+      <Flex align="center" color="white" mr={{ base: "10px", md: "20px" }}>
+        <HumburgerBtn />
       </Flex>
     </Flex>
   );
