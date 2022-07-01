@@ -18,7 +18,7 @@ export const Top = () => {
         fontWeight="500"
         backgroundColor="gray.300"
         w="100%"
-        h="auto"
+        minH="100vh"
       >
         <Flex justify="space-between" align="center" py="10px"></Flex>
         <Box

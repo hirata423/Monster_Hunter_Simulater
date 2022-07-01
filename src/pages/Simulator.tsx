@@ -17,6 +17,7 @@ import { LogoutBtn } from "src/components/Parts/Buttons/LogoutBtn";
 import { GoPostBtn } from "../components/Parts/Buttons/GoPostBtn";
 import { Loading } from "src/components/Parts/Spinner/Loading";
 import { User } from "src/types/StoreUserTypes";
+import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
 
 const Simulator = () => {
   const [user, setUser] = useState<Partial<User>>();
@@ -55,7 +56,7 @@ const Simulator = () => {
         fontWeight="500"
         backgroundColor="blue.900"
         w="100%"
-        h="auto"
+        minH="100vh"
       >
         <Box fontSize={{ base: "17px", md: "25px" }} fontWeight="700" pb="20px">
           Simulator
@@ -129,9 +130,7 @@ const Simulator = () => {
           </Box>
         </Flex>
         <Box pt="100px">
-          <GoPostBtn />
-          <Box pt="20px"></Box>
-          <LogoutBtn />
+          <GoTopBtn />
         </Box>
       </Box>
     </>

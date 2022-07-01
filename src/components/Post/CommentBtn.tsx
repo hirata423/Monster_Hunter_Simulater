@@ -88,20 +88,31 @@ export const CommentBtn = () => {
 
   const contents = logBox.map((item: Log) => {
     return (
-      <Box key={item.id} mb="20px" borderBottom="1px solid gray">
-        <Flex align="center" justify="space-between" mb="8px">
-          <Flex align="center">
-            <Avatar size="sm" mr="8px" src={item.avatar} />
-            <Box fontSize={{ base: "12px", md: "16px" }}>
-              {item.hunterName ? item.hunterName : "名無しさん"}
-            </Box>
+      <Box key={item.id} borderBottom="1px solid gray">
+        <Flex align="center" justify="space-between" my="10px">
+          <Flex>
+            <HStack>
+              <Avatar
+                size="sm"
+                display={{ base: "block", md: "none" }}
+                src={item.avatar}
+              />
+              <Avatar
+                size="md"
+                display={{ base: "none", md: "block" }}
+                src={item.avatar}
+              />
+              <Box fontSize={{ base: "12px", md: "16px" }}>
+                {getName ? getName : "名無しさん"}
+              </Box>
+            </HStack>
           </Flex>
 
-          <Flex fontSize={{ base: "10px", md: "16px" }} onChange={timeChange}>
+          <Flex fontSize={{ base: "12px", md: "16px" }} onChange={timeChange}>
             {item.time}
           </Flex>
         </Flex>
-        <Box fontSize={{ base: "11px", md: "16px" }}>{item.comment}</Box>
+        <Box fontSize={{ base: "12px", md: "16px" }}>{item.comment}</Box>
       </Box>
     );
   });
@@ -129,8 +140,21 @@ export const CommentBtn = () => {
               <Flex align="center">
                 <FormLabel>
                   <HStack>
-                    <Avatar size="sm" src={getAvatar} />
-                    <Box fontWeight="700">
+                    <Avatar
+                      size="sm"
+                      display={{ base: "block", md: "none" }}
+                      src={getAvatar}
+                    />
+                    <Avatar
+                      size="md"
+                      display={{ base: "none", md: "block" }}
+                      src={getAvatar}
+                    />
+
+                    <Box
+                      fontWeight="600"
+                      fontSize={{ base: "15px", md: "20px" }}
+                    >
                       {getName ? getName : "名無しさん"}
                     </Box>
                   </HStack>

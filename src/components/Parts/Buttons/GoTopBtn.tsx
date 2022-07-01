@@ -2,9 +2,9 @@ import { Box, Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 
-export const GoPostBtn = () => {
+export const GoTopBtn = () => {
   const router = useRouter();
-  const clickPostPage = useCallback(() => router.push("/Post"), [router]);
+  const clickTopPage = useCallback(() => router.push("/Top"), [router]);
 
   return (
     <Box textAlign="right" mr={{ base: "10px", md: "20px" }}>
@@ -12,9 +12,9 @@ export const GoPostBtn = () => {
         color="black"
         bgColor="green.300"
         _hover={{ cursor: "pointer", bgColor: "green.100" }}
-        onClick={clickPostPage}
+        onClick={clickTopPage}
       >
-        Post
+        Top
       </Button>
     </Box>
   );

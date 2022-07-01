@@ -21,7 +21,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { BsPencilSquare } from "react-icons/bs";
-import { auth, db } from "src/firebase";
+import { auth, db, storage } from "src/firebase";
 import { User } from "src/types/StoreUserTypes";
 import { PostList } from "./PostList";
 
@@ -156,53 +156,59 @@ export const PostBtn = () => {
         size="xl"
       >
         <ModalOverlay />
-        <ModalContent bgColor="gray.200" justifyContent="center">
+        <ModalContent bgColor="gray.200">
           <ModalHeader fontSize={{ base: "20px", md: "30px" }}>
             Create Post
           </ModalHeader>
+
           <ModalCloseButton />
 
           <ModalBody>
-            <Flex justify="center" display={postBoxMap ? "block" : "none"}>
-              <WrapItem>
-                <Box
-                  w={{ base: "300px", md: "550px" }}
-                  h="auto"
-                  borderBottom="1px white solid"
-                >
-                  <Box m="20px">
-                    <Flex align="center">
-                      <HStack spacing="10px">
-                        <Avatar size="md" src={user?.avatar} />
+            <WrapItem>
+              <Box
+                w={{ base: "400px", md: "650px" }}
+                h="auto"
+                borderBottom="1px white solid"
+              >
+                <Flex justify="center">
+                  <Box>
+                    <Flex>
+                      <HStack>
+                        <Avatar
+                          size="sm"
+                          display={{ base: "block", md: "none" }}
+                          src={getAvatar}
+                        />
+                        <Avatar
+                          size="md"
+                          display={{ base: "none", md: "block" }}
+                          src={getAvatar}
+                        />
                         <Box
                           fontWeight="600"
                           fontSize={{ base: "15px", md: "20px" }}
                         >
-                          {user?.username}
+                          {getName}
                         </Box>
                       </HStack>
                     </Flex>
 
                     <Textarea
-                      mt="10px"
-                      mb="15px"
-                      w={{ base: "270px", md: "500px" }}
+                      my="10px"
+                      w={{ base: "290px", md: "500px" }}
                       h={{ base: "20px", md: "60px" }}
                       bgColor="white"
-                      color="black"
                       value={intro}
                       ref={initialRef}
                       onChange={introChange}
                     />
                     <FormLabel
-                      w={{ base: "270px", md: "500px" }}
+                      w={{ base: "290px", md: "500px" }}
                       h={{ base: "165px", md: "330px" }}
-                      border="solid gray.300 "
                       bgColor="white"
-                      color="gray.400"
                       borderRadius="5px"
                     >
-                      <Flex justify="center" align="center">
+                      <Flex justify="center">
                         <Input
                           type="file"
                           accept="image/*"
@@ -213,20 +219,21 @@ export const PostBtn = () => {
                         {/* eslint-disable-next-line */}
                         <Flex
                           pt={{ base: "65px", md: "160px" }}
-                          justify="center"
-                          display={!image[0] ? "block" : "none"}
+                          display={image[0] ? "none" : "block"}
+                          color="gray.400"
                         >
                           クッリクしてファイルを選択
                         </Flex>
                       </Flex>
                     </FormLabel>
                   </Box>
-                </Box>
-              </WrapItem>
-            </Flex>
+                </Flex>
+              </Box>
+            </WrapItem>
           </ModalBody>
+
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={addPost}>
+            <Button bgColor="green.300" onClick={addPost}>
               Sent
             </Button>
           </ModalFooter>

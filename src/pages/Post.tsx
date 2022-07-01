@@ -1,11 +1,11 @@
 import { Box } from "@chakra-ui/react";
 import React, { useEffect } from "react";
-import { GoSimulatorBtn } from "src/components/Parts/Buttons/GoSimulatorBtn";
-import { PostBtn } from "../components/Post/PostBtn";
-import { HeaderBar } from "../components/Parts/Header/HeaderBar";
-import { LogoutBtn } from "src/components/Parts/Buttons/LogoutBtn";
 import { useRouter } from "next/router";
 import { auth } from "src/firebase";
+
+import { HeaderBar } from "../components/Parts/Header/HeaderBar";
+import { PostBtn } from "../components/Post/PostBtn";
+import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
 import { Loading } from "src/components/Parts/Spinner/Loading";
 
 export const Post = () => {
@@ -30,7 +30,7 @@ export const Post = () => {
       <HeaderBar />
       <Box
         w="100%"
-        h="auto"
+        minH="100vh"
         py={{ base: "13px", md: "20px", lg: "" }}
         backgroundColor="blue.900"
         color="white"
@@ -40,12 +40,9 @@ export const Post = () => {
         </Box>
 
         <PostBtn />
-        <GoSimulatorBtn />
         <Box pt="20px">
-          <LogoutBtn />
+          <GoTopBtn />
         </Box>
-
-        {/* <Input type="file" /> */}
       </Box>
     </>
   );

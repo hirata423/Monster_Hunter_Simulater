@@ -24,7 +24,16 @@ export const PostList = (props: any) => {
           <Box m="20px">
             <Flex align="center">
               <HStack spacing="10px">
-                <Avatar size="sm" src={avatar} />
+                <Avatar
+                  size="sm"
+                  display={{ base: "block", md: "none" }}
+                  src={avatar}
+                />
+                <Avatar
+                  size="md"
+                  display={{ base: "none", md: "block" }}
+                  src={avatar}
+                />
                 <Box fontWeight="600" fontSize={{ base: "15px", md: "20px" }}>
                   {username}
                 </Box>
