@@ -54,6 +54,9 @@ export const PostBtn = () => {
   const date = today.getDate();
   const hours = today.getHours();
   const minutes = today.getMinutes();
+  if (minutes > 10) {
+    `0${minutes}`;
+  }
   const now = [year + "/" + month + "/" + date + "/" + hours + ":" + minutes];
 
   const introChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
@@ -120,7 +123,7 @@ export const PostBtn = () => {
         {/* eslint-disable-next-line */}
         <Image
           src={URL.createObjectURL(item)}
-          w={{ base: "270px", md: "500px" }}
+          w={{ base: "290px", md: "500px" }}
           h={{ base: "165px", md: "330px" }}
         />
       </Box>
@@ -129,15 +132,14 @@ export const PostBtn = () => {
 
   return (
     <>
-      <Box
-        textAlign="right"
-        mr={{ base: "10px", md: "20px" }}
-        borderBottom="1px solid white"
-      >
+      <Box textAlign="right" mr={{ base: "13px", md: "25px", lg: "25px" }}>
         <Button
-          size="lg"
+          size=""
+          px={{ base: "12px", md: "16px", lg: "20px" }}
+          py={{ base: "11px", md: " 15px", lg: "19px" }}
           mb="20px"
           bgColor="green.300"
+          fontSize={{ base: "11px", md: "16", lg: "18px" }}
           _hover={{ cursor: "pointer", bgColor: "green.100" }}
           borderRadius="full"
           onClick={onOpen}

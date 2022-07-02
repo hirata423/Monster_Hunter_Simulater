@@ -10,14 +10,12 @@ export const HeaderBar = () => {
       h={{ base: "8vh", md: "10vh", lg: "13vh" }}
       w="100%"
       justify="space-between"
-      // position="fixed"
-      // zIndex="99"
     >
       <Flex
         align="center"
         color="white"
         fontWeight={{ base: "500", md: "300" }}
-        fontSize={{ base: "13px", md: "33", lg: "40px" }}
+        fontSize={{ base: "16px", md: "33", lg: "40px" }}
         pl={{ base: "13px", md: "24px", lg: "30px" }}
       >
         MH’Rize ツールアプリ（仮称）

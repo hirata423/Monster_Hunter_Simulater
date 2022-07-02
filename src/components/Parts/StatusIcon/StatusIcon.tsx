@@ -2,7 +2,6 @@ import { Avatar, Flex, HStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { auth, db } from "src/firebase";
 import { User } from "src/types/StoreUserTypes";
-import { HumburgerBtn } from "../Buttons/HumburgerBtn";
 
 export const StatusIcon = () => {
   const [user, setUser] = useState<Partial<User>>();
@@ -31,23 +30,23 @@ export const StatusIcon = () => {
           <Flex>
             <HStack>
               <Avatar
-                size="sm"
+                size="md"
                 display={{ base: "none", md: "block" }}
-                // src={getAvatar ? getAvatar : "none"}
+                src={getAvatar}
               />
               <Avatar
-                size="xs"
+                size="sm"
                 display={{ base: "block", md: "none" }}
-                // src={getAvatar ? getAvatar : "未ログイン"}
+                src={getAvatar}
               />
               <Flex
-                fontSize={{ base: "7px", md: "15px" }}
+                fontSize={{ base: "11px", md: "16px" }}
                 fontWeight="700"
                 align="center"
                 justify="center"
                 color="white"
               >
-                {/* {getName ? getName : "未ログイン"} */}
+                {getName ? getName : "未ログイン"}
               </Flex>
             </HStack>
           </Flex>

@@ -18,6 +18,7 @@ import { GoPostBtn } from "../components/Parts/Buttons/GoPostBtn";
 import { Loading } from "src/components/Parts/Spinner/Loading";
 import { User } from "src/types/StoreUserTypes";
 import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
+import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
 
 const Simulator = () => {
   const [user, setUser] = useState<Partial<User>>();
@@ -58,12 +59,21 @@ const Simulator = () => {
         w="100%"
         minH="100vh"
       >
-        <Box fontSize={{ base: "17px", md: "25px" }} fontWeight="700" pb="20px">
-          Simulator
-        </Box>
+        <Flex justify="space-between">
+          <Box
+            fontSize={{ base: "17px", md: "25px" }}
+            fontWeight="700"
+            ml={{ base: "8px", md: "20px" }}
+          >
+            Simulator
+          </Box>
+          <StatusIcon />
+        </Flex>
+
         <Box
           borderBottom="1px solid white"
-          mb={{ base: "13px", md: "20px", lg: "" }}
+          mb={{ base: "13px", md: "20px", lg: "30px" }}
+          pb={{ base: "13px", md: "20px", lg: "20px" }}
         ></Box>
 
         <Flex justify="center">

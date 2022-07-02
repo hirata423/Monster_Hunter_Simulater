@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { auth } from "src/firebase";
@@ -7,6 +7,7 @@ import { HeaderBar } from "../components/Parts/Header/HeaderBar";
 import { PostBtn } from "../components/Post/PostBtn";
 import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
 import { Loading } from "src/components/Parts/Spinner/Loading";
+import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
 
 export const Post = () => {
   const router = useRouter();
@@ -35,9 +36,22 @@ export const Post = () => {
         backgroundColor="blue.900"
         color="white"
       >
-        <Box fontSize={{ base: "17px", md: "25px" }} fontWeight="700" pl="20px">
-          Post
-        </Box>
+        <Flex justify="space-between">
+          <Box
+            fontSize={{ base: "17px", md: "25px" }}
+            fontWeight="700"
+            ml={{ base: "20px", md: "30px" }}
+          >
+            Post
+          </Box>
+          <StatusIcon />
+        </Flex>
+
+        <Box
+          borderBottom="1px solid white"
+          mb={{ base: "13px", md: "20px", lg: "30px" }}
+          pb={{ base: "13px", md: "20px", lg: "20px" }}
+        ></Box>
 
         <PostBtn />
         <Box pt="20px">

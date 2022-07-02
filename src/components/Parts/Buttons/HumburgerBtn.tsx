@@ -32,6 +32,8 @@ export const HumburgerBtn = () => {
         aria-label="Options"
         icon={<HamburgerIcon />}
         variant="outline"
+        border="none"
+        fontSize={{ base: "xl", md: "3xl", lg: "4xl" }}
       />
 
       <MenuList>

@@ -62,10 +62,6 @@ const Register = () => {
     }
   };
 
-  // TestAccount
-  // testaccount@gmail.com
-  // test1996
-
   console.log("avatar", avatar);
 
   const clickSubmit = async (e: FormEvent) => {
