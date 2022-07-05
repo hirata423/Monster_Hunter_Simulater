@@ -102,7 +102,7 @@ export const TestPostBtn = () => {
   const getName: any = user?.username;
   const getAvatar: any = user?.avatar;
 
-  //user//uid/post/自動IDでドキュメント追加
+  //user//uid/posts/自動IDdocだったけど、データの読み取り都合上,/posts/自動IDdocに変更
   const addPost = () => {
     if (image) {
       const postData = {
@@ -112,10 +112,11 @@ export const TestPostBtn = () => {
         intro: intro,
         image: image,
         timeStamp: now,
+        room: "timeLine",
       };
       const subColection = db
-        .collection("users")
-        .doc(uid)
+        // .collection("users")
+        // .doc(uid)
         .collection("posts")
         .doc()
         .set(postData);
@@ -132,9 +133,10 @@ export const TestPostBtn = () => {
 
   //ユーザーの投稿データはグループIdを持たせtてwhere()で取得する
   const getPosts = () => {
-    db.collection("users")
-      .doc(uid)
-      .collection("posts")
+    // db.collection("users")
+    //   .doc(uid)
+    db.collection("posts")
+      // .where("uid", "==", uid)
       .get()
       .then((snapshot) => {
         const localPost: any[] = [];
