@@ -11,11 +11,11 @@ import { CommentBtn } from "./CommentBtn";
 import { HeartBtn } from "./HeartBtn";
 
 export const PostList = (props: any) => {
-  const { id, username, avatar, intro, image, timestamp } = props;
+  const { uid, userName, avatar, intro, image, timeStamp } = props;
 
   return (
     <>
-      <WrapItem justifyContent="center" key={id}>
+      <WrapItem justifyContent="center" key={uid}>
         <Box
           w={{ base: "330px", md: "600px" }}
           h="auto"
@@ -35,7 +35,7 @@ export const PostList = (props: any) => {
                   src={avatar}
                 />
                 <Box fontWeight="600" fontSize={{ base: "15px", md: "20px" }}>
-                  {username}
+                  {userName}
                 </Box>
               </HStack>
             </Flex>
@@ -63,7 +63,7 @@ export const PostList = (props: any) => {
             />
 
             <Flex justify="space-between">
-              <Box fontSize={{ base: "11px", md: "16px" }}>{timestamp}</Box>
+              <Box fontSize={{ base: "11px", md: "16px" }}>{timeStamp}</Box>
               <Flex mr="5px">
                 <HStack spacing={{ base: "6px", md: "13px", lg: "20px" }}>
                   <CommentBtn />

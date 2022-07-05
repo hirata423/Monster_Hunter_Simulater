@@ -54,15 +54,13 @@ const Register = () => {
             .child(`${randomId}.png`)
             .getDownloadURL()
             .then((fireBaseUrl: string) => {
-              console.log(fireBaseUrl);
               setAvatar(fireBaseUrl);
+              console.log(fireBaseUrl);
             });
         }
       );
     }
   };
-
-  console.log("avatar", avatar);
 
   const clickSubmit = async (e: FormEvent) => {
     e.preventDefault();

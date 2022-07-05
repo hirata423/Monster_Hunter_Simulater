@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 import { auth } from "src/firebase";
 
 import { HeaderBar } from "../components/Parts/Header/HeaderBar";
-import { PostBtn } from "../components/Post/PostBtn";
 import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
 import { Loading } from "src/components/Parts/Spinner/Loading";
 import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
+import { TestPostBtn } from "src/components/Post/TestPostBtn";
 
 export const Post = () => {
   const router = useRouter();
@@ -53,7 +53,8 @@ export const Post = () => {
           pb={{ base: "13px", md: "20px", lg: "20px" }}
         ></Box>
 
-        <PostBtn />
+        {/* <PostBtn /> */}
+        <TestPostBtn />
         <Box pt="20px">
           <GoTopBtn />
         </Box>
