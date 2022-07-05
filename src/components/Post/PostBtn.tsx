@@ -19,7 +19,8 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { Router, useRouter } from "next/router";
+import React, { useCallback, useEffect, useState } from "react";
 import { BsPencilSquare } from "react-icons/bs";
 import { auth, db, storage } from "src/firebase";
 import { User } from "src/types/StoreUserTypes";
@@ -34,10 +35,11 @@ type Post = {
   timeStamp: string;
 };
 
-export const TestPostBtn = () => {
+export const PostBtn = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
+  const router = useRouter();
 
   const [user, setUser] = useState<Partial<User>>();
   const [post, setPost] = useState<Post[]>([]);
@@ -115,8 +117,7 @@ export const TestPostBtn = () => {
         room: "timeLine",
       };
       const subColection = db
-        // .collection("users")
-        // .doc(uid)
+        // .collection("users").doc(uid)
         .collection("posts")
         .doc()
         .set(postData);
@@ -127,15 +128,14 @@ export const TestPostBtn = () => {
     onClose();
     setIntro("");
     setImage("");
+    loading();
   };
 
-  //mypage情報としての方が適当なデータ取得とデータ構造↓
-
-  //ユーザーの投稿データはグループIdを持たせtてwhere()で取得する
+  //ユーザーの投稿データに,room:timeLineの共通データを入れてwhere()で取得する
   const getPosts = () => {
-    // db.collection("users")
-    //   .doc(uid)
+    // db.collection("users").doc(uid)
     db.collection("posts")
+      //where使うとエラーが出る。データが無いみたいな
       // .where("uid", "==", uid)
       .get()
       .then((snapshot) => {
@@ -161,6 +161,8 @@ export const TestPostBtn = () => {
       </Box>
     );
   });
+
+  const loading = useCallback(() => router.push("/LoadingDisplay"), [router]);
 
   return (
     <>

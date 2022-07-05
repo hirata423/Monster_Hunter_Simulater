@@ -7,7 +7,7 @@ import { HeaderBar } from "../components/Parts/Header/HeaderBar";
 import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
 import { Loading } from "src/components/Parts/Spinner/Loading";
 import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
-import { TestPostBtn } from "src/components/Post/TestPostBtn";
+import { PostBtn } from "src/components/Post/PostBtn";
 
 export const Post = () => {
   const router = useRouter();
@@ -53,8 +53,8 @@ export const Post = () => {
           pb={{ base: "13px", md: "20px", lg: "20px" }}
         ></Box>
 
-        {/* <PostBtn /> */}
-        <TestPostBtn />
+        {/* <LocalPostBtn /> */}
+        <PostBtn />
         <Box pt="20px">
           <GoTopBtn />
         </Box>
