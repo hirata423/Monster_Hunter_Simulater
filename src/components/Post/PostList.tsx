@@ -1,12 +1,4 @@
-import {
-  Avatar,
-  Box,
-  Flex,
-  HStack,
-  Image,
-  Textarea,
-  WrapItem,
-} from "@chakra-ui/react";
+import { Avatar, Box, Flex, HStack, Image, WrapItem } from "@chakra-ui/react";
 import { CommentBtn } from "./CommentBtn";
 import { HeartBtn } from "./HeartBtn";
 
@@ -40,16 +32,20 @@ export const PostList = (props: any) => {
               </HStack>
             </Flex>
 
-            <Textarea
+            <Box
               mt="10px"
               mb="15px"
-              w={{ base: "290px", md: "560px" }}
-              h={{ base: "20px", md: "90px" }}
+              py="3px"
+              px="6px"
+              fontSize={{ base: "12px", md: "16px" }}
+              borderRadius="5px"
+              minHeight="40px"
+              maxHeight="100px"
               bgColor="white"
               color="black"
-              defaultValue={intro}
-              disabled={true}
-            />
+            >
+              {intro}
+            </Box>
 
             {/* eslint-disable*/}
             <Image

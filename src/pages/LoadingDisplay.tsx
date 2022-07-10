@@ -1,6 +1,5 @@
 import { Box, Flex, Spinner } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { useCallback } from "react";
 import { HeaderBar } from "src/components/Parts/Header/HeaderBar";
 import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
 

@@ -1,24 +1,13 @@
 import { Avatar, Flex, HStack } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { auth, db } from "src/firebase";
-import { User } from "src/types/StoreUserTypes";
+import { useGetAuthUser } from "src/hooks/useGetAuthUser";
 
 export const StatusIcon = () => {
-  const [user, setUser] = useState<Partial<User>>();
+  const getUser = useGetAuthUser();
+  const avatar = getUser?.avatar;
+  const username = getUser?.username;
 
-  useEffect(() => {
-    const uid = auth.currentUser?.uid;
-    db.collection("users")
-      .doc(uid)
-      .get()
-      .then((doc) => {
-        const data = doc.data();
-        setUser(data);
-      });
-    // eslint-disable-next-line
-  }, []);
-  const getName: any = user?.username;
-  const getAvatar: any = user?.avatar;
+  console.log("StatusIcon");
+
   return (
     <>
       <Flex
@@ -32,12 +21,12 @@ export const StatusIcon = () => {
               <Avatar
                 size="md"
                 display={{ base: "none", md: "block" }}
-                src={getAvatar}
+                src={avatar}
               />
               <Avatar
                 size="sm"
                 display={{ base: "block", md: "none" }}
-                src={getAvatar}
+                src={avatar}
               />
               <Flex
                 fontSize={{ base: "11px", md: "16px" }}
@@ -46,7 +35,7 @@ export const StatusIcon = () => {
                 justify="center"
                 color="white"
               >
-                {getName ? getName : "未ログイン"}
+                {username ? username : "未ログイン"}
               </Flex>
             </HStack>
           </Flex>

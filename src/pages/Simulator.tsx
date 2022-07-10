@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { auth, db } from "src/firebase";
+import { useEffect } from "react";
+import { auth } from "src/firebase";
 
 import { HeaderBar } from "../components/Parts/Header/HeaderBar";
 import { Helm } from "../components/Simulator/Helm";
@@ -13,15 +13,11 @@ import { SumBox } from "../components/Simulator/SumBox/Index";
 import { SkillSearch } from "../components/Simulator/SkillSearch";
 import { TotalSkill } from "src/components/Simulator/TotalSkill";
 
-import { LogoutBtn } from "src/components/Parts/Buttons/LogoutBtn";
-import { GoPostBtn } from "../components/Parts/Buttons/GoPostBtn";
 import { Loading } from "src/components/Parts/Spinner/Loading";
-import { User } from "src/types/StoreUserTypes";
 import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
 import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
 
 const Simulator = () => {
-  const [user, setUser] = useState<Partial<User>>();
   //Vercelでデプロイ時にエラー
   //Error: No router instance found. you should only use "next/router"
   //inside the client side of your app. https://nextjs.org/docs/messages/no-router-instance

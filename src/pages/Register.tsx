@@ -1,4 +1,4 @@
-import { auth, db, storage } from "../firebase";
+import { auth, db } from "../firebase";
 
 import {
   Avatar,
@@ -13,14 +13,16 @@ import {
 import { HeaderBar } from "src/components/Parts/Header/HeaderBar";
 import { FormEvent, useCallback, useState } from "react";
 import { useRouter } from "next/router";
+import { useStorage } from "src/hooks/useStorage";
 
 const Register = () => {
   const router = useRouter();
 
+  const { image, setImage, stg } = useStorage();
+
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [avatar, setAvatar] = useState<string>("");
 
   const changeName = (e: React.ChangeEvent<HTMLInputElement>) =>
     setUserName(e.target.value);
@@ -28,37 +30,10 @@ const Register = () => {
     setEmail(e.target.value);
   const changePass = (e: React.ChangeEvent<HTMLInputElement>) =>
     setPassword(e.target.value);
-
   const changeAvatar = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //いらない気がする
     if (!e.target.files) return;
-
-    //画像キャンセル機能も忘れないように！！
     if (e.target.files[0]) {
-      const randomId = Math.random().toString(32).substring(2);
-      const uploadTask = storage
-        .ref(`/images/avatar/${randomId}.png`)
-        .put(e.target.files[0]);
-      //必要ない気がする、、、というか意味がわからない笑
-      uploadTask.on(
-        "state_changed",
-        (snapShot: any) => {
-          console.log(snapShot);
-        },
-        (err: any) => {
-          console.log(err);
-        },
-        () => {
-          storage
-            .ref("images/avatar/")
-            .child(`${randomId}.png`)
-            .getDownloadURL()
-            .then((fireBaseUrl: string) => {
-              setAvatar(fireBaseUrl);
-              console.log(fireBaseUrl);
-            });
-        }
-      );
+      stg({ Children: "avatar", File: e.target.files[0] });
     }
   };
 
@@ -76,7 +51,7 @@ const Register = () => {
           uid: uid,
           username: userName,
           email: authUser.user?.email,
-          avatar: avatar,
+          avatar: image,
         };
         db.collection("users").doc(uid).set(userData);
         console.log(userData);
@@ -115,7 +90,7 @@ const Register = () => {
                   accept="/image/*"
                   onChange={changeAvatar}
                 />
-                <Avatar size="md" src={avatar} />
+                <Avatar size="md" src={image} />
               </FormLabel>
 
               <Box py="3px">Avatar</Box>

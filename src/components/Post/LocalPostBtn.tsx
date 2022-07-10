@@ -22,7 +22,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { BsPencilSquare } from "react-icons/bs";
 import { auth, db, storage } from "src/firebase";
-import { User } from "src/types/StoreUserTypes";
+import { User } from "src/types/StoreDbTypes";
 import { PostList } from "./PostList";
 
 type Post = {

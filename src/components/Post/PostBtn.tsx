@@ -19,21 +19,16 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
 import { BsPencilSquare } from "react-icons/bs";
-import { auth, db, storage } from "src/firebase";
-import { User } from "src/types/StoreUserTypes";
-import { PostList } from "./PostList";
 
-type Post = {
-  uid: string;
-  userName: string;
-  avatar: string;
-  intro: string;
-  image: string;
-  timeStamp: string;
-};
+import { db } from "src/firebase";
+import { useGetAuthUser } from "src/hooks/useGetAuthUser";
+import { useGetDate } from "src/hooks/useGetDate";
+import { useStorage } from "src/hooks/useStorage";
+import { Post } from "src/types/StoreDbTypes";
+import { PostList } from "./PostList";
 
 export const PostBtn = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -41,86 +36,39 @@ export const PostBtn = () => {
   const finalRef = React.useRef(null);
   const router = useRouter();
 
-  const [user, setUser] = useState<Partial<User>>();
+  const getUser = useGetAuthUser();
+  const uid = getUser?.uid;
+  const avatar = getUser?.avatar;
+  const username = getUser?.username;
+
+  const { image, setImage, stg } = useStorage();
+  const { now } = useGetDate();
+
   const [post, setPost] = useState<Post[]>([]);
   const [intro, setIntro] = useState<string>("");
-  const [image, setImage] = useState<string>("");
-
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth() + 1;
-  const date = today.getDate();
-  const hours = today.getHours();
-  const minutes = today.getMinutes();
-  if (minutes > 10) {
-    `0${minutes}`;
-  }
-  const now = year + "/" + month + "/" + date + "/" + hours + ":" + minutes;
 
   const introChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
     setIntro(e.target.value);
-
-  //storage,imageに投稿写真を追加
   const imageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
     if (e.target.files[0]) {
-      const randomId = Math.random().toString(32).substring(2);
-      const uploadTask = storage
-        .ref(`/images/postimage/${randomId}.png`)
-        .put(e.target.files[0]);
-      uploadTask.on(
-        "state_changed",
-        (snapShot: any) => {
-          console.log("snapShot", snapShot);
-        },
-        (err: any) => {
-          console.log("err", err);
-        },
-        () => {
-          storage
-            .ref("/images/postimage/")
-            .child(`${randomId}.png`)
-            .getDownloadURL()
-            .then((fireBaseUrl: string) => {
-              console.log(fireBaseUrl);
-              setImage(fireBaseUrl);
-            });
-        }
-      );
+      stg({ Children: "postimage", File: e.target.files[0] });
     }
   };
 
-  const uid = auth.currentUser?.uid;
-  useEffect(() => {
-    db.collection("users")
-      .doc(uid)
-      .get()
-      .then((doc) => {
-        const data = doc.data();
-        setUser(data);
-      });
-    // eslint-disable-next-line
-  }, []);
-  const getName: any = user?.username;
-  const getAvatar: any = user?.avatar;
-
-  //user//uid/posts/自動IDdocだったけど、データの読み取り都合上,/posts/自動IDdocに変更
+  const postsCol = db.collection("posts");
   const addPost = () => {
     if (image) {
       const postData = {
         uid: uid,
-        userName: getName,
-        avatar: getAvatar,
+        userName: username,
+        avatar: avatar,
         intro: intro,
         image: image,
         timeStamp: now,
         room: "timeLine",
       };
-      const subColection = db
-        // .collection("users").doc(uid)
-        .collection("posts")
-        .doc()
-        .set(postData);
+      postsCol.doc().set(postData);
     } else {
       console.log("err");
     }
@@ -131,22 +79,16 @@ export const PostBtn = () => {
     loading();
   };
 
-  //ユーザーの投稿データに,room:timeLineの共通データを入れてwhere()で取得する
   const getPosts = () => {
-    // db.collection("users").doc(uid)
-    db.collection("posts")
-      //where使うとエラーが出る。データが無いみたいな
-      // .where("uid", "==", uid)
-      .get()
-      .then((snapshot) => {
-        const localPost: any[] = [];
-        snapshot.forEach((doc) => {
-          localPost.push({
-            ...doc.data(),
-          });
+    postsCol.get().then((snapshot) => {
+      const localPost: any[] = [];
+      snapshot.forEach((doc) => {
+        localPost.push({
+          ...doc.data(),
         });
-        setPost(localPost);
       });
+      setPost(localPost);
+    });
   };
 
   useEffect(() => {
@@ -213,18 +155,18 @@ export const PostBtn = () => {
                         <Avatar
                           size="sm"
                           display={{ base: "block", md: "none" }}
-                          src={getAvatar}
+                          src={avatar}
                         />
                         <Avatar
                           size="md"
                           display={{ base: "none", md: "block" }}
-                          src={getAvatar}
+                          src={avatar}
                         />
                         <Box
                           fontWeight="600"
                           fontSize={{ base: "15px", md: "20px" }}
                         >
-                          {getName}
+                          {username}
                         </Box>
                       </HStack>
                     </Flex>
