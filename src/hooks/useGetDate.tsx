@@ -1,3 +1,5 @@
+import { useCallback } from "react";
+
 export const useGetDate = () => {
   const today = new Date();
   const year = today.getFullYear();
@@ -9,8 +11,6 @@ export const useGetDate = () => {
     `0${minutes}`;
   }
   const now = year + "/" + month + "/" + date + "/" + hours + ":" + minutes;
-
-  console.log("now", now);
 
   return { now };
 };

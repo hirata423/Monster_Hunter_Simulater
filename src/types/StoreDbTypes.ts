@@ -12,9 +12,10 @@ export type Post = {
   intro: string;
   image: string;
   timeStamp: string;
+  likeId: string;
 };
 
-export type Log = {
+export type Comment = {
   id: number;
   uid?: string;
   avatar?: string;

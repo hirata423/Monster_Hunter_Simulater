@@ -21,7 +21,7 @@ import React, { useState } from "react";
 import { BsChatSquareDotsFill } from "react-icons/bs";
 import { useGetAuthUser } from "src/hooks/useGetAuthUser";
 import { useGetDate } from "src/hooks/useGetDate";
-import { Log } from "src/types/StoreDbTypes";
+import { Comment } from "src/types/StoreDbTypes";
 import { CommentList } from "./CommentList";
 
 export const CommentBtn = () => {
@@ -51,7 +51,7 @@ export const CommentBtn = () => {
     // setTime([...time, ...now]);
   };
 
-  const logBox: Log[] = [];
+  const logBox: Comment[] = [];
   for (let i = 0; i < removeUndefind.length; i++) {
     logBox.push({
       id: i,
@@ -63,7 +63,7 @@ export const CommentBtn = () => {
     });
   }
 
-  const contents = logBox.map((item: Log) => {
+  const contents = logBox.map((item: Comment) => {
     return (
       <Box key={item.id} borderBottom="1px solid gray">
         <Flex align="center" justify="space-between" my="10px">

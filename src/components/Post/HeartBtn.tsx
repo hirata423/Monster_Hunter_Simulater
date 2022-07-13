@@ -1,47 +1,37 @@
 import { Box, Icon } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsHeartFill } from "react-icons/bs";
-import { auth, db } from "src/firebase";
+import { db } from "src/firebase";
+import { useGetAuthUser } from "src/hooks/useGetAuthUser";
 import { Post } from "src/types/StoreDbTypes";
 
-export const HeartBtn = () => {
+export const HeartBtn = (props: any) => {
+  const { post } = props;
   const [heartColor, setHeartColor] = useState<boolean>(true);
-  // const [doc, setDoc] = useState<Post[]>([]);
 
-  // const uid = auth.currentUser?.uid;
+  const getUser = useGetAuthUser();
+  const uid = getUser?.uid;
+  const usersRef = db.collection("users").doc(uid);
+  const postsRef = usersRef.collection("posts");
 
-  // const docId = db
-  //   .collection("posts")
-  //   .get()
-  //   .then((snapshot) => {
-  //     const docList: any[] = [];
-  //     snapshot.forEach((doc) => {
-  //       docList.push({
-  //         ...doc.data(),
-  //       });
-  //     });
-  //     setDoc(docList);
-  //   });
+  const yooo = post.map((item: Post, index: number) => {
+    return item.likeId;
+  });
+  const piii = yooo.shift();
+  console.log(piii);
 
-  //   doc.findIndex()
+  const likedUser = {
+    uid: uid,
+    likeCount: 1,
+  };
+
+  const like = () => {
+    postsRef.doc(piii).collection("likeUsers").doc().set(likedUser);
+  };
 
   const pushheart = () => {
     setHeartColor(!heartColor);
-
-    //   try {
-    //     const likeData = {
-    //       uid: uid,
-    //       like: 1,
-    //     };
-    //     const subColection = db
-    //       .collection("posts")
-    //       .doc()
-    //       .collection("likes")
-    //       .doc()
-    //       .set(likeData);
-    //   } catch {
-    //     console.log("err");
-    //   }
+    like();
   };
 
   return (
