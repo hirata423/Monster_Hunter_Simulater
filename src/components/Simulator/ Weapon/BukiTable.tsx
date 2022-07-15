@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { Bukis } from "../../../types/BukiTypes";
+import { Bukis } from "../../../types/BuguType";
 import BukiList from "../../../../Buki.json";
 
 export const Table = () => {

@@ -2,7 +2,7 @@ import { Box, Flex, Heading, HStack, Input, Stack } from "@chakra-ui/react";
 import { SetStateAction, useState } from "react";
 
 import { BukiFix } from "./BukiFix";
-import { Bukis } from "../../../types/BukiTypes";
+import { Bukis } from "../../../types/BuguType";
 import BukiList from "../../../../Buki.json";
 
 export const Buki = () => {
