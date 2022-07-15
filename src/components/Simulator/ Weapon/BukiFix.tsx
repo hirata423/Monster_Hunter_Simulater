@@ -1,6 +1,6 @@
 import { Box, Button, Flex, HStack, Stack } from "@chakra-ui/react";
 
-import { Bukis } from "../../../types/BukiTypes";
+import { Bukis } from "../../../types/BuguType";
 import BukiList from "../../../../Buki.json";
 
 export const BukiFix = (props: Bukis) => {
