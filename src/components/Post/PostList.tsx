@@ -3,7 +3,7 @@ import { CommentBtn } from "./CommentBtn";
 import { HeartBtn } from "./HeartBtn";
 
 export const PostList = (props: any) => {
-  const { uid, userName, avatar, intro, image, timeStamp, post } = props;
+  const { uid, userName, avatar, intro, image, timeStamp, likeId } = props;
 
   return (
     <>
@@ -62,8 +62,8 @@ export const PostList = (props: any) => {
               <Box fontSize={{ base: "11px", md: "16px" }}>{timeStamp}</Box>
               <Flex mr="5px">
                 <HStack spacing={{ base: "6px", md: "13px", lg: "20px" }}>
-                  <CommentBtn />
-                  <HeartBtn post={post} />
+                  <CommentBtn likeId={likeId} />
+                  <HeartBtn likeId={likeId} />
                 </HStack>
               </Flex>
             </Flex>

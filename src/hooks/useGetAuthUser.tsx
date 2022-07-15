@@ -8,7 +8,6 @@ export const useGetAuthUser = () => {
   const uid = auth.currentUser?.uid;
   const usersCol = db.collection("users").doc(uid);
 
-  //useCallbackを使うと表示されない
   useEffect(() => {
     usersCol.get().then((doc) => {
       setUser(doc.data());

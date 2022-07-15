@@ -14,7 +14,7 @@ import {
 import { useState } from "react";
 
 export const CommentList = (props: any) => {
-  const { removeUndefind, contents } = props;
+  const { contents } = props;
   const [modal, setModal] = useState(true);
   const { isOpen, onClose, onToggle } = useDisclosure();
 
@@ -23,12 +23,9 @@ export const CommentList = (props: any) => {
     onToggle();
   };
 
-  //comment,timestamp,ハートを押した投稿情報をログインユーザーの情報としtr紐付ける
-
   return (
     <>
       <Button
-        display={!removeUndefind ? "none" : "block"}
         variant="link"
         onClick={commentDisplay}
         fontSize={{ base: "11px", md: "16px" }}

@@ -22,4 +22,10 @@ export type Comment = {
   username?: string;
   comment: string;
   time: string;
+  likeId: string;
+};
+
+export type Like = {
+  uid: string;
+  likePostId: string;
 };

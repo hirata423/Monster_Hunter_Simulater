@@ -3,35 +3,51 @@ import { useState } from "react";
 import { BsHeartFill } from "react-icons/bs";
 import { db } from "src/firebase";
 import { useGetAuthUser } from "src/hooks/useGetAuthUser";
-import { Post } from "src/types/StoreDbTypes";
+import { Like } from "src/types/StoreDbTypes";
 
 export const HeartBtn = (props: any) => {
-  const { post } = props;
+  const { likeId } = props;
   const [heartColor, setHeartColor] = useState<boolean>(true);
+  const [likes, setLikes] = useState<Like[]>([]);
 
   const getUser = useGetAuthUser();
   const uid = getUser?.uid;
-  const usersRef = db.collection("users").doc(uid);
-  const postsRef = usersRef.collection("posts");
-
-  const yooo = post.map((item: Post, index: number) => {
-    return item.likeId;
-  });
-  const piii = yooo.shift();
-  console.log(piii);
 
   const likedUser = {
     uid: uid,
-    likeCount: 1,
+    likePostId: likeId,
   };
 
+  const postRef = db.collection("posts").doc(likeId).collection("likeUsers");
+
   const like = () => {
-    postsRef.doc(piii).collection("likeUsers").doc().set(likedUser);
+    // if (heartColor == true) {
+    postRef.doc().set(likedUser);
+    // } else {
+    //   return;
+    //ここに削除ロジック
+    // }
   };
+
+  const getLikes = () => {
+    postRef.get().then((snapshot) => {
+      const localLikes: any[] = [];
+      snapshot.forEach((doc) => {
+        localLikes.push({
+          ...doc.data(),
+        });
+      });
+      setLikes(localLikes);
+    });
+  };
+
+  //useEffectでgetLikesをラップしないといいね数が描画されない
+  //ラップしてもボタンを押して更新しないと表示されない
 
   const pushheart = () => {
     setHeartColor(!heartColor);
     like();
+    getLikes();
   };
 
   return (
@@ -42,11 +58,7 @@ export const HeartBtn = (props: any) => {
         onClick={pushheart}
         color={heartColor ? "White" : "red"}
       />
-      <Box fontSize={{ base: "11px", md: "16px" }}>{heartColor ? 0 : 1}</Box>
+      <Box fontSize={{ base: "11px", md: "16px" }}>{likes.length}</Box>
     </>
   );
 };
-
-//likesコレクションの中にランダムIDのDocを生成。uidとcount：1のデータ
-//いいね数を取り出して表示する時は配列内のデータ数を表示
-//uidはいいねの取り消し、制御のために必要

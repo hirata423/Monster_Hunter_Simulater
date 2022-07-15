@@ -19,20 +19,20 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { BsChatSquareDotsFill } from "react-icons/bs";
+import { db } from "src/firebase";
 import { useGetAuthUser } from "src/hooks/useGetAuthUser";
 import { useGetDate } from "src/hooks/useGetDate";
 import { Comment } from "src/types/StoreDbTypes";
 import { CommentList } from "./CommentList";
 
-export const CommentBtn = () => {
+export const CommentBtn = (props: any) => {
+  const { likeId } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
 
-  // const [time, setTime] = useState<string[]>([]);
   const [comment, setComment] = useState<string>("");
-  const [commentBox, setCommentBox] = useState<string[]>([]);
-  const removeUndefind = commentBox.filter((v) => v);
+  const [commentBox, setCommentBox] = useState<Comment[]>([]);
 
   const { now } = useGetDate();
   const getUser = useGetAuthUser();
@@ -42,30 +42,40 @@ export const CommentBtn = () => {
 
   const commentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
     setComment(e.target.value);
-  // const timeChange = (e: any) => setTime(e.target.value);
 
-  const Sent = () => {
-    setCommentBox((pre) => [...pre, comment]);
-    onClose();
-    setComment("");
-    // setTime([...time, ...now]);
+  const commentRef = db.collection("posts").doc(likeId).collection("comments");
+
+  const commentData = {
+    uid: uid,
+    avatar: avatar,
+    username: username,
+    comment: comment,
+    time: now,
+    likeId: likeId,
   };
 
-  const logBox: Comment[] = [];
-  for (let i = 0; i < removeUndefind.length; i++) {
-    logBox.push({
-      id: i,
-      uid: uid,
-      avatar: avatar,
-      username: username,
-      comment: removeUndefind[i],
-      time: now,
+  const getComments = () => {
+    commentRef.get().then((snapshot) => {
+      const localComments: any[] = [];
+      snapshot.forEach((doc) => {
+        localComments.push({
+          ...doc.data(),
+        });
+      });
+      setCommentBox(localComments);
     });
-  }
+  };
 
-  const contents = logBox.map((item: Comment) => {
+  const Sent = () => {
+    commentRef.doc().set(commentData);
+    setComment("");
+    getComments();
+    onClose();
+  };
+
+  const contents = commentBox.map((item: Comment, index: number) => {
     return (
-      <Box key={item.id} borderBottom="1px solid gray">
+      <Box key={index} borderBottom="1px solid gray">
         <Flex align="center" justify="space-between" my="10px">
           <Flex>
             <HStack>
@@ -80,7 +90,7 @@ export const CommentBtn = () => {
                 src={item.avatar}
               />
               <Box fontSize={{ base: "12px", md: "16px" }}>
-                {username ? username : "名無しさん"}
+                {item.username ? item.username : "名無しさん"}
               </Box>
             </HStack>
           </Flex>
@@ -155,9 +165,9 @@ export const CommentBtn = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-      <Box fontSize={{ base: "11px", md: "16px" }}>{removeUndefind.length}</Box>
+      <Box fontSize={{ base: "11px", md: "16px" }}>{commentBox.length}</Box>
 
-      <CommentList removeUndefind={removeUndefind} contents={contents} />
+      <CommentList commentBox={commentBox} contents={contents} />
     </>
   );
 };

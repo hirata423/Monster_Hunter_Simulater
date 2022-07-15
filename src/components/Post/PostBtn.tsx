@@ -36,7 +36,6 @@ export const PostBtn = () => {
   const finalRef = React.useRef(null);
   const router = useRouter();
 
-  //Hookの戻り値にする（uid,avatar,username）
   const getUser = useGetAuthUser();
   const uid = getUser?.uid;
   const avatar = getUser?.avatar;
@@ -57,23 +56,24 @@ export const PostBtn = () => {
     }
   };
 
-  const usersRef = db.collection("users").doc(uid);
-  const postsRef = usersRef.collection("posts");
+  const postRef = db.collection("posts");
+
   const randomId = Math.random().toString(32).substring(2);
+  const postData = {
+    uid: uid,
+    userName: username,
+    avatar: avatar,
+    intro: intro,
+    image: image,
+    timeStamp: now,
+    likeId: randomId,
+  };
+
   const addPost = () => {
     if (image) {
-      const postData = {
-        uid: uid,
-        userName: username,
-        avatar: avatar,
-        intro: intro,
-        image: image,
-        timeStamp: now,
-        likeId: randomId,
-      };
-      postsRef.doc(randomId).set(postData);
+      postRef.doc(randomId).set(postData);
     } else {
-      console.log("err");
+      console.log("error");
     }
     //投稿完了toastを出す
     onClose();
@@ -83,17 +83,15 @@ export const PostBtn = () => {
   };
 
   const getPosts = () => {
-    db.collectionGroup("posts")
-      .get()
-      .then((snapshot) => {
-        const localPost: any[] = [];
-        snapshot.forEach((doc) => {
-          localPost.push({
-            ...doc.data(),
-          });
+    postRef.get().then((snapshot) => {
+      const localPosts: any[] = [];
+      snapshot.forEach((doc) => {
+        localPosts.push({
+          ...doc.data(),
         });
-        setPost(localPost);
       });
+      setPost(localPosts);
+    });
   };
 
   useEffect(() => {
@@ -104,7 +102,7 @@ export const PostBtn = () => {
   const postListMap = post.map((item, index) => {
     return (
       <Box key={index}>
-        <PostList {...item} post={post} />
+        <PostList {...item} />
       </Box>
     );
   });

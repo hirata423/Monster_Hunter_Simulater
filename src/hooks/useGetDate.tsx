@@ -1,5 +1,3 @@
-import { useCallback } from "react";
-
 export const useGetDate = () => {
   const today = new Date();
   const year = today.getFullYear();

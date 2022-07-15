@@ -24,6 +24,7 @@ const Simulator = () => {
   //isReadeyを使うと解消
   const router = useRouter();
   const isReady = useRouter();
+
   useEffect(() => {
     if (isReady) {
       auth.onAuthStateChanged((user) => {
@@ -37,7 +38,9 @@ const Simulator = () => {
     } else {
       <Loading />;
     }
-  });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
