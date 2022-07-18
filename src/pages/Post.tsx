@@ -1,31 +1,13 @@
 import { Box, Flex } from "@chakra-ui/react";
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
-import { auth } from "src/firebase";
 
 import { HeaderBar } from "../components/Parts/Header/HeaderBar";
 import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
-import { Loading } from "src/components/Parts/Spinner/Loading";
 import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
 import { PostBtn } from "src/components/Post/PostBtn";
+import { useOnAuthState } from "src/hooks/useOnAuthState";
 
 export const Post = () => {
-  const router = useRouter();
-  const isReady = useRouter();
-  useEffect(() => {
-    if (isReady) {
-      auth.onAuthStateChanged((user) => {
-        if (!user) {
-          console.log("未サインイン");
-          router.push("/Login");
-        } else {
-          console.log("サインイン済");
-        }
-      });
-    } else {
-      <Loading />;
-    }
-  });
+  useOnAuthState();
   return (
     <>
       <HeaderBar />

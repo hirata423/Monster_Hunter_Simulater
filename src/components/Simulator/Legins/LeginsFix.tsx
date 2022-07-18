@@ -12,6 +12,7 @@ export const LeginsFix = (props: any) => {
     slot,
     flag,
     icon,
+    closeModal,
     setAble,
     setDefaultLegins,
   } = props;
@@ -41,6 +42,7 @@ export const LeginsFix = (props: any) => {
     });
     setAble(true);
     setDefaultLegins("グリーヴは追加済です");
+    closeModal();
   };
 
   return (
@@ -89,7 +91,7 @@ export const LeginsFix = (props: any) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="54px"> {skill.thirdSK}</Box>
+          <Box ml="74px"> {skill.thirdSK}</Box>
           <Box> {skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>

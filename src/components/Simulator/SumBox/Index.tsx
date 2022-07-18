@@ -200,7 +200,7 @@ export const SumBox = () => {
         fontSize={{ base: "13px", lg: "15px" }}
       >
         <Stack>
-          <Box borderRight="solid gray 1px" pr="5px">
+          <Box pr="5px">
             <Box fontWeight="700">発動スキル</Box>
             <Box pl="7px" pt="9px">
               {skillMapItem}
@@ -209,7 +209,7 @@ export const SumBox = () => {
         </Stack>
 
         <Stack>
-          <Box borderRight="solid gray 1px" pr={{ base: "33px", lg: "15px" }}>
+          <Box pr={{ base: "33px", lg: "15px" }}>
             <Box fontWeight="700">スキルレベル</Box>
             <Box pl="43px" pt="9px">
               {skillLevelMapItem}

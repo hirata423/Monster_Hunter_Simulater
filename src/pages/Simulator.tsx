@@ -1,53 +1,18 @@
 import { Box, Flex, Heading, Stack } from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { auth } from "src/firebase";
 
 import { HeaderBar } from "../components/Parts/Header/HeaderBar";
-import { Helm } from "../components/Simulator/Helm";
-import { Arm } from "../components/Simulator/Arm";
-import { Meil } from "../components/Simulator/Meil";
-import { Koil } from "../components/Simulator/Koil";
-import { Legins } from "../components/Simulator/Legins";
 import { SumBox } from "../components/Simulator/SumBox/Index";
 import { SkillSearch } from "../components/Simulator/SkillSearch";
-import { TotalSkill } from "src/components/Simulator/TotalSkill";
-
-import { Loading } from "src/components/Parts/Spinner/Loading";
 import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
 import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
+import { useOnAuthState } from "src/hooks/useOnAuthState";
+import { TotalSkill } from "src/components/Simulator/TotalSkill";
 
 const Simulator = () => {
-  //Vercelでデプロイ時にエラー
-  //Error: No router instance found. you should only use "next/router"
-  //inside the client side of your app. https://nextjs.org/docs/messages/no-router-instance
-  //isReadeyを使うと解消
-  const router = useRouter();
-  const isReady = useRouter();
-
-  useEffect(() => {
-    if (isReady) {
-      auth.onAuthStateChanged((user) => {
-        if (!user) {
-          console.log("未サインイン");
-          router.push("/Login");
-        } else {
-          console.log("サインイン済");
-        }
-      });
-    } else {
-      <Loading />;
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+  useOnAuthState();
   return (
     <>
       <HeaderBar />
-      {/*開発中機能 */}
-      {/* <TotalSkill /> */}
-
       <Box
         py={{ base: "13px", md: "20px", lg: "" }}
         px={{ base: "13px", md: "20px", lg: "" }}
@@ -76,33 +41,16 @@ const Simulator = () => {
         ></Box>
 
         <Flex justify="center">
-          <Stack spacing="58px" pr={{ base: "0px", lg: "40px" }}>
+          <Stack spacing="40px" pr={{ base: "0px", lg: "50px" }}>
             {/** position:"fixed"するなら,mt="120px" */}
-            <Heading fontSize={{ base: "18px", md: "25px" }}>
-              防具パーツ
+            <Heading
+              fontSize={{ base: "18px", md: "25px" }}
+              mb={{ base: "0", md: "20px" }}
+            >
+              一括検索
             </Heading>
 
-            <Box>
-              <Helm />
-            </Box>
-
-            <Box>
-              <Meil />
-            </Box>
-
-            <Box>
-              <Arm />
-            </Box>
-
-            <Box>
-              <Koil />
-            </Box>
-
-            <Box>
-              <Legins />
-            </Box>
-
-            {/* //縦に並ばせる */}
+            <TotalSkill />
 
             <Box display={{ base: "block", lg: "none" }}>
               <Heading fontSize={{ base: "18px", md: "25px" }} mb="30px">
@@ -113,7 +61,7 @@ const Simulator = () => {
 
             <Box display={{ base: "block", md: "none" }}>
               <Heading fontSize={{ base: "18px", md: "25px" }} mb="30px">
-                スキル検索
+                スキル詳細検索
               </Heading>
               <SkillSearch />
             </Box>
@@ -133,7 +81,7 @@ const Simulator = () => {
             ml={{ base: "0", md: "15px" }}
           >
             <Stack spacing="62px">
-              <Heading fontSize="25px">スキル検索</Heading>
+              <Heading fontSize="25px">スキル詳細検索</Heading>
               <SkillSearch />
             </Stack>
           </Box>

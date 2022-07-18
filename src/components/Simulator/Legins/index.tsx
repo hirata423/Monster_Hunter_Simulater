@@ -1,19 +1,48 @@
-import { Box, Button, Flex, Image, Input, useToast } from "@chakra-ui/react";
-import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  Flex,
+  Image,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+  useToast,
+} from "@chakra-ui/react";
+import React, { useCallback, useState } from "react";
 
 import { useTotalData } from "src/hooks/useTotalData";
 import { BuguType } from "../../../types/BuguType";
 import { LeginsFix } from "./LeginsFix";
 import LeginsList from "../../../../Legins.json";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
-export const Legins = () => {
+const leginsList: BuguType[] = LeginsList;
+
+export const Legins = (props: any) => {
+  const { searchAllData } = props;
+  const toast = useToast();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef(null);
+  const closeModal = () => onClose();
+
+  const { total, setTotal } = useTotalData();
+
   const [defaultLegins, setDefaultLegins] = useState<string>("");
   const [able, setAble] = useState<boolean>(false);
-  const { total, setTotal } = useTotalData();
-  const leginsList: BuguType[] = LeginsList;
-  const changeBugu = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setDefaultLegins(e.target.value);
-  const toast = useToast();
+  const [display, setDisplay] = useState<boolean>(false);
+  const [display2, setDisplay2] = useState<boolean>(false);
+
+  const changeBugu = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setDefaultLegins(e.target.value);
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [defaultLegins]
+  );
 
   const filterItem = leginsList.filter((item: BuguType) => {
     const itemKey =
@@ -21,7 +50,8 @@ export const Legins = () => {
       item.subName +
       item.skill.firstSK +
       item.skill.secondSK +
-      item.skill.thirdSK;
+      item.skill.thirdSK +
+      item.skill.fourthSK;
     return itemKey.includes(defaultLegins);
   });
 
@@ -38,10 +68,31 @@ export const Legins = () => {
           {...item}
           setDefaultLegins={setDefaultLegins}
           setAble={setAble}
+          closeModal={closeModal}
         />
       </Box>
     );
   });
+
+  //////////////////////////////////////////////////////////////////////
+
+  console.log(searchAllData);
+  const searchItem = searchAllData.map((item: BuguType) => {
+    if (item.icon === "./public/images/legins.jpg") {
+      return (
+        <Box borderBottom="1px solid white" p="15px" key={item.id}>
+          <LeginsFix
+            {...item}
+            setDefaultLegins={setDefaultLegins}
+            setAble={setAble}
+            closeModal={closeModal}
+          />
+        </Box>
+      );
+    }
+  });
+  const removeUndefind = searchItem.filter((v: any) => v);
+  //////////////////////////////////////////////////////////////////////
 
   const takeOff = () => {
     setTotal((prev) => [
@@ -85,6 +136,9 @@ export const Legins = () => {
     }
   });
 
+  const dsiplayNone = () => setDisplay(!display);
+  const dsiplayNone2 = () => setDisplay2(!display2);
+
   return (
     <>
       <Flex align="center">
@@ -106,16 +160,56 @@ export const Legins = () => {
         </Box>
       </Flex>
       <Box pl={{ base: "58px", md: "76px" }} mt="10px">
-        <Box
-          display={defaultLegins ? "none" : "block"}
-          fontSize={{ base: "11px", md: "14px" }}
+        <Button
+          mt={3}
+          ref={btnRef}
+          onClick={onOpen}
+          rightIcon={<ChevronDownIcon />}
+          color="green.600"
+          fontWeight="700"
+          display={able ? "none" : "block"}
         >
-          武具名：
-        </Box>
-        {mapItem}
-        <Box>
-          <Box fontSize={{ base: "13px", lg: "15px" }}>{takeOffBugu}</Box>
-        </Box>
+          個別({defaultLegins ? mapItem.length : "0"}) 一括 (
+          {searchItem ? removeUndefind.length : "0"})
+        </Button>
+
+        <Modal
+          onClose={onClose}
+          finalFocusRef={btnRef}
+          isOpen={isOpen}
+          scrollBehavior="inside"
+        >
+          <ModalOverlay />
+          <ModalContent bgColor="blue.900" color="white">
+            <ModalHeader>Modal Title</ModalHeader>
+            <ModalCloseButton />
+            <Flex justify="center" fontWeight="700" fontSize="18px">
+              <Box
+                onClick={dsiplayNone}
+                _hover={{ cursor: "pointer", color: "green.300" }}
+              >
+                {display ? "個別：表示" : "個別：非表示"}
+              </Box>
+            </Flex>
+            <ModalBody m="10px" hidden={display}>
+              {mapItem}
+            </ModalBody>
+
+            <Flex justify="center" fontWeight="700" fontSize="18px">
+              <Box
+                onClick={dsiplayNone2}
+                _hover={{ cursor: "pointer", color: "green.300" }}
+              >
+                {display2 ? "一括：表示" : "一括：非表示"}
+              </Box>
+            </Flex>
+            <ModalBody m="10px" hidden={display2}>
+              {searchItem}
+            </ModalBody>
+          </ModalContent>
+        </Modal>
+
+        <Box fontSize={{ base: "13px", lg: "15px" }}>{takeOffBugu}</Box>
       </Box>
     </>
   );

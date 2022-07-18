@@ -12,6 +12,7 @@ export const KoilFix = (props: any) => {
     slot,
     flag,
     icon,
+    closeModal,
     setAble,
     setDefaultKoil,
   } = props;
@@ -42,6 +43,7 @@ export const KoilFix = (props: any) => {
     });
     setAble(true);
     setDefaultKoil("フォールドは追加済です");
+    closeModal();
   };
 
   return (
@@ -90,7 +92,7 @@ export const KoilFix = (props: any) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="54px"> {skill.thirdSK}</Box>
+          <Box ml="74px"> {skill.thirdSK}</Box>
           <Box> {skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>

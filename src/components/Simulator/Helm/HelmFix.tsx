@@ -5,6 +5,7 @@ export const HelmFix = (props: any) => {
   const {
     setDefaultHelm,
     setAble,
+    closeModal,
     id,
     name,
     subName,
@@ -44,6 +45,7 @@ export const HelmFix = (props: any) => {
     });
     setDefaultHelm("ヘルムは追加済です");
     setAble(true);
+    closeModal();
   };
 
   return (
@@ -92,7 +94,7 @@ export const HelmFix = (props: any) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="54px"> {skill.thirdSK}</Box>
+          <Box ml="74px"> {skill.thirdSK}</Box>
           <Box> {skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>

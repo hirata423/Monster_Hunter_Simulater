@@ -12,9 +12,11 @@ export const ArmFix = (props: any) => {
     slot,
     flag,
     icon,
+    closeModal,
     setAble,
     setDefaultArm,
   } = props;
+
   const { setTotal } = useTotalData();
   const toast = useToast();
 
@@ -41,6 +43,7 @@ export const ArmFix = (props: any) => {
     });
     setAble(true);
     setDefaultArm("アームは追加済です");
+    closeModal();
   };
 
   return (
@@ -89,7 +92,7 @@ export const ArmFix = (props: any) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="54px"> {skill.thirdSK}</Box>
+          <Box ml="74px"> {skill.thirdSK}</Box>
           <Box> {skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>

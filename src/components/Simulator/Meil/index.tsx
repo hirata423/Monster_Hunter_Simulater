@@ -1,19 +1,48 @@
-import { Box, Button, Flex, Image, Input, useToast } from "@chakra-ui/react";
-import { useState } from "react";
+import {
+  Box,
+  Button,
+  Flex,
+  Image,
+  Input,
+  useToast,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+} from "@chakra-ui/react";
+import React, { useCallback, useState } from "react";
 
 import { useTotalData } from "src/hooks/useTotalData";
 import { BuguType } from "../../../types/BuguType";
 import { MeilFix } from "./MeilFix";
 import MeilList from "../../../../Meil.json";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
-export const Meil = () => {
+const meilList: BuguType[] = MeilList;
+
+export const Meil = (props: any) => {
+  const { searchAllData } = props;
+  const toast = useToast();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef(null);
+  const closeModal = () => onClose();
+
+  const { total, setTotal } = useTotalData();
+
   const [defaultMeil, setDefaultMeil] = useState<string>("");
   const [able, setAble] = useState<boolean>(false);
-  const { total, setTotal } = useTotalData();
-  const meilList: BuguType[] = MeilList;
-  const changeBugu = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setDefaultMeil(e.target.value);
-  const toast = useToast();
+  const [display, setDisplay] = useState<boolean>(false);
+  const [display2, setDisplay2] = useState<boolean>(false);
+
+  const changeBugu = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setDefaultMeil(e.target.value);
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [defaultMeil]
+  );
 
   const filterItem = meilList.filter((item: BuguType) => {
     const itemKey =
@@ -21,7 +50,8 @@ export const Meil = () => {
       item.subName +
       item.skill.firstSK +
       item.skill.secondSK +
-      item.skill.thirdSK;
+      item.skill.thirdSK +
+      item.skill.fourthSK;
     return itemKey.includes(defaultMeil);
   });
 
@@ -38,6 +68,26 @@ export const Meil = () => {
       </Box>
     );
   });
+
+  //////////////////////////////////////////////////////////////////////
+
+  console.log(searchAllData);
+  const searchItem = searchAllData.map((item: BuguType) => {
+    if (item.icon === "./public/images/meil.jpg") {
+      return (
+        <Box borderBottom="1px solid white" p="15px" key={item.id}>
+          <MeilFix
+            {...item}
+            setDefaultMeil={setDefaultMeil}
+            setAble={setAble}
+            closeModal={closeModal}
+          />
+        </Box>
+      );
+    }
+  });
+  const removeUndefind = searchItem.filter((v: any) => v);
+  //////////////////////////////////////////////////////////////////////
 
   const takeOff = () => {
     setTotal((prev) => [
@@ -81,6 +131,9 @@ export const Meil = () => {
     }
   });
 
+  const dsiplayNone = () => setDisplay(!display);
+  const dsiplayNone2 = () => setDisplay2(!display2);
+
   return (
     <>
       <Flex align="center">
@@ -102,16 +155,56 @@ export const Meil = () => {
         </Box>
       </Flex>
       <Box pl={{ base: "58px", md: "76px" }} mt="10px">
-        <Box
-          display={defaultMeil ? "none" : "block"}
-          fontSize={{ base: "11px", md: "14px" }}
+        <Button
+          mt={3}
+          ref={btnRef}
+          onClick={onOpen}
+          rightIcon={<ChevronDownIcon />}
+          color="green.600"
+          fontWeight="700"
+          display={able ? "none" : "block"}
         >
-          防具名：
-        </Box>
-        {mapItem}
-        <Box>
-          <Box fontSize={{ base: "13px", lg: "15px" }}>{takeOffBugu}</Box>
-        </Box>
+          個別({defaultMeil ? mapItem.length : "0"}) 一括 (
+          {searchItem ? removeUndefind.length : "0"})
+        </Button>
+
+        <Modal
+          onClose={onClose}
+          finalFocusRef={btnRef}
+          isOpen={isOpen}
+          scrollBehavior="inside"
+        >
+          <ModalOverlay />
+          <ModalContent bgColor="blue.900" color="white">
+            <ModalHeader>Modal Title</ModalHeader>
+            <ModalCloseButton />
+            <Flex justify="center" fontWeight="700" fontSize="18px">
+              <Box
+                onClick={dsiplayNone}
+                _hover={{ cursor: "pointer", color: "green.300" }}
+              >
+                {display ? "個別：表示" : "個別：非表示"}
+              </Box>
+            </Flex>
+            <ModalBody m="10px" hidden={display}>
+              {mapItem}
+            </ModalBody>
+
+            <Flex justify="center" fontWeight="700" fontSize="18px">
+              <Box
+                onClick={dsiplayNone2}
+                _hover={{ cursor: "pointer", color: "green.300" }}
+              >
+                {display2 ? "一括：表示" : "一括：非表示"}
+              </Box>
+            </Flex>
+            <ModalBody m="10px" hidden={display2}>
+              {searchItem}
+            </ModalBody>
+          </ModalContent>
+        </Modal>
+
+        <Box fontSize={{ base: "13px", lg: "15px" }}>{takeOffBugu}</Box>
       </Box>
     </>
   );
