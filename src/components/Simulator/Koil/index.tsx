@@ -177,7 +177,7 @@ export const Koil = (props: any) => {
         >
           <ModalOverlay />
           <ModalContent bgColor="blue.900" color="white">
-            <ModalHeader>Modal Title</ModalHeader>
+            <ModalHeader>防具リスト</ModalHeader>
             <ModalCloseButton />
             <Flex justify="center" fontWeight="700" fontSize="18px">
               <Box

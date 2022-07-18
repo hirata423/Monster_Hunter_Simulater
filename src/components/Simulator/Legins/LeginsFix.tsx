@@ -91,7 +91,9 @@ export const LeginsFix = (props: any) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="74px"> {skill.thirdSK}</Box>
+          <Box ml={{ base: "55px", md: "65px", lg: "74px" }}>
+            {skill.thirdSK}
+          </Box>
           <Box> {skillLevel.thirdSK}</Box>
         </HStack>
       </Flex>

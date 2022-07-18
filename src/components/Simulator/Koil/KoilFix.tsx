@@ -92,8 +92,16 @@ export const KoilFix = (props: any) => {
       </Flex>
       <Flex>
         <HStack spacing="15px">
-          <Box ml="74px"> {skill.thirdSK}</Box>
-          <Box> {skillLevel.thirdSK}</Box>
+          <Flex>
+            <Box ml={{ base: "55px", md: "65px", lg: "74px" }} mr="15px">
+              {skill.thirdSK}
+            </Box>
+            <Box> {skillLevel.thirdSK}</Box>
+          </Flex>
+          <Flex>
+            <Box mr="15px"> {skill.fourthSK}</Box>
+            <Box> {skillLevel.fourthSK}</Box>
+          </Flex>
         </HStack>
       </Flex>
     </Stack>
