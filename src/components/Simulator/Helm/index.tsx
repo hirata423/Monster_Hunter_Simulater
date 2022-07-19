@@ -141,7 +141,7 @@ export const Helm = (props: any) => {
 
   return (
     <>
-      <Flex align="center">
+      <Flex align="center" justify="center">
         <Box boxSize={{ base: "39px", md: "48px" }}>
           {/* eslint-disable*/}
           <Image src="/images/helm.jpg" />

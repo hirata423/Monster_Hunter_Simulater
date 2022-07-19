@@ -1,4 +1,4 @@
-import { Box, Heading, Input } from "@chakra-ui/react";
+import { Box, Flex, Heading, Input } from "@chakra-ui/react";
 import { useState } from "react";
 
 import { BuguType } from "src/types/BuguType";
@@ -45,7 +45,7 @@ export const TotalSkill = () => {
 
   return (
     <>
-      <Box>
+      <Flex justify="center">
         <Input
           onChange={testChange}
           value={defaultValue}
@@ -53,7 +53,7 @@ export const TotalSkill = () => {
           w={{ base: "330px", md: "370px" }}
           h={{ base: "35px", md: "40px" }}
         />
-      </Box>
+      </Flex>
       <Heading fontSize={{ base: "18px", md: "25px" }}>個別検索</Heading>
       <Box>
         <Helm searchAllData={searchAllData} />

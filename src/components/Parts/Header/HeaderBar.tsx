@@ -15,7 +15,7 @@ export const HeaderBar = () => {
         align="center"
         color="white"
         fontWeight={{ base: "500", md: "300" }}
-        fontSize={{ base: "16px", md: "33", lg: "40px" }}
+        fontSize={{ base: "20px", md: "33", lg: "40px" }}
         pl={{ base: "13px", md: "24px", lg: "30px" }}
       >
         MH’Rize ツールアプリ（仮称）
