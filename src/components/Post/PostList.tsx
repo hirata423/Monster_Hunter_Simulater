@@ -1,6 +1,9 @@
+import { Icon } from "@chakra-ui/icons";
 import { Avatar, Box, Flex, HStack, Image, WrapItem } from "@chakra-ui/react";
 import { CommentBtn } from "./CommentBtn";
 import { HeartBtn } from "./HeartBtn";
+import { IoTrashBinOutline } from "react-icons/io5";
+import { DeleteBtn } from "./DeleteBtn";
 
 export const PostList = (props: any) => {
   const { uid, userName, avatar, intro, image, timeStamp, likeId } = props;
@@ -14,22 +17,27 @@ export const PostList = (props: any) => {
           borderBottom="1px white solid"
         >
           <Box m="20px">
-            <Flex align="center">
-              <HStack spacing="10px">
-                <Avatar
-                  size="sm"
-                  display={{ base: "block", md: "none" }}
-                  src={avatar}
-                />
-                <Avatar
-                  size="md"
-                  display={{ base: "none", md: "block" }}
-                  src={avatar}
-                />
-                <Box fontWeight="600" fontSize={{ base: "15px", md: "20px" }}>
-                  {userName}
-                </Box>
-              </HStack>
+            <Flex justify="space-between">
+              <Flex align="center">
+                <HStack spacing="10px">
+                  <Avatar
+                    size="sm"
+                    display={{ base: "block", md: "none" }}
+                    src={avatar}
+                  />
+                  <Avatar
+                    size="md"
+                    display={{ base: "none", md: "block" }}
+                    src={avatar}
+                  />
+                  <Box fontWeight="600" fontSize={{ base: "15px", md: "20px" }}>
+                    {userName}
+                  </Box>
+                </HStack>
+              </Flex>
+              <Flex align="center">
+                <DeleteBtn likeId={likeId} uid={uid} />
+              </Flex>
             </Flex>
 
             <Box
