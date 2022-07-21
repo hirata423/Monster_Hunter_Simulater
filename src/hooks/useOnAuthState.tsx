@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { Loading } from "src/components/Parts/Spinner/Loading";
-import { auth } from "src/firebase";
+import { useEffect, useState } from "react";
+import { auth, db } from "src/firebase";
+import { User } from "src/types/StoreDbTypes";
 
 export const useOnAuthState = () => {
+  // const [user, setUser] = useState<Partial<User>>();
   //Vercelでデプロイ時にエラー
   //Error: No router instance found. you should only use "next/router"
   //inside the client side of your app. https://nextjs.org/docs/messages/no-router-instance
@@ -19,13 +20,19 @@ export const useOnAuthState = () => {
           router.push("/Login");
         } else {
           console.log("サインイン済");
+
+          //読み取り回数多すぎる
+
+          // const uid = auth.currentUser?.uid;
+          // const usersCol = db.collection("users").doc(uid);
+          // usersCol.get().then((doc) => {
+          //   setUser(doc.data());
+          // });
         }
       });
-    } else {
-      <Loading />;
     }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, []);
 
   return;

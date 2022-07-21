@@ -23,12 +23,13 @@ import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
 import { BsPencilSquare } from "react-icons/bs";
 
-import { db } from "src/firebase";
-import { useGetAuthUser } from "src/hooks/useGetAuthUser";
+import { auth, db } from "src/firebase";
+import { useOnAuthState } from "src/hooks/useOnAuthState";
 import { useGetDate } from "src/hooks/useGetDate";
 import { useStorage } from "src/hooks/useStorage";
-import { Post } from "src/types/StoreDbTypes";
+import { Post, User } from "src/types/StoreDbTypes";
 import { PostList } from "./PostList";
+import { useGetAuthUser } from "src/hooks/useGetAuthUser";
 
 export const PostBtn = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,6 +41,11 @@ export const PostBtn = () => {
   const uid = getUser?.uid;
   const avatar = getUser?.avatar;
   const username = getUser?.username;
+
+  // const getUser = useOnAuthState();
+  // const uid = getUser?.uid;
+  // const avatar = getUser?.avatar;
+  // const username = getUser?.username;
 
   const { image, setImage, stg } = useStorage();
   const { now } = useGetDate();
@@ -98,6 +104,11 @@ export const PostBtn = () => {
     getPosts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  //第二引数にpostを入れると、下のエラー
+  //Warning: Can't perform a React state update on an unmounted component.
+  //This is a no-op, but it indicates a memory leak in your application.
+  //To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
 
   const postListMap = post.map((item, index) => {
     return (

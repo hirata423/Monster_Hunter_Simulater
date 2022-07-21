@@ -1,12 +1,15 @@
 import { Avatar, Flex, HStack } from "@chakra-ui/react";
 import { useGetAuthUser } from "src/hooks/useGetAuthUser";
+import { useOnAuthState } from "src/hooks/useOnAuthState";
 
 export const StatusIcon = () => {
+  // const getUser = useOnAuthState();
+  // const avatar = getUser?.avatar;
+  // const username = getUser?.username;
+
   const getUser = useGetAuthUser();
   const avatar = getUser?.avatar;
   const username = getUser?.username;
-
-  console.log("StatusIcon");
 
   return (
     <>

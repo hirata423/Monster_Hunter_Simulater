@@ -17,13 +17,14 @@ import {
   Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsChatSquareDotsFill } from "react-icons/bs";
 import { db } from "src/firebase";
-import { useGetAuthUser } from "src/hooks/useGetAuthUser";
+import { useOnAuthState } from "src/hooks/useOnAuthState";
 import { useGetDate } from "src/hooks/useGetDate";
 import { Comment } from "src/types/StoreDbTypes";
 import { CommentList } from "./CommentList";
+import { useGetAuthUser } from "src/hooks/useGetAuthUser";
 
 export const CommentBtn = (props: any) => {
   const { likeId } = props;
@@ -35,6 +36,11 @@ export const CommentBtn = (props: any) => {
   const [commentBox, setCommentBox] = useState<Comment[]>([]);
 
   const { now } = useGetDate();
+  // const getUser = useOnAuthState();
+  // const uid = getUser?.uid;
+  // const avatar = getUser?.avatar;
+  // const username = getUser?.username;
+
   const getUser = useGetAuthUser();
   const uid = getUser?.uid;
   const avatar = getUser?.avatar;
@@ -65,6 +71,12 @@ export const CommentBtn = (props: any) => {
       setCommentBox(localComments);
     });
   };
+
+  useEffect(() => {
+    getComments();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const Sent = () => {
     commentRef.doc().set(commentData);

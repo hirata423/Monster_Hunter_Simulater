@@ -1,14 +1,18 @@
 import { Box, Icon } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsHeartFill } from "react-icons/bs";
 import { db } from "src/firebase";
 import { useGetAuthUser } from "src/hooks/useGetAuthUser";
+import { useOnAuthState } from "src/hooks/useOnAuthState";
 import { Like } from "src/types/StoreDbTypes";
 
 export const HeartBtn = (props: any) => {
   const { likeId } = props;
   const [heartColor, setHeartColor] = useState<boolean>(true);
   const [likes, setLikes] = useState<Like[]>([]);
+
+  // const getUser = useOnAuthState();
+  // const uid = getUser?.uid;
 
   const getUser = useGetAuthUser();
   const uid = getUser?.uid;
@@ -41,6 +45,11 @@ export const HeartBtn = (props: any) => {
     });
   };
 
+  useEffect(() => {
+    getLikes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   //useEffectでgetLikesをラップしないといいね数が描画されない
   //ラップしてもボタンを押して更新しないと表示されない
 
@@ -56,7 +65,7 @@ export const HeartBtn = (props: any) => {
         as={BsHeartFill}
         fontSize={{ base: "11px", md: "16px" }}
         onClick={pushheart}
-        color={heartColor ? "White" : "red"}
+        color={likes.length == 0 ? "White" : "red"}
       />
       <Box fontSize={{ base: "11px", md: "16px" }}>{likes.length}</Box>
     </>

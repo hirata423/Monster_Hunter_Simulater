@@ -76,6 +76,8 @@ export const Helm = (props: any) => {
 
   //////////////////////////////////////////////////////////////////////
 
+  //レンダリング2回
+  console.log("Helm", searchAllData);
   const searchItem = searchAllData.map((item: BuguType) => {
     if (item.icon === "./public/images/helm.jpg") {
       return (

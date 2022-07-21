@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Input } from "@chakra-ui/react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import { BuguType } from "src/types/BuguType";
 import HelmList from "../../../../Helm.json";
@@ -30,7 +30,12 @@ const totalList: BuguType[] = [
 export const TotalSkill = () => {
   const [defaultValue, setDefalutValue] = useState<string>("");
 
-  const testChange = (e: any) => setDefalutValue(e.target.value);
+  const testChange = useCallback(
+    (e: any) => {
+      setDefalutValue(e.target.value);
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [defaultValue]
+  );
 
   const searchAllData = totalList.filter((item: BuguType) => {
     const keyWord =
@@ -42,6 +47,9 @@ export const TotalSkill = () => {
       item.skill.fourthSK;
     return keyWord.includes(defaultValue);
   });
+
+  //レンダリング1回
+  console.log("TotalSkill", searchAllData);
 
   return (
     <>

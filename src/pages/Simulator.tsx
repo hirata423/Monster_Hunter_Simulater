@@ -10,6 +10,7 @@ import { TotalSkill } from "src/components/Simulator/TotalSkill";
 
 const Simulator = () => {
   useOnAuthState();
+
   return (
     <>
       <HeaderBar />

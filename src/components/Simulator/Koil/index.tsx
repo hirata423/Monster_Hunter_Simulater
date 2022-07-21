@@ -72,7 +72,6 @@ export const Koil = (props: any) => {
 
   //////////////////////////////////////////////////////////////////////
 
-  console.log(searchAllData);
   const searchItem = searchAllData.map((item: BuguType) => {
     if (item.icon === "./public/images/koil.jpg") {
       return (

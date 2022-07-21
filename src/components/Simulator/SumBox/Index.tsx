@@ -192,6 +192,8 @@ export const SumBox = () => {
   //   return acc + val.blockPoint;
   // }, 0);
 
+  console.log("SumBox");
+
   return (
     <>
       <Flex
