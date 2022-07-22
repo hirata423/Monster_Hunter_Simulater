@@ -25,6 +25,7 @@ import { useGetDate } from "src/hooks/useGetDate";
 import { Comment } from "src/types/StoreDbTypes";
 import { CommentList } from "./CommentList";
 import { useGetAuthUser } from "src/hooks/useGetAuthUser";
+import { DeleteCommentBtn } from "./DeleteCommentBtn";
 
 export const CommentBtn = (props: any) => {
   const { likeId } = props;
@@ -104,6 +105,7 @@ export const CommentBtn = (props: any) => {
               <Box fontSize={{ base: "12px", md: "16px" }}>
                 {item.username ? item.username : "名無しさん"}
               </Box>
+              {/* <DeleteCommentBtn likeId={likeId} uid={uid} /> */}
             </HStack>
           </Flex>
 

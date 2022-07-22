@@ -172,18 +172,18 @@ export const SumBox = () => {
 
   const slotCountMapItem = reduceList2.map(
     (item: SkillLevelType, index: number) => {
-      if (index < 3) {
-        return (
-          <Box key={index}>
-            <Flex>
-              <HStack spacing="15px">
-                <Box>{item.slot}</Box>
-                <Box>×{item.count}</Box>
-              </HStack>
-            </Flex>
-          </Box>
-        );
-      }
+      return (
+        <Box key={index}>
+          <Flex>
+            <HStack spacing="15px">
+              <Box>{item.slot}</Box>
+              <Box display={item.slot === undefined ? "none" : "block"}>
+                {`×${item.count}`}
+              </Box>
+            </HStack>
+          </Flex>
+        </Box>
+      );
     }
   );
 

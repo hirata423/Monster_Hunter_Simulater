@@ -14,7 +14,7 @@ import {
 import { useState } from "react";
 
 export const CommentList = (props: any) => {
-  const { contents } = props;
+  const { contents, likeId, uid } = props;
   const [modal, setModal] = useState(true);
   const { isOpen, onClose, onToggle } = useDisclosure();
 

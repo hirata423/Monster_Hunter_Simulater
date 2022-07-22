@@ -1,9 +1,8 @@
-import { Icon } from "@chakra-ui/icons";
 import { Avatar, Box, Flex, HStack, Image, WrapItem } from "@chakra-ui/react";
 import { CommentBtn } from "./CommentBtn";
 import { HeartBtn } from "./HeartBtn";
-import { IoTrashBinOutline } from "react-icons/io5";
-import { DeleteBtn } from "./DeleteBtn";
+
+import { DeletePostBtn } from "./DeletePostBtn";
 
 export const PostList = (props: any) => {
   const { uid, userName, avatar, intro, image, timeStamp, likeId } = props;
@@ -36,7 +35,7 @@ export const PostList = (props: any) => {
                 </HStack>
               </Flex>
               <Flex align="center">
-                <DeleteBtn likeId={likeId} uid={uid} />
+                <DeletePostBtn likeId={likeId} uid={uid} />
               </Flex>
             </Flex>
 

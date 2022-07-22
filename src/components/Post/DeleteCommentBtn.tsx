@@ -5,7 +5,7 @@ import { IoTrashBinOutline } from "react-icons/io5";
 import { db } from "src/firebase";
 import { useGetAuthUser } from "src/hooks/useGetAuthUser";
 
-export const DeleteBtn = (props: any) => {
+export const DeleteCommentBtn = (props: any) => {
   const { likeId, uid } = props;
 
   const router = useRouter();
@@ -15,7 +15,11 @@ export const DeleteBtn = (props: any) => {
 
   const loading = useCallback(() => router.push("/LoadingDisplay"), [router]);
 
-  const postRef = db.collection("posts").doc(likeId);
+  const postRef = db
+    .collection("posts")
+    .doc(likeId)
+    .collection("comments")
+    .doc(likeId);
 
   const deletePost = () => {
     postRef.delete();
