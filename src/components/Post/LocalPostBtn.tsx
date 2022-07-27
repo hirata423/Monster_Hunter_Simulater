@@ -94,7 +94,6 @@ export const PostBtn = () => {
     setImage([]);
     onClose();
   };
-  // console.log("Post", userNameBox, avatarBox, introBox, imageBox, timeStamp);
 
   const postBox: Post[] = [];
   for (let i = 0; i < introBox.length; i++) {

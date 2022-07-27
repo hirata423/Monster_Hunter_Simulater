@@ -41,7 +41,7 @@ export const Meil = (props: any) => {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setDefaultMeil(e.target.value);
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultMeil]
+    []
   );
 
   const filterItem = meilList.filter((item: BuguType) => {

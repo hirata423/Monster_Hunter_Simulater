@@ -48,9 +48,6 @@ export const HelmFix = (props: any) => {
     closeModal();
   };
 
-  //レンダリングなし
-  console.log("HelmFix");
-
   return (
     <Stack
       spacing="15px"

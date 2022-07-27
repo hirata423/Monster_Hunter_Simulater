@@ -40,7 +40,7 @@ export const Koil = (props: any) => {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setDefaultKoil(e.target.value);
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultKoil]
+    []
   );
 
   const toast = useToast();

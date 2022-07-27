@@ -7,8 +7,9 @@ import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
 import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
 import { useOnAuthState } from "src/hooks/useOnAuthState";
 import { TotalSkill } from "src/components/Simulator/TotalSkill";
+import { memo } from "react";
 
-const Simulator = () => {
+const Simulator = memo(function Simulator() {
   useOnAuthState();
 
   return (
@@ -93,6 +94,6 @@ const Simulator = () => {
       </Box>
     </>
   );
-};
+});
 
 export default Simulator;

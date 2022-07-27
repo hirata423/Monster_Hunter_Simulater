@@ -24,7 +24,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 const helmList: BuguType[] = HelmList;
 
 export const Helm = (props: any) => {
-  const { searchAllData } = props;
+  const { searchAllData, defaultValue } = props;
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef(null);
@@ -41,7 +41,7 @@ export const Helm = (props: any) => {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setDefaultHelm(e.target.value);
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultHelm]
+    []
   );
 
   const filterItem = helmList.filter((item: BuguType) => {
@@ -76,12 +76,16 @@ export const Helm = (props: any) => {
 
   //////////////////////////////////////////////////////////////////////
 
-  //レンダリング2回
-  console.log("Helm", searchAllData);
   const searchItem = searchAllData.map((item: BuguType) => {
     if (item.icon === "./public/images/helm.jpg") {
       return (
-        <Box borderBottom="1px solid white" p="15px" key={item.id}>
+        <Box
+          // display={!defaultValue ? "none" : "block"}
+          borderBottom="1px solid white"
+          fontSize="18px"
+          mb="25px"
+          key={item.id}
+        >
           <HelmFix
             {...item}
             setDefaultHelm={setDefaultHelm}

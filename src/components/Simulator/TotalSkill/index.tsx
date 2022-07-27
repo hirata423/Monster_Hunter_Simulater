@@ -1,5 +1,5 @@
-import { Box, Flex, Heading, Input } from "@chakra-ui/react";
-import { useCallback, useState } from "react";
+import { Box, Button, Flex, Heading, Input } from "@chakra-ui/react";
+import { memo, useCallback, useEffect, useState } from "react";
 
 import { BuguType } from "src/types/BuguType";
 import HelmList from "../../../../Helm.json";
@@ -27,15 +27,14 @@ const totalList: BuguType[] = [
   ...leginsList,
 ];
 
-export const TotalSkill = () => {
+export const TotalSkill = memo(function TotalSkill() {
   const [defaultValue, setDefalutValue] = useState<string>("");
+  // const [too, setToo] = useState<BuguType[]>([]);
 
-  const testChange = useCallback(
-    (e: any) => {
-      setDefalutValue(e.target.value);
-    }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultValue]
-  );
+  const testChange = useCallback((e: any) => {
+    setDefalutValue(e.target.value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const searchAllData = totalList.filter((item: BuguType) => {
     const keyWord =
@@ -48,8 +47,9 @@ export const TotalSkill = () => {
     return keyWord.includes(defaultValue);
   });
 
-  //レンダリング1回
-  console.log("TotalSkill", searchAllData);
+  // const testClick = () => {
+  //   setToo(searchAllData);
+  // };
 
   return (
     <>
@@ -61,10 +61,13 @@ export const TotalSkill = () => {
           w={{ base: "330px", md: "370px" }}
           h={{ base: "35px", md: "40px" }}
         />
+        {/* <Button color="white" bgColor="green" onClick={testClick}>
+          test
+        </Button> */}
       </Flex>
       <Heading fontSize={{ base: "18px", md: "25px" }}>個別検索</Heading>
       <Box>
-        <Helm searchAllData={searchAllData} />
+        <Helm searchAllData={searchAllData} defaultValue={defaultValue} />
       </Box>
 
       <Box>
@@ -84,4 +87,4 @@ export const TotalSkill = () => {
       </Box>
     </>
   );
-};
+});

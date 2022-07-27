@@ -41,7 +41,7 @@ export const Legins = (props: any) => {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setDefaultLegins(e.target.value);
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultLegins]
+    []
   );
 
   const filterItem = leginsList.filter((item: BuguType) => {

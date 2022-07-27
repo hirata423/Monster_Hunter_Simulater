@@ -1,7 +1,8 @@
-import { Box, Flex, HStack, Image, Stack } from "@chakra-ui/react";
+import { Box, Flex, HStack, Image, Select, Stack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { HeaderBar } from "src/components/Parts/Header/HeaderBar";
+import { SelectMenue } from "src/components/Post/SelectMenue";
 
 export const Top = () => {
   const router = useRouter();
@@ -20,19 +21,24 @@ export const Top = () => {
         w="100%"
         minH="100vh"
       >
-        <Flex justify="space-between" align="center" py="10px"></Flex>
-        <Box
+        <Flex justify="space-between" align="center"></Flex>
+        <Flex
           fontSize={{ base: "17px", md: "25px" }}
           fontWeight="700"
           color="black"
         >
           Top
-        </Box>
+        </Flex>
 
         <Box
           borderBottom="1px solid gray"
           mb={{ base: "13px", md: "20px", lg: "" }}
+          pb={{ base: "13px", md: "20px", lg: "20px" }}
         ></Box>
+
+        <Flex fontSize={{ base: "13px", md: "25px" }} justify="center">
+          <SelectMenue />
+        </Flex>
 
         <Flex
           fontSize={{ base: "13px", md: "25px" }}
@@ -59,10 +65,11 @@ export const Top = () => {
               fontWeight="800"
             >
               <Stack>
-                <Box>１、検索バーに入力（防具名・モンスター名・スキル名）</Box>
-                <Box>２、装着ボタンで登録→着脱ボタンで解除</Box>
-                <Box>３、装着済リストに各項目の合計値が表示</Box>
-                <Box>４、スキル検索でスキル詳細を検索可能</Box>
+                <Box>１、一括または個別検索バーに入力（例:攻撃と入力）</Box>
+                <Box>2、プルダウン中に個別、一括の検索対象が上下で表示。</Box>
+                <Box>3、装着→着脱ボタンで操作</Box>
+                <Box>4、装着済リストに各項目の合計値が表示</Box>
+                <Box>5、スキル検索でスキル詳細を検索可能</Box>
               </Stack>
             </Box>
           </HStack>

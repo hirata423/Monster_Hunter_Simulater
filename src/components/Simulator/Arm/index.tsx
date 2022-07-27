@@ -41,7 +41,7 @@ export const Arm = (props: any) => {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setDefaultArm(e.target.value);
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultArm]
+    []
   );
 
   const filterItem = armList.filter((item: BuguType) => {

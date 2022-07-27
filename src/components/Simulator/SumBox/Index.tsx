@@ -98,7 +98,6 @@ export const SumBox = () => {
       count: test,
     });
   }
-  // console.log("skillList:スキルを細分化した新配列", skillList);
 
   //skillとskillLevell
   const reduceList = skillList.reduce(
@@ -120,7 +119,6 @@ export const SumBox = () => {
     },
     []
   );
-  // console.log("reduceList:スキル名重複削除、レベルの足し算", reduceList);
 
   //slot
   const reduceList2 = skillList.reduce(
@@ -142,7 +140,6 @@ export const SumBox = () => {
     },
     []
   );
-  // console.log("reduceList2:スロットの数計算", reduceList2);
 
   const skillMapItem = reduceList.map((item: SkillLevelType, index: number) => {
     return (
@@ -191,8 +188,6 @@ export const SumBox = () => {
   // const sumBlockPoint = total.reduce((acc: number, val: BuguType): number => {
   //   return acc + val.blockPoint;
   // }, 0);
-
-  console.log("SumBox");
 
   return (
     <>
