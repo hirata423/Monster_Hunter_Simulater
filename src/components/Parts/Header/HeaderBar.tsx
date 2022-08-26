@@ -18,11 +18,11 @@ export const HeaderBar = () => {
         fontSize={{ base: "20px", md: "33", lg: "40px" }}
         pl={{ base: "13px", md: "24px", lg: "30px" }}
       >
-        MH’Rize ツールアプリ（仮称）
+        MH’Rizeスキルシュミレーター
       </Flex>
 
       <Flex align="center" color="white" mr={{ base: "10px", md: "20px" }}>
-        <HumburgerBtn />
+        {/* <HumburgerBtn /> */}
       </Flex>
     </Flex>
   );

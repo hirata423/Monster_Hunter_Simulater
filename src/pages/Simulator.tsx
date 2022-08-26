@@ -4,14 +4,10 @@ import { HeaderBar } from "../components/Parts/Header/HeaderBar";
 import { SumBox } from "../components/Simulator/SumBox/Index";
 import { SkillSearch } from "../components/Simulator/SkillSearch";
 import { GoTopBtn } from "src/components/Parts/Buttons/GoTopBtn";
-import { StatusIcon } from "src/components/Parts/StatusIcon/StatusIcon";
-import { useOnAuthState } from "src/hooks/useOnAuthState";
 import { TotalSkill } from "src/components/Simulator/TotalSkill";
 import { memo } from "react";
 
 const Simulator = memo(function Simulator() {
-  useOnAuthState();
-
   return (
     <>
       <HeaderBar />
@@ -33,7 +29,6 @@ const Simulator = memo(function Simulator() {
           >
             Simulator
           </Box>
-          <StatusIcon />
         </Flex>
 
         <Box
@@ -88,9 +83,7 @@ const Simulator = memo(function Simulator() {
             </Stack>
           </Box>
         </Flex>
-        <Box pt="100px">
-          <GoTopBtn />
-        </Box>
+        <Box pt="100px"></Box>
       </Box>
     </>
   );

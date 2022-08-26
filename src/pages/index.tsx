@@ -1,11 +1,15 @@
 import { Box } from "@chakra-ui/react";
 import type { NextPage } from "next";
-import Top from "./Top";
+import Simulator from "./Simulator";
 
 const Home: NextPage = () => {
   return (
-    <Box m="0" p="0">
-      <Top />
+    <Box
+      m="0"
+      p="0"
+      title="モンスターハンターライズ(MH’Rize )-スキルシュミレーター"
+    >
+      <Simulator />
     </Box>
   );
 };
